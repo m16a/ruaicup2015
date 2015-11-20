@@ -10,7 +10,6 @@ public final class MyStrategy implements Strategy {
   @Override
 	public void move(Car self, World world, Game game, Move move) 
 	{
-		move.setEnginePower(0.5D);
 		//move.setThrowProjectile(true);
 		//move.setSpillOil(true);
 
@@ -22,8 +21,15 @@ public final class MyStrategy implements Strategy {
 		long ms0 = System.currentTimeMillis();
 		
 		CarProxy cp = new CarProxy(self, game);
-		cp.m_in_power = 0.5D;
-	
+
+		if (tickN < 190)
+		{		
+			move.setEnginePower(0.5D);
+			cp.m_in_power = 0.5D;
+		}else{
+			move.setBrake(true);
+			cp.m_in_brake = true;		
+		}
 		PhysSym.step(cp, game);
 
 		long ms1 = System.currentTimeMillis();

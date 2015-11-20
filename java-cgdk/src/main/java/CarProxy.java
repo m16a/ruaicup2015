@@ -18,7 +18,9 @@ public final class CarProxy
 
 	public double m_power;
 	
+	//input parameters
 	public double m_in_power;
+	public boolean m_in_brake;
 
 	public double m_angle;
 
@@ -42,7 +44,8 @@ public final class CarProxy
 		this.m_crossFrict = game.getCarCrosswiseMovementFrictionFactor();
 		this.m_airFrict = game.getCarMovementAirFrictionFactor(); 
 
-		this.m_game = game; 	
+		this.m_game = game;
+		this.m_in_brake = false; 	
 	}
 
    public void applyMovementAirFriction(double updateFactor)
@@ -79,7 +82,7 @@ public final class CarProxy
 				if (velocityLength <= 0.0D)
 					return;                                                                         
         
-				double dlf = m_longFrict * updateFactor;                    
+				double dlf = (m_in_brake ? m_crossFrict : m_longFrict) * updateFactor;                    
         double dcf = m_crossFrict * updateFactor;                      
         Vector2D forward = new Vector2D(1.0D, 0.0D).rotate(m_angle);
 				Vector2D crosswise = new Vector2D(0.0D, 1.0D).rotate(m_angle);                    
@@ -87,9 +90,9 @@ public final class CarProxy
 				double vel_forw = m_v.dotProduct(forward);                  
                                                                                                   
 				if ( vel_forw >= 0.0D) {                                                                 
-            vel_forw -= dlf;                                               
-            if (vel_forw < 0.0D)                                                              
-                vel_forw = 0.0D;                                                                
+					vel_forw -= dlf;                                               
+          if (vel_forw < 0.0D)                                                              
+						vel_forw = 0.0D;                                                                
 				} else {
 					vel_forw += dlf;                                               
             if (vel_forw > 0.0D)                                                               

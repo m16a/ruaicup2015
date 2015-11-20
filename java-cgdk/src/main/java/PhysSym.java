@@ -23,8 +23,8 @@ public final class PhysSym
     double s = Math.sin(cp.m_angle);
 	
 		double p = cp.m_power * (cp.m_power >=0 ?  game.getBuggyEngineForwardPower() : game.getBuggyEngineRearPower());
-
-		cp.m_f = new Vector2D(c * p, s * p);
+		if (cp.m_in_brake != true)
+			cp.m_f = new Vector2D(c * p, s * p);
 
 		for (int i=0; i<ITERATION_COUNT; i++)
 			updatePos(cp); 

@@ -1,0 +1,5 @@
+#no vim tmp file
+*.swp
+
+#ignore binaries
+java-cgdk/classes/
