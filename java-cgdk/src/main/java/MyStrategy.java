@@ -22,22 +22,27 @@ public final class MyStrategy implements Strategy {
 		
 		CarProxy cp = new CarProxy(self, game);
 
-		if (tickN < 190)
+		if (tickN < 300)
 		{		
 			move.setEnginePower(0.5D);
 			cp.m_in_power = 0.5D;
 		}else{
 			move.setBrake(true);
-			cp.m_in_brake = true;		
+			cp.m_in_brake = true;
+			move.setWheelTurn(1);
+			cp.m_in_wheel = 1;		
 		}
 		PhysSym.step(cp, game);
 
 		long ms1 = System.currentTimeMillis();
-		if (tickN > 178 && tickN < 210)
+		if (tickN > 290 && tickN < 310)
 		{
 			System.out.printf("time %d ms\n", ms1 - ms0);
 			System.out.printf("tickN:%d curr vel (%.5f, %.5f), next vel %s\n", tickN, v_x, v_y,  cp.m_v.toString());
-			System.out.printf("curr power %.5f, next power %.5f\n", self.getEnginePower(), cp.m_power);
+			//System.out.printf("curr power %.5f, next power %.5f\n", self.getEnginePower(), cp.m_power);
+			System.out.printf("cur turn %.5f, next turn %.5f\n", self.getWheelTurn(), cp.m_wheel);
+			System.out.printf("w %.5f, next w %.5f\n", self.getAngularSpeed(), cp.m_w);
+			System.out.printf("angle %.5f, next angle %.5f\n", self.getAngle(), cp.m_angle);
 		}
 		tickN = tickN + 1;
 	}
