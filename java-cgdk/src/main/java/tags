@@ -6,6 +6,7 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 AMMO_CRATE	model/BonusType.java	/^    AMMO_CRATE,$/;"	e	enum:BonusType	file:
 AUTHENTICATION_TOKEN	RemoteProcessClient.java	/^        AUTHENTICATION_TOKEN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
+BOTTOM	Vawe.java	/^	int BOTTOM = 1<<2;$/;"	f	class:Wave
 BOTTOM_HEADED_T	model/TileType.java	/^    BOTTOM_HEADED_T,$/;"	e	enum:TileType	file:
 BUFFER_SIZE_BYTES	RemoteProcessClient.java	/^    private static final int BUFFER_SIZE_BYTES = 1 << 20;$/;"	f	class:RemoteProcessClient	file:
 BUGGY	model/CarType.java	/^    BUGGY,$/;"	e	enum:CarType	file:
@@ -28,10 +29,12 @@ GAME_CONTEXT	RemoteProcessClient.java	/^        GAME_CONTEXT,$/;"	e	enum:RemoteP
 GAME_OVER	RemoteProcessClient.java	/^        GAME_OVER,$/;"	e	enum:RemoteProcessClient.MessageType	file:
 Game	model/Game.java	/^    public Game($/;"	m	class:Game
 Game	model/Game.java	/^public class Game {$/;"	c
+Global	Global.java	/^public final class Global{$/;"	c
 HORIZONTAL	model/TileType.java	/^    HORIZONTAL,$/;"	e	enum:TileType	file:
 INTEGER_SIZE_BYTES	RemoteProcessClient.java	/^    private static final int INTEGER_SIZE_BYTES = Integer.SIZE \/ Byte.SIZE;$/;"	f	class:RemoteProcessClient	file:
 ITERATION_COUNT	PhysSym.java	/^	public static final int ITERATION_COUNT = 10;$/;"	f	class:PhysSym
 JEEP	model/CarType.java	/^    JEEP$/;"	e	enum:CarType	file:
+LEFT	Vawe.java	/^	int LEFT = 1<<1;$/;"	f	class:Wave
 LEFT	model/Direction.java	/^    LEFT,$/;"	e	enum:Direction	file:
 LEFT_BOTTOM_CORNER	model/TileType.java	/^    LEFT_BOTTOM_CORNER,$/;"	e	enum:TileType	file:
 LEFT_HEADED_T	model/TileType.java	/^    LEFT_HEADED_T,$/;"	e	enum:TileType	file:
@@ -42,6 +45,7 @@ MessageType	RemoteProcessClient.java	/^    private enum MessageType {$/;"	g	clas
 Move	model/Move.java	/^public class Move {$/;"	c
 MyStrategy	MyStrategy.java	/^public final class MyStrategy implements Strategy {$/;"	c
 NITRO_BOOST	model/BonusType.java	/^    NITRO_BOOST,$/;"	e	enum:BonusType	file:
+Node	Vawe.java	/^	public final class Node$/;"	c	class:Wave
 OIL_CANISTER	model/BonusType.java	/^    OIL_CANISTER,$/;"	e	enum:BonusType	file:
 OilSlick	model/OilSlick.java	/^    public OilSlick($/;"	m	class:OilSlick
 OilSlick	model/OilSlick.java	/^public class OilSlick extends CircularUnit {$/;"	c
@@ -59,6 +63,7 @@ Projectile	model/Projectile.java	/^    public Projectile($/;"	m	class:Projectile
 Projectile	model/Projectile.java	/^public class Projectile extends CircularUnit {$/;"	c
 ProjectileType	model/ProjectileType.java	/^public enum ProjectileType {$/;"	g
 REPAIR_KIT	model/BonusType.java	/^    REPAIR_KIT,$/;"	e	enum:BonusType	file:
+RIGHT	Vawe.java	/^	int RIGHT = 1<<0;$/;"	f	class:Wave
 RIGHT	model/Direction.java	/^    RIGHT,$/;"	e	enum:Direction	file:
 RIGHT_BOTTOM_CORNER	model/TileType.java	/^    RIGHT_BOTTOM_CORNER,$/;"	e	enum:TileType	file:
 RIGHT_HEADED_T	model/TileType.java	/^    RIGHT_HEADED_T,$/;"	e	enum:TileType	file:
@@ -72,6 +77,7 @@ Runner	Runner.java	/^public final class Runner {$/;"	c
 Strategy	Strategy.java	/^public interface Strategy {$/;"	i
 TEAM_SIZE	RemoteProcessClient.java	/^        TEAM_SIZE,$/;"	e	enum:RemoteProcessClient.MessageType	file:
 TIRE	model/ProjectileType.java	/^    TIRE$/;"	e	enum:ProjectileType	file:
+TOP	Vawe.java	/^	int TOP = 1<<3;$/;"	f	class:Wave
 TOP_HEADED_T	model/TileType.java	/^    TOP_HEADED_T,$/;"	e	enum:TileType	file:
 TileType	model/TileType.java	/^public enum TileType {$/;"	g
 UNKNOWN	RemoteProcessClient.java	/^        UNKNOWN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
@@ -79,17 +85,20 @@ UP	model/Direction.java	/^    UP,$/;"	e	enum:Direction	file:
 Unit	model/Unit.java	/^    protected Unit($/;"	m	class:Unit
 Unit	model/Unit.java	/^public abstract class Unit {$/;"	c
 VERTICAL	model/TileType.java	/^    VERTICAL,$/;"	e	enum:TileType	file:
+Vawe	Vawe.java	/^	public void Vawe(World w)$/;"	m	class:Wave
 Vector2D	Vector2D.java	/^   public Vector2D( double dX, double dY ) {$/;"	m	class:Vector2D
 Vector2D	Vector2D.java	/^   public Vector2D() {$/;"	m	class:Vector2D
 Vector2D	Vector2D.java	/^public class Vector2D {$/;"	c
 WASHER	model/ProjectileType.java	/^    WASHER,$/;"	e	enum:ProjectileType	file:
+Wave	Vawe.java	/^public final class Wave$/;"	c
 World	model/World.java	/^    public World($/;"	m	class:World
 World	model/World.java	/^public class World {$/;"	c
 add	Vector2D.java	/^   public Vector2D add( Vector2D v1 ) {$/;"	m	class:Vector2D
 angle	model/Unit.java	/^    private final double angle;$/;"	f	class:Unit	file:
 angularSpeed	model/Unit.java	/^    private final double angularSpeed;$/;"	f	class:Unit	file:
-applyFriction	CarProxy.java	/^		public void applyFriction(double updateFactor)$/;"	m	class:CarProxy
+applyFriction	CarProxy.java	/^	public void applyFriction(double updateFactor)$/;"	m	class:CarProxy
 applyMovementAirFriction	CarProxy.java	/^   public void applyMovementAirFriction(double updateFactor)$/;"	m	class:CarProxy
+applyRotationAirFriction	CarProxy.java	/^	public void applyRotationAirFriction(double updateFactor)$/;"	m	class:CarProxy
 bonusMass	model/Game.java	/^    private final double bonusMass;$/;"	f	class:Game	file:
 bonusSize	model/Game.java	/^    private final double bonusSize;$/;"	f	class:Game	file:
 bonuses	model/World.java	/^    private final Bonus[] bonuses;$/;"	f	class:World	file:
@@ -115,6 +124,7 @@ carWidth	model/Game.java	/^    private final double carWidth;$/;"	f	class:Game	f
 cars	model/PlayerContext.java	/^    private final Car[] cars;$/;"	f	class:PlayerContext	file:
 cars	model/World.java	/^    private final Car[] cars;$/;"	f	class:World	file:
 close	RemoteProcessClient.java	/^    public void close() throws IOException {$/;"	m	class:RemoteProcessClient
+d	Vawe.java	/^		int d = -1;$/;"	f	class:Wave.Node
 dX	Vector2D.java	/^   protected double dX;$/;"	f	class:Vector2D
 dY	Vector2D.java	/^   protected double dY;$/;"	f	class:Vector2D
 dotProduct	Vector2D.java	/^   public double dotProduct ( Vector2D v1 ) {$/;"	m	class:Vector2D
@@ -122,6 +132,7 @@ durability	model/Car.java	/^    private final double durability;$/;"	f	class:Car
 enginePower	model/Car.java	/^    private final double enginePower;$/;"	f	class:Car	file:
 enginePower	model/Move.java	/^    private double enginePower;$/;"	f	class:Move	file:
 ensureMessageType	RemoteProcessClient.java	/^    private static void ensureMessageType(MessageType actualType, MessageType expectedType) {$/;"	m	class:RemoteProcessClient	file:
+find	Vawe.java	/^	public Vector find(int startI, int startJ, int finishI, int finishJ)$/;"	m	class:Wave
 finishLapScore	model/Game.java	/^    private final int finishLapScore;$/;"	f	class:Game	file:
 finishTrackScores	model/Game.java	/^    private final int[] finishTrackScores;$/;"	f	class:Game	file:
 finishedTrack	model/Car.java	/^    private final boolean finishedTrack;$/;"	f	class:Car	file:
@@ -177,6 +188,7 @@ getMass	model/Unit.java	/^    public double getMass() {$/;"	m	class:Unit
 getMaxOiledStateDurationTicks	model/Game.java	/^    public int getMaxOiledStateDurationTicks() {$/;"	m	class:Game
 getMyPlayer	model/World.java	/^    public Player getMyPlayer() {$/;"	m	class:World
 getName	model/Player.java	/^    public String getName() {$/;"	m	class:Player
+getNeighbours	Vawe.java	/^	private int getNeighbours(int x, int y)$/;"	m	class:Wave	file:
 getNextWaypointX	model/Car.java	/^    public int getNextWaypointX() {$/;"	m	class:Car
 getNextWaypointY	model/Car.java	/^    public int getNextWaypointY() {$/;"	m	class:Car
 getNitroChargeCount	model/Car.java	/^    public int getNitroChargeCount() {$/;"	m	class:Car
@@ -261,6 +273,9 @@ lapWaypointsSummaryScoreFactor	model/Game.java	/^    private final double lapWay
 lastMovementAirFrictionFactor	CarProxy.java	/^  private double lastMovementAirFrictionFactor;                                                      $/;"	f	class:CarProxy	file:
 lastMovementTransferFactor	CarProxy.java	/^	private Double lastMovementTransferFactor;  $/;"	f	class:CarProxy	file:
 lastMovementUpdateFactor	CarProxy.java	/^	private double lastMovementUpdateFactor;                                                            $/;"	f	class:CarProxy	file:
+lastRotationAirFrictionFactor	CarProxy.java	/^	private double lastRotationAirFrictionFactor;$/;"	f	class:CarProxy	file:
+lastRotationTransferFactor	CarProxy.java	/^	private Double  lastRotationTransferFactor; $/;"	f	class:CarProxy	file:
+lastRotationUpdateFactor	CarProxy.java	/^	private double lastRotationUpdateFactor;$/;"	f	class:CarProxy	file:
 lastTickIndex	model/World.java	/^    private final int lastTickIndex;$/;"	f	class:World	file:
 length	Vector2D.java	/^   public double length() {$/;"	m	class:Vector2D
 m_Minv	CarProxy.java	/^	public double m_Minv;$/;"	f	class:CarProxy
@@ -269,12 +284,21 @@ m_angle	CarProxy.java	/^	public double m_angle;$/;"	f	class:CarProxy
 m_crossFrict	CarProxy.java	/^	public double m_crossFrict; $/;"	f	class:CarProxy
 m_f	CarProxy.java	/^	public Vector2D m_f;$/;"	f	class:CarProxy
 m_game	CarProxy.java	/^	public Game m_game;$/;"	f	class:CarProxy
+m_in_brake	CarProxy.java	/^	public boolean m_in_brake;$/;"	f	class:CarProxy
 m_in_power	CarProxy.java	/^	public double m_in_power;$/;"	f	class:CarProxy
+m_in_wheel	CarProxy.java	/^	public double m_in_wheel;$/;"	f	class:CarProxy
 m_longFrict	CarProxy.java	/^	public double m_longFrict;$/;"	f	class:CarProxy
-m_medianV	CarProxy.java	/^	public Vector2D m_medianV;$/;"	f	class:CarProxy
+m_medianV	CarProxy.java	/^	public Vector2D m_medianV;\/\/zero$/;"	f	class:CarProxy
+m_medianW	CarProxy.java	/^	public double m_medianW;$/;"	f	class:CarProxy
+m_nodes	Vawe.java	/^	public Node[][] m_nodes = null; $/;"	f	class:Wave
 m_pos	CarProxy.java	/^	public Vector2D m_pos;$/;"	f	class:CarProxy
 m_power	CarProxy.java	/^	public double m_power;$/;"	f	class:CarProxy
+m_rotAirFrict	CarProxy.java	/^	public double m_rotAirFrict;$/;"	f	class:CarProxy
+m_rotFrictF	CarProxy.java	/^	public double m_rotFrictF;$/;"	f	class:CarProxy
 m_v	CarProxy.java	/^	public Vector2D m_v;$/;"	f	class:CarProxy
+m_w	CarProxy.java	/^	public double m_w;$/;"	f	class:CarProxy
+m_w	Vawe.java	/^	public World m_w;$/;"	f	class:Wave
+m_wheel	CarProxy.java	/^	public double m_wheel;$/;"	f	class:CarProxy
 main	Runner.java	/^    public static void main(String[] args) throws IOException {$/;"	m	class:Runner
 mapName	RemoteProcessClient.java	/^    private String mapName;$/;"	f	class:RemoteProcessClient	file:
 mapName	model/World.java	/^    private final String mapName;$/;"	f	class:World	file:
@@ -405,6 +429,7 @@ trackTileSize	model/Game.java	/^    private final double trackTileSize;$/;"	f	cl
 type	model/Bonus.java	/^    private final BonusType type;$/;"	f	class:Bonus	file:
 type	model/Car.java	/^    private final CarType type;$/;"	f	class:Car	file:
 type	model/Projectile.java	/^    private final ProjectileType type;$/;"	f	class:Projectile	file:
+updateAngle	PhysSym.java	/^	public static void updateAngle(CarProxy cp, Game game)$/;"	m	class:PhysSym
 updateFactor	PhysSym.java	/^	protected static double updateFactor = 1.0D \/ ITERATION_COUNT ;\/\/ \/ 60;$/;"	f	class:PhysSym
 updatePos	PhysSym.java	/^	public static void updatePos(CarProxy cp) $/;"	m	class:PhysSym
 useNitro	model/Move.java	/^    private boolean useNitro;$/;"	f	class:Move	file:
