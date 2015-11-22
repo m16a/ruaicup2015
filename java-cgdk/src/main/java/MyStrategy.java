@@ -3,13 +3,20 @@ import model.Game;
 import model.Move;
 import model.World;
 
+import java.awt.Color;
 
 public final class MyStrategy implements Strategy {
     
 	int tickN = 0;
+	public static VisualClient s_vc = null;
   @Override
 	public void move(Car self, World world, Game game, Move move) 
 	{
+
+		if (s_vc == null)
+			s_vc = new VisualClient();
+
+	
 		//move.setThrowProjectile(true);
 		//move.setSpillOil(true);
 
@@ -21,6 +28,11 @@ public final class MyStrategy implements Strategy {
 		long ms0 = System.currentTimeMillis();
 		
 		CarProxy cp = new CarProxy(self, game);
+	
+		s_vc.beginPost();
+
+		s_vc.fillCircle(0,0,5000,Color.black);		
+		s_vc.endPost();
 
 		if (tickN < 300)
 		{		
