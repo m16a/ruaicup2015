@@ -4,482 +4,486 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-AMMO_CRATE	./model/BonusType.java	/^    AMMO_CRATE,$/;"	e	enum:BonusType	file:
-AUTHENTICATION_TOKEN	./RemoteProcessClient.java	/^        AUTHENTICATION_TOKEN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
-BOTTOM	./Vawe.java	/^	int BOTTOM = 1<<2;$/;"	f	class:Wave
-BOTTOM_HEADED_T	./model/TileType.java	/^    BOTTOM_HEADED_T,$/;"	e	enum:TileType	file:
-BUFFER_SIZE_BYTES	./RemoteProcessClient.java	/^    private static final int BUFFER_SIZE_BYTES = 1 << 20;$/;"	f	class:RemoteProcessClient	file:
-BUGGY	./model/CarType.java	/^    BUGGY,$/;"	e	enum:CarType	file:
-Bonus	./model/Bonus.java	/^    public Bonus($/;"	m	class:Bonus
-Bonus	./model/Bonus.java	/^public class Bonus extends RectangularUnit {$/;"	c
-BonusType	./model/BonusType.java	/^public enum BonusType {$/;"	g
-CROSSROADS	./model/TileType.java	/^    CROSSROADS$/;"	e	enum:TileType	file:
-Car	./model/Car.java	/^    public Car($/;"	m	class:Car
-Car	./model/Car.java	/^public class Car extends RectangularUnit {$/;"	c
-CarProxy	./CarProxy.java	/^	public CarProxy(Car c, Game game)$/;"	m	class:CarProxy
-CarProxy	./CarProxy.java	/^public final class CarProxy$/;"	c
-CarType	./model/CarType.java	/^public enum CarType {$/;"	g
-CircularUnit	./model/CircularUnit.java	/^    protected CircularUnit($/;"	m	class:CircularUnit
-CircularUnit	./model/CircularUnit.java	/^public abstract class CircularUnit extends Unit {$/;"	c
-DEFAULT_HOST	./VisualClient.java	/^    final String    DEFAULT_HOST = "127.0.0.1";$/;"	f	class:VisualClient
-DEFAULT_PORT	./VisualClient.java	/^    final int       DEFAULT_PORT = 13579;$/;"	f	class:VisualClient
-DOWN	./model/Direction.java	/^    DOWN$/;"	e	enum:Direction	file:
-Direction	./model/Direction.java	/^public enum Direction {$/;"	g
-EMPTY	./model/TileType.java	/^    EMPTY,$/;"	e	enum:TileType	file:
-EPSILON	./PhysSym.java	/^	public static final double EPSILON = 1.0E-7D;   $/;"	f	class:PhysSym
-GAME_CONTEXT	./RemoteProcessClient.java	/^        GAME_CONTEXT,$/;"	e	enum:RemoteProcessClient.MessageType	file:
-GAME_OVER	./RemoteProcessClient.java	/^        GAME_OVER,$/;"	e	enum:RemoteProcessClient.MessageType	file:
-Game	./model/Game.java	/^    public Game($/;"	m	class:Game
-Game	./model/Game.java	/^public class Game {$/;"	c
-Global	./Global.java	/^public final class Global{$/;"	c
-HORIZONTAL	./model/TileType.java	/^    HORIZONTAL,$/;"	e	enum:TileType	file:
-INTEGER_SIZE_BYTES	./RemoteProcessClient.java	/^    private static final int INTEGER_SIZE_BYTES = Integer.SIZE \/ Byte.SIZE;$/;"	f	class:RemoteProcessClient	file:
-ITERATION_COUNT	./PhysSym.java	/^	public static final int ITERATION_COUNT = 10;$/;"	f	class:PhysSym
-JEEP	./model/CarType.java	/^    JEEP$/;"	e	enum:CarType	file:
-LEFT	./Vawe.java	/^	int LEFT = 1<<1;$/;"	f	class:Wave
-LEFT	./model/Direction.java	/^    LEFT,$/;"	e	enum:Direction	file:
-LEFT_BOTTOM_CORNER	./model/TileType.java	/^    LEFT_BOTTOM_CORNER,$/;"	e	enum:TileType	file:
-LEFT_HEADED_T	./model/TileType.java	/^    LEFT_HEADED_T,$/;"	e	enum:TileType	file:
-LEFT_TOP_CORNER	./model/TileType.java	/^    LEFT_TOP_CORNER,$/;"	e	enum:TileType	file:
-LONG_SIZE_BYTES	./RemoteProcessClient.java	/^    private static final int LONG_SIZE_BYTES = Long.SIZE \/ Byte.SIZE;$/;"	f	class:RemoteProcessClient	file:
-MOVES	./RemoteProcessClient.java	/^        MOVES$/;"	e	enum:RemoteProcessClient.MessageType	file:
-MessageType	./RemoteProcessClient.java	/^    private enum MessageType {$/;"	g	class:RemoteProcessClient
-Move	./model/Move.java	/^public class Move {$/;"	c
-MyStrategy	./MyStrategy.java	/^public final class MyStrategy implements Strategy {$/;"	c
-NITRO_BOOST	./model/BonusType.java	/^    NITRO_BOOST,$/;"	e	enum:BonusType	file:
-Node	./Vawe.java	/^	public final class Node$/;"	c	class:Wave
-OIL_CANISTER	./model/BonusType.java	/^    OIL_CANISTER,$/;"	e	enum:BonusType	file:
-OilSlick	./model/OilSlick.java	/^    public OilSlick($/;"	m	class:OilSlick
-OilSlick	./model/OilSlick.java	/^public class OilSlick extends CircularUnit {$/;"	c
-PLAYER_CONTEXT	./RemoteProcessClient.java	/^        PLAYER_CONTEXT,$/;"	e	enum:RemoteProcessClient.MessageType	file:
-POWER_PER_TICK	./PhysSym.java	/^  static double POWER_PER_TICK = 0.025;$/;"	f	class:PhysSym
-PROTOCOL_BYTE_ORDER	./RemoteProcessClient.java	/^    private static final ByteOrder PROTOCOL_BYTE_ORDER = ByteOrder.LITTLE_ENDIAN;$/;"	f	class:RemoteProcessClient	file:
-PROTOCOL_VERSION	./RemoteProcessClient.java	/^        PROTOCOL_VERSION,$/;"	e	enum:RemoteProcessClient.MessageType	file:
-PURE_SCORE	./model/BonusType.java	/^    PURE_SCORE$/;"	e	enum:BonusType	file:
-PhysSym	./PhysSym.java	/^public final class PhysSym$/;"	c
-Player	./model/Player.java	/^    public Player(long id, boolean me, String name, boolean strategyCrashed, int score) {$/;"	m	class:Player
-Player	./model/Player.java	/^public class Player {$/;"	c
-PlayerContext	./model/PlayerContext.java	/^    public PlayerContext(Car[] cars, World world) {$/;"	m	class:PlayerContext
-PlayerContext	./model/PlayerContext.java	/^public final class PlayerContext {$/;"	c
-Projectile	./model/Projectile.java	/^    public Projectile($/;"	m	class:Projectile
-Projectile	./model/Projectile.java	/^public class Projectile extends CircularUnit {$/;"	c
-ProjectileType	./model/ProjectileType.java	/^public enum ProjectileType {$/;"	g
-REPAIR_KIT	./model/BonusType.java	/^    REPAIR_KIT,$/;"	e	enum:BonusType	file:
-RIGHT	./Vawe.java	/^	int RIGHT = 1<<0;$/;"	f	class:Wave
-RIGHT	./model/Direction.java	/^    RIGHT,$/;"	e	enum:Direction	file:
-RIGHT_BOTTOM_CORNER	./model/TileType.java	/^    RIGHT_BOTTOM_CORNER,$/;"	e	enum:TileType	file:
-RIGHT_HEADED_T	./model/TileType.java	/^    RIGHT_HEADED_T,$/;"	e	enum:TileType	file:
-RIGHT_TOP_CORNER	./model/TileType.java	/^    RIGHT_TOP_CORNER,$/;"	e	enum:TileType	file:
-RectangularUnit	./model/RectangularUnit.java	/^    protected RectangularUnit($/;"	m	class:RectangularUnit
-RectangularUnit	./model/RectangularUnit.java	/^public abstract class RectangularUnit extends Unit {$/;"	c
-RemoteProcessClient	./RemoteProcessClient.java	/^    public RemoteProcessClient(String host, int port) throws IOException {$/;"	m	class:RemoteProcessClient
-RemoteProcessClient	./RemoteProcessClient.java	/^public final class RemoteProcessClient implements Closeable {$/;"	c
-Runner	./Runner.java	/^    private Runner(String[] args) throws IOException {$/;"	m	class:Runner	file:
-Runner	./Runner.java	/^public final class Runner {$/;"	c
-Strategy	./Strategy.java	/^public interface Strategy {$/;"	i
-TEAM_SIZE	./RemoteProcessClient.java	/^        TEAM_SIZE,$/;"	e	enum:RemoteProcessClient.MessageType	file:
-TIRE	./model/ProjectileType.java	/^    TIRE$/;"	e	enum:ProjectileType	file:
-TOP	./Vawe.java	/^	int TOP = 1<<3;$/;"	f	class:Wave
-TOP_HEADED_T	./model/TileType.java	/^    TOP_HEADED_T,$/;"	e	enum:TileType	file:
-TileType	./model/TileType.java	/^public enum TileType {$/;"	g
-UNKNOWN	./RemoteProcessClient.java	/^        UNKNOWN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
-UP	./model/Direction.java	/^    UP,$/;"	e	enum:Direction	file:
-Unit	./model/Unit.java	/^    protected Unit($/;"	m	class:Unit
-Unit	./model/Unit.java	/^public abstract class Unit {$/;"	c
-VERTICAL	./model/TileType.java	/^    VERTICAL,$/;"	e	enum:TileType	file:
-Vawe	./Vawe.java	/^	public void Vawe(World w)$/;"	m	class:Wave
-Vector2D	./Vector2D.java	/^   public Vector2D( double dX, double dY ) {$/;"	m	class:Vector2D
-Vector2D	./Vector2D.java	/^   public Vector2D() {$/;"	m	class:Vector2D
-Vector2D	./Vector2D.java	/^public class Vector2D {$/;"	c
-VisualClient	./VisualClient.java	/^    public VisualClient() {$/;"	m	class:VisualClient
-VisualClient	./VisualClient.java	/^    public VisualClient(String host, int port) {$/;"	m	class:VisualClient
-VisualClient	./VisualClient.java	/^public class VisualClient {$/;"	c
-WASHER	./model/ProjectileType.java	/^    WASHER,$/;"	e	enum:ProjectileType	file:
-Wave	./Vawe.java	/^public final class Wave$/;"	c
-World	./model/World.java	/^    public World($/;"	m	class:World
-World	./model/World.java	/^public class World {$/;"	c
-add	./Vector2D.java	/^   public Vector2D add( Vector2D v1 ) {$/;"	m	class:Vector2D
-angle	./model/Unit.java	/^    private final double angle;$/;"	f	class:Unit	file:
-angularSpeed	./model/Unit.java	/^    private final double angularSpeed;$/;"	f	class:Unit	file:
-applyFriction	./CarProxy.java	/^	public void applyFriction(double updateFactor)$/;"	m	class:CarProxy
-applyMovementAirFriction	./CarProxy.java	/^   public void applyMovementAirFriction(double updateFactor)$/;"	m	class:CarProxy
-applyRotationAirFriction	./CarProxy.java	/^	public void applyRotationAirFriction(double updateFactor)$/;"	m	class:CarProxy
-beginPost	./VisualClient.java	/^    public void beginPost() {$/;"	m	class:VisualClient
-beginPre	./VisualClient.java	/^    public void beginPre() {$/;"	m	class:VisualClient
-bonusMass	./model/Game.java	/^    private final double bonusMass;$/;"	f	class:Game	file:
-bonusSize	./model/Game.java	/^    private final double bonusSize;$/;"	f	class:Game	file:
-bonuses	./model/World.java	/^    private final Bonus[] bonuses;$/;"	f	class:World	file:
-brake	./model/Move.java	/^    private boolean brake;$/;"	f	class:Move	file:
-buggyEngineForwardPower	./model/Game.java	/^    private final double buggyEngineForwardPower;$/;"	f	class:Game	file:
-buggyEngineRearPower	./model/Game.java	/^    private final double buggyEngineRearPower;$/;"	f	class:Game	file:
-buggyMass	./model/Game.java	/^    private final double buggyMass;$/;"	f	class:Game	file:
-burningTimeDurationFactor	./model/Game.java	/^    private final double burningTimeDurationFactor;$/;"	f	class:Game	file:
-carAngularSpeedFactor	./model/Game.java	/^    private final double carAngularSpeedFactor;$/;"	f	class:Game	file:
-carCrosswiseMovementFrictionFactor	./model/Game.java	/^    private final double carCrosswiseMovementFrictionFactor;$/;"	f	class:Game	file:
-carDamageScoreFactor	./model/Game.java	/^    private final double carDamageScoreFactor;$/;"	f	class:Game	file:
-carEliminationScore	./model/Game.java	/^    private final int carEliminationScore;$/;"	f	class:Game	file:
-carEnginePowerChangePerTick	./model/Game.java	/^    private final double carEnginePowerChangePerTick;$/;"	f	class:Game	file:
-carHeight	./model/Game.java	/^    private final double carHeight;$/;"	f	class:Game	file:
-carId	./model/Projectile.java	/^    private final long carId;$/;"	f	class:Projectile	file:
-carLengthwiseMovementFrictionFactor	./model/Game.java	/^    private final double carLengthwiseMovementFrictionFactor;$/;"	f	class:Game	file:
-carMovementAirFrictionFactor	./model/Game.java	/^    private final double carMovementAirFrictionFactor;$/;"	f	class:Game	file:
-carReactivationTimeTicks	./model/Game.java	/^    private final int carReactivationTimeTicks;$/;"	f	class:Game	file:
-carRotationAirFrictionFactor	./model/Game.java	/^    private final double carRotationAirFrictionFactor;$/;"	f	class:Game	file:
-carRotationFrictionFactor	./model/Game.java	/^    private final double carRotationFrictionFactor;$/;"	f	class:Game	file:
-carWheelTurnChangePerTick	./model/Game.java	/^    private final double carWheelTurnChangePerTick;$/;"	f	class:Game	file:
-carWidth	./model/Game.java	/^    private final double carWidth;$/;"	f	class:Game	file:
-cars	./model/PlayerContext.java	/^    private final Car[] cars;$/;"	f	class:PlayerContext	file:
-cars	./model/World.java	/^    private final Car[] cars;$/;"	f	class:World	file:
-circle	./VisualClient.java	/^    public void circle(double x, double y, double r, Color color) {$/;"	m	class:VisualClient
-close	./RemoteProcessClient.java	/^    public void close() throws IOException {$/;"	m	class:RemoteProcessClient
-d	./Vawe.java	/^		int d = -1;$/;"	f	class:Wave.Node
-dX	./Vector2D.java	/^   protected double dX;$/;"	f	class:Vector2D
-dY	./Vector2D.java	/^   protected double dY;$/;"	f	class:Vector2D
-dotProduct	./Vector2D.java	/^   public double dotProduct ( Vector2D v1 ) {$/;"	m	class:Vector2D
-durability	./model/Car.java	/^    private final double durability;$/;"	f	class:Car	file:
-endPost	./VisualClient.java	/^    public void endPost() {$/;"	m	class:VisualClient
-endPre	./VisualClient.java	/^    public void endPre() {$/;"	m	class:VisualClient
-enginePower	./model/Car.java	/^    private final double enginePower;$/;"	f	class:Car	file:
-enginePower	./model/Move.java	/^    private double enginePower;$/;"	f	class:Move	file:
-ensureMessageType	./RemoteProcessClient.java	/^    private static void ensureMessageType(MessageType actualType, MessageType expectedType) {$/;"	m	class:RemoteProcessClient	file:
-fillCircle	./VisualClient.java	/^    public void fillCircle(double x, double y, double r, Color color) {$/;"	m	class:VisualClient
-fillRect	./VisualClient.java	/^    public void fillRect(double x1, double y1, double x2, double y2, Color color) {$/;"	m	class:VisualClient
-find	./Vawe.java	/^	public Vector find(int startI, int startJ, int finishI, int finishJ)$/;"	m	class:Wave
-finishLapScore	./model/Game.java	/^    private final int finishLapScore;$/;"	f	class:Game	file:
-finishTrackScores	./model/Game.java	/^    private final int[] finishTrackScores;$/;"	f	class:Game	file:
-finishedTrack	./model/Car.java	/^    private final boolean finishedTrack;$/;"	f	class:Car	file:
-flush	./RemoteProcessClient.java	/^    private void flush() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-getAngle	./model/Unit.java	/^    public final double getAngle() {$/;"	m	class:Unit
-getAngleTo	./model/Unit.java	/^    public double getAngleTo(Unit unit) {$/;"	m	class:Unit
-getAngleTo	./model/Unit.java	/^    public double getAngleTo(double x, double y) {$/;"	m	class:Unit
-getAngularSpeed	./model/Unit.java	/^    public double getAngularSpeed() {$/;"	m	class:Unit
-getBonusMass	./model/Game.java	/^    public double getBonusMass() {$/;"	m	class:Game
-getBonusSize	./model/Game.java	/^    public double getBonusSize() {$/;"	m	class:Game
-getBonuses	./model/World.java	/^    public Bonus[] getBonuses() {$/;"	m	class:World
-getBuggyEngineForwardPower	./model/Game.java	/^    public double getBuggyEngineForwardPower() {$/;"	m	class:Game
-getBuggyEngineRearPower	./model/Game.java	/^    public double getBuggyEngineRearPower() {$/;"	m	class:Game
-getBuggyMass	./model/Game.java	/^    public double getBuggyMass() {$/;"	m	class:Game
-getBurningTimeDurationFactor	./model/Game.java	/^    public double getBurningTimeDurationFactor() {$/;"	m	class:Game
-getCarAngularSpeedFactor	./model/Game.java	/^    public double getCarAngularSpeedFactor() {$/;"	m	class:Game
-getCarCrosswiseMovementFrictionFactor	./model/Game.java	/^    public double getCarCrosswiseMovementFrictionFactor() {$/;"	m	class:Game
-getCarDamageScoreFactor	./model/Game.java	/^    public double getCarDamageScoreFactor() {$/;"	m	class:Game
-getCarEliminationScore	./model/Game.java	/^    public int getCarEliminationScore() {$/;"	m	class:Game
-getCarEnginePowerChangePerTick	./model/Game.java	/^    public double getCarEnginePowerChangePerTick() {$/;"	m	class:Game
-getCarHeight	./model/Game.java	/^    public double getCarHeight() {$/;"	m	class:Game
-getCarId	./model/Projectile.java	/^    public long getCarId() {$/;"	m	class:Projectile
-getCarLengthwiseMovementFrictionFactor	./model/Game.java	/^    public double getCarLengthwiseMovementFrictionFactor() {$/;"	m	class:Game
-getCarMovementAirFrictionFactor	./model/Game.java	/^    public double getCarMovementAirFrictionFactor() {$/;"	m	class:Game
-getCarReactivationTimeTicks	./model/Game.java	/^    public int getCarReactivationTimeTicks() {$/;"	m	class:Game
-getCarRotationAirFrictionFactor	./model/Game.java	/^    public double getCarRotationAirFrictionFactor() {$/;"	m	class:Game
-getCarRotationFrictionFactor	./model/Game.java	/^    public double getCarRotationFrictionFactor() {$/;"	m	class:Game
-getCarWheelTurnChangePerTick	./model/Game.java	/^    public double getCarWheelTurnChangePerTick() {$/;"	m	class:Game
-getCarWidth	./model/Game.java	/^    public double getCarWidth() {$/;"	m	class:Game
-getCars	./model/PlayerContext.java	/^    public Car[] getCars() {$/;"	m	class:PlayerContext
-getCars	./model/World.java	/^    public Car[] getCars() {$/;"	m	class:World
-getDistanceTo	./model/Unit.java	/^    public double getDistanceTo(Unit unit) {$/;"	m	class:Unit
-getDistanceTo	./model/Unit.java	/^    public double getDistanceTo(double x, double y) {$/;"	m	class:Unit
-getDurability	./model/Car.java	/^    public double getDurability() {$/;"	m	class:Car
-getEnginePower	./model/Car.java	/^    public double getEnginePower() {$/;"	m	class:Car
-getEnginePower	./model/Move.java	/^    public double getEnginePower() {$/;"	m	class:Move
-getFinishLapScore	./model/Game.java	/^    public int getFinishLapScore() {$/;"	m	class:Game
-getFinishTrackScores	./model/Game.java	/^    public int[] getFinishTrackScores() {$/;"	m	class:Game
-getHeight	./model/RectangularUnit.java	/^    public double getHeight() {$/;"	m	class:RectangularUnit
-getHeight	./model/World.java	/^    public int getHeight() {$/;"	m	class:World
-getId	./model/Player.java	/^    public long getId() {$/;"	m	class:Player
-getId	./model/Unit.java	/^    public long getId() {$/;"	m	class:Unit
-getInitialFreezeDurationTicks	./model/Game.java	/^    public int getInitialFreezeDurationTicks() {$/;"	m	class:Game
-getJeepEngineForwardPower	./model/Game.java	/^    public double getJeepEngineForwardPower() {$/;"	m	class:Game
-getJeepEngineRearPower	./model/Game.java	/^    public double getJeepEngineRearPower() {$/;"	m	class:Game
-getJeepMass	./model/Game.java	/^    public double getJeepMass() {$/;"	m	class:Game
-getLapCount	./model/Game.java	/^    public int getLapCount() {$/;"	m	class:Game
-getLapTickCount	./model/Game.java	/^    public int getLapTickCount() {$/;"	m	class:Game
-getLapWaypointsSummaryScoreFactor	./model/Game.java	/^    public double getLapWaypointsSummaryScoreFactor() {$/;"	m	class:Game
-getLastTickIndex	./model/World.java	/^    public int getLastTickIndex() {$/;"	m	class:World
-getMapName	./model/World.java	/^    public String getMapName() {$/;"	m	class:World
-getMass	./model/Unit.java	/^    public double getMass() {$/;"	m	class:Unit
-getMaxOiledStateDurationTicks	./model/Game.java	/^    public int getMaxOiledStateDurationTicks() {$/;"	m	class:Game
-getMyPlayer	./model/World.java	/^    public Player getMyPlayer() {$/;"	m	class:World
-getName	./model/Player.java	/^    public String getName() {$/;"	m	class:Player
-getNeighbours	./Vawe.java	/^	private int getNeighbours(int x, int y)$/;"	m	class:Wave	file:
-getNextWaypointX	./model/Car.java	/^    public int getNextWaypointX() {$/;"	m	class:Car
-getNextWaypointY	./model/Car.java	/^    public int getNextWaypointY() {$/;"	m	class:Car
-getNitroChargeCount	./model/Car.java	/^    public int getNitroChargeCount() {$/;"	m	class:Car
-getNitroDurationTicks	./model/Game.java	/^    public int getNitroDurationTicks() {$/;"	m	class:Game
-getNitroEnginePowerFactor	./model/Game.java	/^    public double getNitroEnginePowerFactor() {$/;"	m	class:Game
-getOilCanisterCount	./model/Car.java	/^    public int getOilCanisterCount() {$/;"	m	class:Car
-getOilSlickInitialRange	./model/Game.java	/^    public double getOilSlickInitialRange() {$/;"	m	class:Game
-getOilSlickLifetime	./model/Game.java	/^    public int getOilSlickLifetime() {$/;"	m	class:Game
-getOilSlickRadius	./model/Game.java	/^    public double getOilSlickRadius() {$/;"	m	class:Game
-getOilSlicks	./model/World.java	/^    public OilSlick[] getOilSlicks() {$/;"	m	class:World
-getPlayerId	./model/Car.java	/^    public long getPlayerId() {$/;"	m	class:Car
-getPlayerId	./model/Projectile.java	/^    public long getPlayerId() {$/;"	m	class:Projectile
-getPlayers	./model/World.java	/^    public Player[] getPlayers() {$/;"	m	class:World
-getProjectileCount	./model/Car.java	/^    public int getProjectileCount() {$/;"	m	class:Car
-getProjectiles	./model/World.java	/^    public Projectile[] getProjectiles() {$/;"	m	class:World
-getPureScoreAmount	./model/Game.java	/^    public int getPureScoreAmount() {$/;"	m	class:Game
-getRadius	./model/CircularUnit.java	/^    public double getRadius() {$/;"	m	class:CircularUnit
-getRandomSeed	./model/Game.java	/^    public long getRandomSeed() {$/;"	m	class:Game
-getRemainingLifetime	./model/OilSlick.java	/^    public int getRemainingLifetime() {$/;"	m	class:OilSlick
-getRemainingNitroCooldownTicks	./model/Car.java	/^    public int getRemainingNitroCooldownTicks() {$/;"	m	class:Car
-getRemainingNitroTicks	./model/Car.java	/^    public int getRemainingNitroTicks() {$/;"	m	class:Car
-getRemainingOilCooldownTicks	./model/Car.java	/^    public int getRemainingOilCooldownTicks() {$/;"	m	class:Car
-getRemainingOiledTicks	./model/Car.java	/^    public int getRemainingOiledTicks() {$/;"	m	class:Car
-getRemainingProjectileCooldownTicks	./model/Car.java	/^    public int getRemainingProjectileCooldownTicks() {$/;"	m	class:Car
-getScore	./model/Player.java	/^    public int getScore() {$/;"	m	class:Player
-getSideWasherAngle	./model/Game.java	/^    public double getSideWasherAngle() {$/;"	m	class:Game
-getSpeedX	./model/Unit.java	/^    public final double getSpeedX() {$/;"	m	class:Unit
-getSpeedY	./model/Unit.java	/^    public final double getSpeedY() {$/;"	m	class:Unit
-getSpillOilCooldownTicks	./model/Game.java	/^    public int getSpillOilCooldownTicks() {$/;"	m	class:Game
-getStartingDirection	./model/World.java	/^    public Direction getStartingDirection() {$/;"	m	class:World
-getTeammateIndex	./model/Car.java	/^    public int getTeammateIndex() {$/;"	m	class:Car
-getThrowProjectileCooldownTicks	./model/Game.java	/^    public int getThrowProjectileCooldownTicks() {$/;"	m	class:Game
-getTick	./model/World.java	/^    public int getTick() {$/;"	m	class:World
-getTickCount	./model/Game.java	/^    public int getTickCount() {$/;"	m	class:Game
-getTickCount	./model/World.java	/^    public int getTickCount() {$/;"	m	class:World
-getTilesXY	./model/World.java	/^    public TileType[][] getTilesXY() {$/;"	m	class:World
-getTireDamageFactor	./model/Game.java	/^    public double getTireDamageFactor() {$/;"	m	class:Game
-getTireDisappearSpeedFactor	./model/Game.java	/^    public double getTireDisappearSpeedFactor() {$/;"	m	class:Game
-getTireInitialSpeed	./model/Game.java	/^    public double getTireInitialSpeed() {$/;"	m	class:Game
-getTireMass	./model/Game.java	/^    public double getTireMass() {$/;"	m	class:Game
-getTireRadius	./model/Game.java	/^    public double getTireRadius() {$/;"	m	class:Game
-getTrackTileMargin	./model/Game.java	/^    public double getTrackTileMargin() {$/;"	m	class:Game
-getTrackTileSize	./model/Game.java	/^    public double getTrackTileSize() {$/;"	m	class:Game
-getType	./model/Bonus.java	/^    public BonusType getType() {$/;"	m	class:Bonus
-getType	./model/Car.java	/^    public CarType getType() {$/;"	m	class:Car
-getType	./model/Projectile.java	/^    public ProjectileType getType() {$/;"	m	class:Projectile
-getUseNitroCooldownTicks	./model/Game.java	/^    public int getUseNitroCooldownTicks() {$/;"	m	class:Game
-getWasherDamage	./model/Game.java	/^    public double getWasherDamage() {$/;"	m	class:Game
-getWasherInitialSpeed	./model/Game.java	/^    public double getWasherInitialSpeed() {$/;"	m	class:Game
-getWasherMass	./model/Game.java	/^    public double getWasherMass() {$/;"	m	class:Game
-getWasherRadius	./model/Game.java	/^    public double getWasherRadius() {$/;"	m	class:Game
-getWaypoints	./model/World.java	/^    public int[][] getWaypoints() {$/;"	m	class:World
-getWheelTurn	./model/Car.java	/^    public double getWheelTurn() {$/;"	m	class:Car
-getWheelTurn	./model/Move.java	/^    public double getWheelTurn() {$/;"	m	class:Move
-getWidth	./model/RectangularUnit.java	/^    public double getWidth() {$/;"	m	class:RectangularUnit
-getWidth	./model/World.java	/^    public int getWidth() {$/;"	m	class:World
-getWorld	./model/PlayerContext.java	/^    public World getWorld() {$/;"	m	class:PlayerContext
-getWorldHeight	./model/Game.java	/^    public int getWorldHeight() {$/;"	m	class:Game
-getWorldWidth	./model/Game.java	/^    public int getWorldWidth() {$/;"	m	class:Game
-getX	./model/Unit.java	/^    public final double getX() {$/;"	m	class:Unit
-getY	./model/Unit.java	/^    public final double getY() {$/;"	m	class:Unit
-height	./model/RectangularUnit.java	/^    private final double height;$/;"	f	class:RectangularUnit	file:
-height	./model/World.java	/^    private final int height;$/;"	f	class:World	file:
-id	./model/Player.java	/^    private final long id;$/;"	f	class:Player	file:
-id	./model/Unit.java	/^    private final long id;$/;"	f	class:Unit	file:
-initialFreezeDurationTicks	./model/Game.java	/^    private final int initialFreezeDurationTicks;$/;"	f	class:Game	file:
-inputStream	./RemoteProcessClient.java	/^    private final InputStream inputStream;$/;"	f	class:RemoteProcessClient	file:
-isBrake	./model/Move.java	/^    public boolean isBrake() {$/;"	m	class:Move
-isFinishedTrack	./model/Car.java	/^    public boolean isFinishedTrack() {$/;"	m	class:Car
-isMe	./model/Player.java	/^    public boolean isMe() {$/;"	m	class:Player
-isSpillOil	./model/Move.java	/^    public boolean isSpillOil() {$/;"	m	class:Move
-isStrategyCrashed	./model/Player.java	/^    public boolean isStrategyCrashed() {$/;"	m	class:Player
-isTeammate	./model/Car.java	/^    public boolean isTeammate() {$/;"	m	class:Car
-isThrowProjectile	./model/Move.java	/^    public boolean isThrowProjectile() {$/;"	m	class:Move
-isUseNitro	./model/Move.java	/^    public boolean isUseNitro() {$/;"	m	class:Move
-jeepEngineForwardPower	./model/Game.java	/^    private final double jeepEngineForwardPower;$/;"	f	class:Game	file:
-jeepEngineRearPower	./model/Game.java	/^    private final double jeepEngineRearPower;$/;"	f	class:Game	file:
-jeepMass	./model/Game.java	/^    private final double jeepMass;$/;"	f	class:Game	file:
-lapCount	./model/Game.java	/^    private final int lapCount;$/;"	f	class:Game	file:
-lapTickCount	./model/Game.java	/^    private final int lapTickCount;$/;"	f	class:Game	file:
-lapWaypointsSummaryScoreFactor	./model/Game.java	/^    private final double lapWaypointsSummaryScoreFactor;$/;"	f	class:Game	file:
-lastMovementAirFrictionFactor	./CarProxy.java	/^  private double lastMovementAirFrictionFactor;                                                      $/;"	f	class:CarProxy	file:
-lastMovementTransferFactor	./CarProxy.java	/^	private Double lastMovementTransferFactor;  $/;"	f	class:CarProxy	file:
-lastMovementUpdateFactor	./CarProxy.java	/^	private double lastMovementUpdateFactor;                                                            $/;"	f	class:CarProxy	file:
-lastRotationAirFrictionFactor	./CarProxy.java	/^	private double lastRotationAirFrictionFactor;$/;"	f	class:CarProxy	file:
-lastRotationTransferFactor	./CarProxy.java	/^	private Double  lastRotationTransferFactor; $/;"	f	class:CarProxy	file:
-lastRotationUpdateFactor	./CarProxy.java	/^	private double lastRotationUpdateFactor;$/;"	f	class:CarProxy	file:
-lastTickIndex	./model/World.java	/^    private final int lastTickIndex;$/;"	f	class:World	file:
-length	./Vector2D.java	/^   public double length() {$/;"	m	class:Vector2D
-line	./VisualClient.java	/^    public void line(double x1, double y1, double x2, double y2, Color color) {$/;"	m	class:VisualClient
-m_Minv	./CarProxy.java	/^	public double m_Minv;$/;"	f	class:CarProxy
-m_airFrict	./CarProxy.java	/^	public double m_airFrict;$/;"	f	class:CarProxy
-m_angle	./CarProxy.java	/^	public double m_angle;$/;"	f	class:CarProxy
-m_crossFrict	./CarProxy.java	/^	public double m_crossFrict; $/;"	f	class:CarProxy
-m_drawer	./Runner.java	/^		public Drawer m_drawer;$/;"	f	class:Runner
-m_f	./CarProxy.java	/^	public Vector2D m_f;$/;"	f	class:CarProxy
-m_game	./CarProxy.java	/^	public Game m_game;$/;"	f	class:CarProxy
-m_in_brake	./CarProxy.java	/^	public boolean m_in_brake;$/;"	f	class:CarProxy
-m_in_power	./CarProxy.java	/^	public double m_in_power;$/;"	f	class:CarProxy
-m_in_wheel	./CarProxy.java	/^	public double m_in_wheel;$/;"	f	class:CarProxy
-m_longFrict	./CarProxy.java	/^	public double m_longFrict;$/;"	f	class:CarProxy
-m_medianV	./CarProxy.java	/^	public Vector2D m_medianV;\/\/zero$/;"	f	class:CarProxy
-m_medianW	./CarProxy.java	/^	public double m_medianW;$/;"	f	class:CarProxy
-m_nodes	./Vawe.java	/^	public Node[][] m_nodes = null; $/;"	f	class:Wave
-m_polygons	./Global.java	/^	static public List<Vector2D> m_polygons = new ArrayList<Vector2D>();$/;"	f	class:Global
-m_pos	./CarProxy.java	/^	public Vector2D m_pos;$/;"	f	class:CarProxy
-m_power	./CarProxy.java	/^	public double m_power;$/;"	f	class:CarProxy
-m_rotAirFrict	./CarProxy.java	/^	public double m_rotAirFrict;$/;"	f	class:CarProxy
-m_rotFrictF	./CarProxy.java	/^	public double m_rotFrictF;$/;"	f	class:CarProxy
-m_v	./CarProxy.java	/^	public Vector2D m_v;$/;"	f	class:CarProxy
-m_w	./CarProxy.java	/^	public double m_w;$/;"	f	class:CarProxy
-m_w	./Vawe.java	/^	public World m_w;$/;"	f	class:Wave
-m_wheel	./CarProxy.java	/^	public double m_wheel;$/;"	f	class:CarProxy
-main	./Runner.java	/^    public static void main(String[] args) throws IOException {$/;"	m	class:Runner
-mapName	./RemoteProcessClient.java	/^    private String mapName;$/;"	f	class:RemoteProcessClient	file:
-mapName	./model/World.java	/^    private final String mapName;$/;"	f	class:World	file:
-mass	./model/Unit.java	/^    private final double mass;$/;"	f	class:Unit	file:
-maxOiledStateDurationTicks	./model/Game.java	/^    private final int maxOiledStateDurationTicks;$/;"	f	class:Game	file:
-me	./model/Player.java	/^    private final boolean me;$/;"	f	class:Player	file:
-model	./model/Bonus.java	/^package model;$/;"	p
-model	./model/BonusType.java	/^package model;$/;"	p
-model	./model/Car.java	/^package model;$/;"	p
-model	./model/CarType.java	/^package model;$/;"	p
-model	./model/CircularUnit.java	/^package model;$/;"	p
-model	./model/Direction.java	/^package model;$/;"	p
-model	./model/Game.java	/^package model;$/;"	p
-model	./model/Move.java	/^package model;$/;"	p
-model	./model/OilSlick.java	/^package model;$/;"	p
-model	./model/Player.java	/^package model;$/;"	p
-model	./model/PlayerContext.java	/^package model;$/;"	p
-model	./model/Projectile.java	/^package model;$/;"	p
-model	./model/ProjectileType.java	/^package model;$/;"	p
-model	./model/RectangularUnit.java	/^package model;$/;"	p
-model	./model/TileType.java	/^package model;$/;"	p
-model	./model/Unit.java	/^package model;$/;"	p
-model	./model/World.java	/^package model;$/;"	p
-move	./MyStrategy.java	/^	public void move(Car self, World world, Game game, Move move) $/;"	m	class:MyStrategy
-move	./Strategy.java	/^    void move(Car self, World world, Game game, Move move);$/;"	m	interface:Strategy
-name	./model/Player.java	/^    private final String name;$/;"	f	class:Player	file:
-nextWaypointX	./model/Car.java	/^    private final int nextWaypointX;$/;"	f	class:Car	file:
-nextWaypointY	./model/Car.java	/^    private final int nextWaypointY;$/;"	f	class:Car	file:
-nitroChargeCount	./model/Car.java	/^    private final int nitroChargeCount;$/;"	f	class:Car	file:
-nitroDurationTicks	./model/Game.java	/^    private final int nitroDurationTicks;$/;"	f	class:Game	file:
-nitroEnginePowerFactor	./model/Game.java	/^    private final double nitroEnginePowerFactor;$/;"	f	class:Game	file:
-normalize	./Vector2D.java	/^   public Vector2D normalize() {$/;"	m	class:Vector2D
-oilCanisterCount	./model/Car.java	/^    private final int oilCanisterCount;$/;"	f	class:Car	file:
-oilSlickInitialRange	./model/Game.java	/^    private final double oilSlickInitialRange;$/;"	f	class:Game	file:
-oilSlickLifetime	./model/Game.java	/^    private final int oilSlickLifetime;$/;"	f	class:Game	file:
-oilSlickRadius	./model/Game.java	/^    private final double oilSlickRadius;$/;"	f	class:Game	file:
-oilSlicks	./model/World.java	/^    private final OilSlick[] oilSlicks;$/;"	f	class:World	file:
-outputStream	./RemoteProcessClient.java	/^    private final OutputStream outputStream;$/;"	f	class:RemoteProcessClient	file:
-outputStream	./VisualClient.java	/^    OutputStream    outputStream;$/;"	f	class:VisualClient
-outputStreamBuffer	./RemoteProcessClient.java	/^    private final ByteArrayOutputStream outputStreamBuffer;$/;"	f	class:RemoteProcessClient	file:
-playerId	./model/Car.java	/^    private final long playerId;$/;"	f	class:Car	file:
-playerId	./model/Projectile.java	/^    private final long playerId;$/;"	f	class:Projectile	file:
-players	./model/World.java	/^    private final Player[] players;$/;"	f	class:World	file:
-projectileCount	./model/Car.java	/^    private final int projectileCount;$/;"	f	class:Car	file:
-projectiles	./model/World.java	/^    private final Projectile[] projectiles;$/;"	f	class:World	file:
-pureScoreAmount	./model/Game.java	/^    private final int pureScoreAmount;$/;"	f	class:Game	file:
-radius	./model/CircularUnit.java	/^    private final double radius;$/;"	f	class:CircularUnit	file:
-randomSeed	./model/Game.java	/^    private final long randomSeed;$/;"	f	class:Game	file:
-readBonus	./RemoteProcessClient.java	/^    private Bonus readBonus() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readBonuses	./RemoteProcessClient.java	/^    private Bonus[] readBonuses() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readBoolean	./RemoteProcessClient.java	/^    private boolean readBoolean() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readBooleanArray	./RemoteProcessClient.java	/^    private boolean[] readBooleanArray() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readBooleanArray	./RemoteProcessClient.java	/^    private boolean[] readBooleanArray(int count) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readBooleanArray2D	./RemoteProcessClient.java	/^    private boolean[][] readBooleanArray2D() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readBytes	./RemoteProcessClient.java	/^    private byte[] readBytes(int byteCount) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readCar	./RemoteProcessClient.java	/^    private Car readCar() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readCars	./RemoteProcessClient.java	/^    private Car[] readCars() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readDouble	./RemoteProcessClient.java	/^    private double readDouble() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readEnum	./RemoteProcessClient.java	/^    private <E extends Enum> E readEnum(Class<E> enumClass) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readEnumArray	./RemoteProcessClient.java	/^    private <E extends Enum> E[] readEnumArray(Class<E> enumClass) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readEnumArray	./RemoteProcessClient.java	/^    private <E extends Enum> E[] readEnumArray(Class<E> enumClass, int count) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readEnumArray2D	./RemoteProcessClient.java	/^    private <E extends Enum> E[][] readEnumArray2D(Class<E> enumClass) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readGameContext	./RemoteProcessClient.java	/^    public Game readGameContext() throws IOException {$/;"	m	class:RemoteProcessClient
-readInt	./RemoteProcessClient.java	/^    private int readInt() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readIntArray	./RemoteProcessClient.java	/^    private int[] readIntArray() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readIntArray	./RemoteProcessClient.java	/^    private int[] readIntArray(int count) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readIntArray2D	./RemoteProcessClient.java	/^    private int[][] readIntArray2D() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readLong	./RemoteProcessClient.java	/^    private long readLong() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readMapName	./RemoteProcessClient.java	/^    private String readMapName() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readOilSlick	./RemoteProcessClient.java	/^    private OilSlick readOilSlick() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readOilSlicks	./RemoteProcessClient.java	/^    private OilSlick[] readOilSlicks() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readPlayerContext	./RemoteProcessClient.java	/^    public PlayerContext readPlayerContext() throws IOException {$/;"	m	class:RemoteProcessClient
-readPlayers	./RemoteProcessClient.java	/^    private Player[] readPlayers() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readProjectile	./RemoteProcessClient.java	/^    private Projectile readProjectile() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readProjectiles	./RemoteProcessClient.java	/^    private Projectile[] readProjectiles() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readStartingDirection	./RemoteProcessClient.java	/^    private Direction readStartingDirection() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readString	./RemoteProcessClient.java	/^    private String readString() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readTeamSize	./RemoteProcessClient.java	/^    public int readTeamSize() throws IOException {$/;"	m	class:RemoteProcessClient
-readTilesXY	./RemoteProcessClient.java	/^    private TileType[][] readTilesXY() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readWaypoints	./RemoteProcessClient.java	/^    private int[][] readWaypoints() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-readWorld	./RemoteProcessClient.java	/^    private World readWorld() throws IOException {$/;"	m	class:RemoteProcessClient	file:
-rect	./VisualClient.java	/^    public void rect(double x1, double y1, double x2, double y2, Color color) {$/;"	m	class:VisualClient
-remainingLifetime	./model/OilSlick.java	/^    private final int remainingLifetime;$/;"	f	class:OilSlick	file:
-remainingNitroCooldownTicks	./model/Car.java	/^    private final int remainingNitroCooldownTicks;$/;"	f	class:Car	file:
-remainingNitroTicks	./model/Car.java	/^    private final int remainingNitroTicks;$/;"	f	class:Car	file:
-remainingOilCooldownTicks	./model/Car.java	/^    private final int remainingOilCooldownTicks;$/;"	f	class:Car	file:
-remainingOiledTicks	./model/Car.java	/^    private final int remainingOiledTicks;$/;"	f	class:Car	file:
-remainingProjectileCooldownTicks	./model/Car.java	/^    private final int remainingProjectileCooldownTicks;$/;"	f	class:Car	file:
-remoteProcessClient	./Runner.java	/^    private final RemoteProcessClient remoteProcessClient;$/;"	f	class:Runner	file:
-rotate	./Vector2D.java	/^	public Vector2D rotate(double rad)$/;"	m	class:Vector2D
-run	./Runner.java	/^    public void run() throws IOException {$/;"	m	class:Runner
-s_vc	./MyStrategy.java	/^	public static VisualClient s_vc = null;$/;"	f	class:MyStrategy
-scale	./Vector2D.java	/^   public Vector2D scale( double scaleFactor ) {$/;"	m	class:Vector2D
-score	./model/Player.java	/^    private final int score;$/;"	f	class:Player	file:
-sendCommand	./VisualClient.java	/^    private void sendCommand(String command) {$/;"	m	class:VisualClient	file:
-setBrake	./model/Move.java	/^    public void setBrake(boolean brake) {$/;"	m	class:Move
-setEnginePower	./model/Move.java	/^    public void setEnginePower(double enginePower) {$/;"	m	class:Move
-setSpillOil	./model/Move.java	/^    public void setSpillOil(boolean spillOil) {$/;"	m	class:Move
-setThrowProjectile	./model/Move.java	/^    public void setThrowProjectile(boolean throwProjectile) {$/;"	m	class:Move
-setUseNitro	./model/Move.java	/^    public void setUseNitro(boolean useNitro) {$/;"	m	class:Move
-setWheelTurn	./model/Move.java	/^    public void setWheelTurn(double wheelTurn) {$/;"	m	class:Move
-sideWasherAngle	./model/Game.java	/^    private final double sideWasherAngle;$/;"	f	class:Game	file:
-socket	./RemoteProcessClient.java	/^    private final Socket socket;$/;"	f	class:RemoteProcessClient	file:
-socket	./VisualClient.java	/^    Socket          socket;$/;"	f	class:VisualClient
-speedX	./model/Unit.java	/^    private final double speedX;$/;"	f	class:Unit	file:
-speedY	./model/Unit.java	/^    private final double speedY;$/;"	f	class:Unit	file:
-spillOil	./model/Move.java	/^    private boolean spillOil;$/;"	f	class:Move	file:
-spillOilCooldownTicks	./model/Game.java	/^    private final int spillOilCooldownTicks;$/;"	f	class:Game	file:
-startingDirection	./RemoteProcessClient.java	/^    private Direction startingDirection;$/;"	f	class:RemoteProcessClient	file:
-startingDirection	./model/World.java	/^    private final Direction startingDirection;$/;"	f	class:World	file:
-step	./PhysSym.java	/^	public static void step(CarProxy cp, Game game)$/;"	m	class:PhysSym
-stop	./VisualClient.java	/^    public void stop() {$/;"	m	class:VisualClient
-strategyCrashed	./model/Player.java	/^    private final boolean strategyCrashed;$/;"	f	class:Player	file:
-sub	./Vector2D.java	/^   public Vector2D sub( Vector2D v1 ) {$/;"	m	class:Vector2D
-teammate	./model/Car.java	/^    private final boolean teammate;$/;"	f	class:Car	file:
-teammateIndex	./model/Car.java	/^    private final int teammateIndex;$/;"	f	class:Car	file:
-text	./VisualClient.java	/^    public void text(double x, double y, String msg, Color color) {$/;"	m	class:VisualClient
-throwProjectile	./model/Move.java	/^    private boolean throwProjectile;$/;"	f	class:Move	file:
-throwProjectileCooldownTicks	./model/Game.java	/^    private final int throwProjectileCooldownTicks;$/;"	f	class:Game	file:
-tick	./model/World.java	/^    private final int tick;$/;"	f	class:World	file:
-tickCount	./model/Game.java	/^    private final int tickCount;$/;"	f	class:Game	file:
-tickCount	./model/World.java	/^    private final int tickCount;$/;"	f	class:World	file:
-tickN	./MyStrategy.java	/^	int tickN = 0;$/;"	f	class:MyStrategy
-tilesXY	./RemoteProcessClient.java	/^    private TileType[][] tilesXY;$/;"	f	class:RemoteProcessClient	file:
-tilesXY	./model/World.java	/^    private final TileType[][] tilesXY;$/;"	f	class:World	file:
-tireDamageFactor	./model/Game.java	/^    private final double tireDamageFactor;$/;"	f	class:Game	file:
-tireDisappearSpeedFactor	./model/Game.java	/^    private final double tireDisappearSpeedFactor;$/;"	f	class:Game	file:
-tireInitialSpeed	./model/Game.java	/^    private final double tireInitialSpeed;$/;"	f	class:Game	file:
-tireMass	./model/Game.java	/^    private final double tireMass;$/;"	f	class:Game	file:
-tireRadius	./model/Game.java	/^    private final double tireRadius;$/;"	f	class:Game	file:
-toString	./Vector2D.java	/^   public String toString() {$/;"	m	class:Vector2D
-token	./Runner.java	/^    private final String token;$/;"	f	class:Runner	file:
-trackTileMargin	./model/Game.java	/^    private final double trackTileMargin;$/;"	f	class:Game	file:
-trackTileSize	./model/Game.java	/^    private final double trackTileSize;$/;"	f	class:Game	file:
-type	./model/Bonus.java	/^    private final BonusType type;$/;"	f	class:Bonus	file:
-type	./model/Car.java	/^    private final CarType type;$/;"	f	class:Car	file:
-type	./model/Projectile.java	/^    private final ProjectileType type;$/;"	f	class:Projectile	file:
-updateAngle	./PhysSym.java	/^	public static void updateAngle(CarProxy cp, Game game)$/;"	m	class:PhysSym
-updateFactor	./PhysSym.java	/^	protected static double updateFactor = 1.0D \/ ITERATION_COUNT ;\/\/ \/ 60;$/;"	f	class:PhysSym
-updatePos	./PhysSym.java	/^	public static void updatePos(CarProxy cp) $/;"	m	class:PhysSym
-useNitro	./model/Move.java	/^    private boolean useNitro;$/;"	f	class:Move	file:
-useNitroCooldownTicks	./model/Game.java	/^    private final int useNitroCooldownTicks;$/;"	f	class:Game	file:
-washerDamage	./model/Game.java	/^    private final double washerDamage;$/;"	f	class:Game	file:
-washerInitialSpeed	./model/Game.java	/^    private final double washerInitialSpeed;$/;"	f	class:Game	file:
-washerMass	./model/Game.java	/^    private final double washerMass;$/;"	f	class:Game	file:
-washerRadius	./model/Game.java	/^    private final double washerRadius;$/;"	f	class:Game	file:
-waypoints	./RemoteProcessClient.java	/^    private int[][] waypoints;$/;"	f	class:RemoteProcessClient	file:
-waypoints	./model/World.java	/^    private final int[][] waypoints;$/;"	f	class:World	file:
-wheelTurn	./model/Car.java	/^    private final double wheelTurn;$/;"	f	class:Car	file:
-wheelTurn	./model/Move.java	/^    private double wheelTurn;$/;"	f	class:Move	file:
-width	./model/RectangularUnit.java	/^    private final double width;$/;"	f	class:RectangularUnit	file:
-width	./model/World.java	/^    private final int width;$/;"	f	class:World	file:
-world	./model/PlayerContext.java	/^    private final World world;$/;"	f	class:PlayerContext	file:
-worldHeight	./model/Game.java	/^    private final int worldHeight;$/;"	f	class:Game	file:
-worldWidth	./model/Game.java	/^    private final int worldWidth;$/;"	f	class:Game	file:
-writeBoolean	./RemoteProcessClient.java	/^    private void writeBoolean(boolean value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-writeBytes	./RemoteProcessClient.java	/^    private void writeBytes(byte[] bytes) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-writeDouble	./RemoteProcessClient.java	/^    private void writeDouble(double value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-writeEnum	./RemoteProcessClient.java	/^    private <E extends Enum> void writeEnum(E value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-writeInt	./RemoteProcessClient.java	/^    private void writeInt(int value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-writeLong	./RemoteProcessClient.java	/^    private void writeLong(long value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-writeMoves	./RemoteProcessClient.java	/^    public void writeMoves(Move[] moves) throws IOException {$/;"	m	class:RemoteProcessClient
-writeProtocolVersion	./RemoteProcessClient.java	/^    public void writeProtocolVersion() throws IOException {$/;"	m	class:RemoteProcessClient
-writeString	./RemoteProcessClient.java	/^    private void writeString(String value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
-writeToken	./RemoteProcessClient.java	/^    public void writeToken(String token) throws IOException {$/;"	m	class:RemoteProcessClient
-x	./Vector2D.java	/^	 public double x(){$/;"	m	class:Vector2D
-x	./model/Unit.java	/^    private final double x;$/;"	f	class:Unit	file:
-y	./Vector2D.java	/^	 public double y(){$/;"	m	class:Vector2D
-y	./model/Unit.java	/^    private final double y;$/;"	f	class:Unit	file:
+AMMO_CRATE	model/BonusType.java	/^    AMMO_CRATE,$/;"	e	enum:BonusType	file:
+AUTHENTICATION_TOKEN	RemoteProcessClient.java	/^        AUTHENTICATION_TOKEN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
+BOTTOM	Wave.java	/^	int BOTTOM = 4;\/\/1<<2;$/;"	f	class:Wave
+BOTTOM_HEADED_T	model/TileType.java	/^    BOTTOM_HEADED_T,$/;"	e	enum:TileType	file:
+BUFFER_SIZE_BYTES	RemoteProcessClient.java	/^    private static final int BUFFER_SIZE_BYTES = 1 << 20;$/;"	f	class:RemoteProcessClient	file:
+BUGGY	model/CarType.java	/^    BUGGY,$/;"	e	enum:CarType	file:
+Bonus	model/Bonus.java	/^    public Bonus($/;"	m	class:Bonus
+Bonus	model/Bonus.java	/^public class Bonus extends RectangularUnit {$/;"	c
+BonusType	model/BonusType.java	/^public enum BonusType {$/;"	g
+CROSSROADS	model/TileType.java	/^    CROSSROADS$/;"	e	enum:TileType	file:
+Car	model/Car.java	/^    public Car($/;"	m	class:Car
+Car	model/Car.java	/^public class Car extends RectangularUnit {$/;"	c
+CarProxy	CarProxy.java	/^	public CarProxy(Car c, Game game)$/;"	m	class:CarProxy
+CarProxy	CarProxy.java	/^public final class CarProxy$/;"	c
+CarType	model/CarType.java	/^public enum CarType {$/;"	g
+CircularUnit	model/CircularUnit.java	/^    protected CircularUnit($/;"	m	class:CircularUnit
+CircularUnit	model/CircularUnit.java	/^public abstract class CircularUnit extends Unit {$/;"	c
+DEFAULT_HOST	VisualClient.java	/^    final String    DEFAULT_HOST = "127.0.0.1";$/;"	f	class:VisualClient
+DEFAULT_PORT	VisualClient.java	/^    final int       DEFAULT_PORT = 13579;$/;"	f	class:VisualClient
+DOWN	model/Direction.java	/^    DOWN$/;"	e	enum:Direction	file:
+Direction	model/Direction.java	/^public enum Direction {$/;"	g
+EMPTY	model/TileType.java	/^    EMPTY,$/;"	e	enum:TileType	file:
+EPSILON	PhysSym.java	/^	public static final double EPSILON = 1.0E-7D;   $/;"	f	class:PhysSym
+GAME_CONTEXT	RemoteProcessClient.java	/^        GAME_CONTEXT,$/;"	e	enum:RemoteProcessClient.MessageType	file:
+GAME_OVER	RemoteProcessClient.java	/^        GAME_OVER,$/;"	e	enum:RemoteProcessClient.MessageType	file:
+Game	model/Game.java	/^    public Game($/;"	m	class:Game
+Game	model/Game.java	/^public class Game {$/;"	c
+Global	Global.java	/^public final class Global{$/;"	c
+HORIZONTAL	model/TileType.java	/^    HORIZONTAL,$/;"	e	enum:TileType	file:
+INTEGER_SIZE_BYTES	RemoteProcessClient.java	/^    private static final int INTEGER_SIZE_BYTES = Integer.SIZE \/ Byte.SIZE;$/;"	f	class:RemoteProcessClient	file:
+ITERATION_COUNT	PhysSym.java	/^	public static final int ITERATION_COUNT = 10;$/;"	f	class:PhysSym
+JEEP	model/CarType.java	/^    JEEP$/;"	e	enum:CarType	file:
+LEFT	Wave.java	/^	int LEFT = 2;\/\/1<<1;$/;"	f	class:Wave
+LEFT	model/Direction.java	/^    LEFT,$/;"	e	enum:Direction	file:
+LEFT_BOTTOM_CORNER	model/TileType.java	/^    LEFT_BOTTOM_CORNER,$/;"	e	enum:TileType	file:
+LEFT_HEADED_T	model/TileType.java	/^    LEFT_HEADED_T,$/;"	e	enum:TileType	file:
+LEFT_TOP_CORNER	model/TileType.java	/^    LEFT_TOP_CORNER,$/;"	e	enum:TileType	file:
+LONG_SIZE_BYTES	RemoteProcessClient.java	/^    private static final int LONG_SIZE_BYTES = Long.SIZE \/ Byte.SIZE;$/;"	f	class:RemoteProcessClient	file:
+MOVES	RemoteProcessClient.java	/^        MOVES$/;"	e	enum:RemoteProcessClient.MessageType	file:
+MessageType	RemoteProcessClient.java	/^    private enum MessageType {$/;"	g	class:RemoteProcessClient
+Move	model/Move.java	/^public class Move {$/;"	c
+MyStrategy	MyStrategy.java	/^public final class MyStrategy implements Strategy {$/;"	c
+NITRO_BOOST	model/BonusType.java	/^    NITRO_BOOST,$/;"	e	enum:BonusType	file:
+Node	Wave.java	/^		public Node(){$/;"	m	class:Wave.Node
+Node	Wave.java	/^	public final class Node$/;"	c	class:Wave
+OIL_CANISTER	model/BonusType.java	/^    OIL_CANISTER,$/;"	e	enum:BonusType	file:
+OilSlick	model/OilSlick.java	/^    public OilSlick($/;"	m	class:OilSlick
+OilSlick	model/OilSlick.java	/^public class OilSlick extends CircularUnit {$/;"	c
+PLAYER_CONTEXT	RemoteProcessClient.java	/^        PLAYER_CONTEXT,$/;"	e	enum:RemoteProcessClient.MessageType	file:
+POWER_PER_TICK	PhysSym.java	/^  static double POWER_PER_TICK = 0.025;$/;"	f	class:PhysSym
+PROTOCOL_BYTE_ORDER	RemoteProcessClient.java	/^    private static final ByteOrder PROTOCOL_BYTE_ORDER = ByteOrder.LITTLE_ENDIAN;$/;"	f	class:RemoteProcessClient	file:
+PROTOCOL_VERSION	RemoteProcessClient.java	/^        PROTOCOL_VERSION,$/;"	e	enum:RemoteProcessClient.MessageType	file:
+PURE_SCORE	model/BonusType.java	/^    PURE_SCORE$/;"	e	enum:BonusType	file:
+PhysSym	PhysSym.java	/^public final class PhysSym$/;"	c
+Player	model/Player.java	/^    public Player(long id, boolean me, String name, boolean strategyCrashed, int score) {$/;"	m	class:Player
+Player	model/Player.java	/^public class Player {$/;"	c
+PlayerContext	model/PlayerContext.java	/^    public PlayerContext(Car[] cars, World world) {$/;"	m	class:PlayerContext
+PlayerContext	model/PlayerContext.java	/^public final class PlayerContext {$/;"	c
+Projectile	model/Projectile.java	/^    public Projectile($/;"	m	class:Projectile
+Projectile	model/Projectile.java	/^public class Projectile extends CircularUnit {$/;"	c
+ProjectileType	model/ProjectileType.java	/^public enum ProjectileType {$/;"	g
+REPAIR_KIT	model/BonusType.java	/^    REPAIR_KIT,$/;"	e	enum:BonusType	file:
+RIGHT	Wave.java	/^	int RIGHT = 1;\/\/ 1<<0;$/;"	f	class:Wave
+RIGHT	model/Direction.java	/^    RIGHT,$/;"	e	enum:Direction	file:
+RIGHT_BOTTOM_CORNER	model/TileType.java	/^    RIGHT_BOTTOM_CORNER,$/;"	e	enum:TileType	file:
+RIGHT_HEADED_T	model/TileType.java	/^    RIGHT_HEADED_T,$/;"	e	enum:TileType	file:
+RIGHT_TOP_CORNER	model/TileType.java	/^    RIGHT_TOP_CORNER,$/;"	e	enum:TileType	file:
+RectangularUnit	model/RectangularUnit.java	/^    protected RectangularUnit($/;"	m	class:RectangularUnit
+RectangularUnit	model/RectangularUnit.java	/^public abstract class RectangularUnit extends Unit {$/;"	c
+RemoteProcessClient	RemoteProcessClient.java	/^    public RemoteProcessClient(String host, int port) throws IOException {$/;"	m	class:RemoteProcessClient
+RemoteProcessClient	RemoteProcessClient.java	/^public final class RemoteProcessClient implements Closeable {$/;"	c
+Runner	Runner.java	/^    private Runner(String[] args) throws IOException {$/;"	m	class:Runner	file:
+Runner	Runner.java	/^public final class Runner {$/;"	c
+Strategy	Strategy.java	/^public interface Strategy {$/;"	i
+TEAM_SIZE	RemoteProcessClient.java	/^        TEAM_SIZE,$/;"	e	enum:RemoteProcessClient.MessageType	file:
+TIRE	model/ProjectileType.java	/^    TIRE$/;"	e	enum:ProjectileType	file:
+TOP	Wave.java	/^	int TOP = 8;\/\/1<<3;$/;"	f	class:Wave
+TOP_HEADED_T	model/TileType.java	/^    TOP_HEADED_T,$/;"	e	enum:TileType	file:
+TileType	model/TileType.java	/^public enum TileType {$/;"	g
+UNKNOWN	RemoteProcessClient.java	/^        UNKNOWN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
+UP	model/Direction.java	/^    UP,$/;"	e	enum:Direction	file:
+Unit	model/Unit.java	/^    protected Unit($/;"	m	class:Unit
+Unit	model/Unit.java	/^public abstract class Unit {$/;"	c
+VERTICAL	model/TileType.java	/^    VERTICAL,$/;"	e	enum:TileType	file:
+Vector2D	Vector2D.java	/^   public Vector2D( double dX, double dY ) {$/;"	m	class:Vector2D
+Vector2D	Vector2D.java	/^   public Vector2D() {$/;"	m	class:Vector2D
+Vector2D	Vector2D.java	/^public class Vector2D {$/;"	c
+VisualClient	VisualClient.java	/^    public VisualClient() {$/;"	m	class:VisualClient
+VisualClient	VisualClient.java	/^    public VisualClient(String host, int port) {$/;"	m	class:VisualClient
+VisualClient	VisualClient.java	/^public class VisualClient {$/;"	c
+WASHER	model/ProjectileType.java	/^    WASHER,$/;"	e	enum:ProjectileType	file:
+WIDTH	MyStrategy.java	/^	public static int WIDTH = 800;$/;"	f	class:MyStrategy
+Wave	Wave.java	/^	public Wave(World w)$/;"	m	class:Wave
+Wave	Wave.java	/^public final class Wave$/;"	c
+World	model/World.java	/^    public World($/;"	m	class:World
+World	model/World.java	/^public class World {$/;"	c
+add	Vector2D.java	/^   public Vector2D add( Vector2D v1 ) {$/;"	m	class:Vector2D
+angle	model/Unit.java	/^    private final double angle;$/;"	f	class:Unit	file:
+angularSpeed	model/Unit.java	/^    private final double angularSpeed;$/;"	f	class:Unit	file:
+applyFriction	CarProxy.java	/^	public void applyFriction(double updateFactor)$/;"	m	class:CarProxy
+applyMovementAirFriction	CarProxy.java	/^   public void applyMovementAirFriction(double updateFactor)$/;"	m	class:CarProxy
+applyRotationAirFriction	CarProxy.java	/^	public void applyRotationAirFriction(double updateFactor)$/;"	m	class:CarProxy
+beginPost	VisualClient.java	/^    public void beginPost() {$/;"	m	class:VisualClient
+beginPre	VisualClient.java	/^    public void beginPre() {$/;"	m	class:VisualClient
+bonusMass	model/Game.java	/^    private final double bonusMass;$/;"	f	class:Game	file:
+bonusSize	model/Game.java	/^    private final double bonusSize;$/;"	f	class:Game	file:
+bonuses	model/World.java	/^    private final Bonus[] bonuses;$/;"	f	class:World	file:
+brake	model/Move.java	/^    private boolean brake;$/;"	f	class:Move	file:
+buggyEngineForwardPower	model/Game.java	/^    private final double buggyEngineForwardPower;$/;"	f	class:Game	file:
+buggyEngineRearPower	model/Game.java	/^    private final double buggyEngineRearPower;$/;"	f	class:Game	file:
+buggyMass	model/Game.java	/^    private final double buggyMass;$/;"	f	class:Game	file:
+burningTimeDurationFactor	model/Game.java	/^    private final double burningTimeDurationFactor;$/;"	f	class:Game	file:
+carAngularSpeedFactor	model/Game.java	/^    private final double carAngularSpeedFactor;$/;"	f	class:Game	file:
+carCrosswiseMovementFrictionFactor	model/Game.java	/^    private final double carCrosswiseMovementFrictionFactor;$/;"	f	class:Game	file:
+carDamageScoreFactor	model/Game.java	/^    private final double carDamageScoreFactor;$/;"	f	class:Game	file:
+carEliminationScore	model/Game.java	/^    private final int carEliminationScore;$/;"	f	class:Game	file:
+carEnginePowerChangePerTick	model/Game.java	/^    private final double carEnginePowerChangePerTick;$/;"	f	class:Game	file:
+carHeight	model/Game.java	/^    private final double carHeight;$/;"	f	class:Game	file:
+carId	model/Projectile.java	/^    private final long carId;$/;"	f	class:Projectile	file:
+carLengthwiseMovementFrictionFactor	model/Game.java	/^    private final double carLengthwiseMovementFrictionFactor;$/;"	f	class:Game	file:
+carMovementAirFrictionFactor	model/Game.java	/^    private final double carMovementAirFrictionFactor;$/;"	f	class:Game	file:
+carReactivationTimeTicks	model/Game.java	/^    private final int carReactivationTimeTicks;$/;"	f	class:Game	file:
+carRotationAirFrictionFactor	model/Game.java	/^    private final double carRotationAirFrictionFactor;$/;"	f	class:Game	file:
+carRotationFrictionFactor	model/Game.java	/^    private final double carRotationFrictionFactor;$/;"	f	class:Game	file:
+carWheelTurnChangePerTick	model/Game.java	/^    private final double carWheelTurnChangePerTick;$/;"	f	class:Game	file:
+carWidth	model/Game.java	/^    private final double carWidth;$/;"	f	class:Game	file:
+cars	model/PlayerContext.java	/^    private final Car[] cars;$/;"	f	class:PlayerContext	file:
+cars	model/World.java	/^    private final Car[] cars;$/;"	f	class:World	file:
+circle	VisualClient.java	/^    public void circle(double x, double y, double r, Color color) {$/;"	m	class:VisualClient
+close	RemoteProcessClient.java	/^    public void close() throws IOException {$/;"	m	class:RemoteProcessClient
+d	Wave.java	/^		int d = -1;$/;"	f	class:Wave.Node
+dX	Vector2D.java	/^   protected double dX;$/;"	f	class:Vector2D
+dY	Vector2D.java	/^   protected double dY;$/;"	f	class:Vector2D
+dotProduct	Vector2D.java	/^   public double dotProduct ( Vector2D v1 ) {$/;"	m	class:Vector2D
+durability	model/Car.java	/^    private final double durability;$/;"	f	class:Car	file:
+endPost	VisualClient.java	/^    public void endPost() {$/;"	m	class:VisualClient
+endPre	VisualClient.java	/^    public void endPre() {$/;"	m	class:VisualClient
+enginePower	model/Car.java	/^    private final double enginePower;$/;"	f	class:Car	file:
+enginePower	model/Move.java	/^    private double enginePower;$/;"	f	class:Move	file:
+ensureMessageType	RemoteProcessClient.java	/^    private static void ensureMessageType(MessageType actualType, MessageType expectedType) {$/;"	m	class:RemoteProcessClient	file:
+fillCircle	VisualClient.java	/^    public void fillCircle(double x, double y, double r, Color color) {$/;"	m	class:VisualClient
+fillRect	VisualClient.java	/^    public void fillRect(double x1, double y1, double x2, double y2, Color color) {$/;"	m	class:VisualClient
+find	Wave.java	/^	public Vector<Vector2D> find(int startI, int startJ, int finishI, int finishJ)$/;"	m	class:Wave
+finishLapScore	model/Game.java	/^    private final int finishLapScore;$/;"	f	class:Game	file:
+finishTrackScores	model/Game.java	/^    private final int[] finishTrackScores;$/;"	f	class:Game	file:
+finishedTrack	model/Car.java	/^    private final boolean finishedTrack;$/;"	f	class:Car	file:
+flush	RemoteProcessClient.java	/^    private void flush() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+getAngle	model/Unit.java	/^    public final double getAngle() {$/;"	m	class:Unit
+getAngleTo	model/Unit.java	/^    public double getAngleTo(Unit unit) {$/;"	m	class:Unit
+getAngleTo	model/Unit.java	/^    public double getAngleTo(double x, double y) {$/;"	m	class:Unit
+getAngularSpeed	model/Unit.java	/^    public double getAngularSpeed() {$/;"	m	class:Unit
+getBonusMass	model/Game.java	/^    public double getBonusMass() {$/;"	m	class:Game
+getBonusSize	model/Game.java	/^    public double getBonusSize() {$/;"	m	class:Game
+getBonuses	model/World.java	/^    public Bonus[] getBonuses() {$/;"	m	class:World
+getBuggyEngineForwardPower	model/Game.java	/^    public double getBuggyEngineForwardPower() {$/;"	m	class:Game
+getBuggyEngineRearPower	model/Game.java	/^    public double getBuggyEngineRearPower() {$/;"	m	class:Game
+getBuggyMass	model/Game.java	/^    public double getBuggyMass() {$/;"	m	class:Game
+getBurningTimeDurationFactor	model/Game.java	/^    public double getBurningTimeDurationFactor() {$/;"	m	class:Game
+getCarAngularSpeedFactor	model/Game.java	/^    public double getCarAngularSpeedFactor() {$/;"	m	class:Game
+getCarCrosswiseMovementFrictionFactor	model/Game.java	/^    public double getCarCrosswiseMovementFrictionFactor() {$/;"	m	class:Game
+getCarDamageScoreFactor	model/Game.java	/^    public double getCarDamageScoreFactor() {$/;"	m	class:Game
+getCarEliminationScore	model/Game.java	/^    public int getCarEliminationScore() {$/;"	m	class:Game
+getCarEnginePowerChangePerTick	model/Game.java	/^    public double getCarEnginePowerChangePerTick() {$/;"	m	class:Game
+getCarHeight	model/Game.java	/^    public double getCarHeight() {$/;"	m	class:Game
+getCarId	model/Projectile.java	/^    public long getCarId() {$/;"	m	class:Projectile
+getCarLengthwiseMovementFrictionFactor	model/Game.java	/^    public double getCarLengthwiseMovementFrictionFactor() {$/;"	m	class:Game
+getCarMovementAirFrictionFactor	model/Game.java	/^    public double getCarMovementAirFrictionFactor() {$/;"	m	class:Game
+getCarReactivationTimeTicks	model/Game.java	/^    public int getCarReactivationTimeTicks() {$/;"	m	class:Game
+getCarRotationAirFrictionFactor	model/Game.java	/^    public double getCarRotationAirFrictionFactor() {$/;"	m	class:Game
+getCarRotationFrictionFactor	model/Game.java	/^    public double getCarRotationFrictionFactor() {$/;"	m	class:Game
+getCarWheelTurnChangePerTick	model/Game.java	/^    public double getCarWheelTurnChangePerTick() {$/;"	m	class:Game
+getCarWidth	model/Game.java	/^    public double getCarWidth() {$/;"	m	class:Game
+getCars	model/PlayerContext.java	/^    public Car[] getCars() {$/;"	m	class:PlayerContext
+getCars	model/World.java	/^    public Car[] getCars() {$/;"	m	class:World
+getDistanceTo	model/Unit.java	/^    public double getDistanceTo(Unit unit) {$/;"	m	class:Unit
+getDistanceTo	model/Unit.java	/^    public double getDistanceTo(double x, double y) {$/;"	m	class:Unit
+getDurability	model/Car.java	/^    public double getDurability() {$/;"	m	class:Car
+getEnginePower	model/Car.java	/^    public double getEnginePower() {$/;"	m	class:Car
+getEnginePower	model/Move.java	/^    public double getEnginePower() {$/;"	m	class:Move
+getFinishLapScore	model/Game.java	/^    public int getFinishLapScore() {$/;"	m	class:Game
+getFinishTrackScores	model/Game.java	/^    public int[] getFinishTrackScores() {$/;"	m	class:Game
+getHeight	model/RectangularUnit.java	/^    public double getHeight() {$/;"	m	class:RectangularUnit
+getHeight	model/World.java	/^    public int getHeight() {$/;"	m	class:World
+getId	model/Player.java	/^    public long getId() {$/;"	m	class:Player
+getId	model/Unit.java	/^    public long getId() {$/;"	m	class:Unit
+getInitialFreezeDurationTicks	model/Game.java	/^    public int getInitialFreezeDurationTicks() {$/;"	m	class:Game
+getJeepEngineForwardPower	model/Game.java	/^    public double getJeepEngineForwardPower() {$/;"	m	class:Game
+getJeepEngineRearPower	model/Game.java	/^    public double getJeepEngineRearPower() {$/;"	m	class:Game
+getJeepMass	model/Game.java	/^    public double getJeepMass() {$/;"	m	class:Game
+getLapCount	model/Game.java	/^    public int getLapCount() {$/;"	m	class:Game
+getLapTickCount	model/Game.java	/^    public int getLapTickCount() {$/;"	m	class:Game
+getLapWaypointsSummaryScoreFactor	model/Game.java	/^    public double getLapWaypointsSummaryScoreFactor() {$/;"	m	class:Game
+getLastTickIndex	model/World.java	/^    public int getLastTickIndex() {$/;"	m	class:World
+getMapName	model/World.java	/^    public String getMapName() {$/;"	m	class:World
+getMass	model/Unit.java	/^    public double getMass() {$/;"	m	class:Unit
+getMaxOiledStateDurationTicks	model/Game.java	/^    public int getMaxOiledStateDurationTicks() {$/;"	m	class:Game
+getMyPlayer	model/World.java	/^    public Player getMyPlayer() {$/;"	m	class:World
+getName	model/Player.java	/^    public String getName() {$/;"	m	class:Player
+getNeighbours	Wave.java	/^	private int getNeighbours(int x, int y)$/;"	m	class:Wave	file:
+getNextWaypointX	model/Car.java	/^    public int getNextWaypointX() {$/;"	m	class:Car
+getNextWaypointY	model/Car.java	/^    public int getNextWaypointY() {$/;"	m	class:Car
+getNitroChargeCount	model/Car.java	/^    public int getNitroChargeCount() {$/;"	m	class:Car
+getNitroDurationTicks	model/Game.java	/^    public int getNitroDurationTicks() {$/;"	m	class:Game
+getNitroEnginePowerFactor	model/Game.java	/^    public double getNitroEnginePowerFactor() {$/;"	m	class:Game
+getOilCanisterCount	model/Car.java	/^    public int getOilCanisterCount() {$/;"	m	class:Car
+getOilSlickInitialRange	model/Game.java	/^    public double getOilSlickInitialRange() {$/;"	m	class:Game
+getOilSlickLifetime	model/Game.java	/^    public int getOilSlickLifetime() {$/;"	m	class:Game
+getOilSlickRadius	model/Game.java	/^    public double getOilSlickRadius() {$/;"	m	class:Game
+getOilSlicks	model/World.java	/^    public OilSlick[] getOilSlicks() {$/;"	m	class:World
+getPlayerId	model/Car.java	/^    public long getPlayerId() {$/;"	m	class:Car
+getPlayerId	model/Projectile.java	/^    public long getPlayerId() {$/;"	m	class:Projectile
+getPlayers	model/World.java	/^    public Player[] getPlayers() {$/;"	m	class:World
+getProjectileCount	model/Car.java	/^    public int getProjectileCount() {$/;"	m	class:Car
+getProjectiles	model/World.java	/^    public Projectile[] getProjectiles() {$/;"	m	class:World
+getPureScoreAmount	model/Game.java	/^    public int getPureScoreAmount() {$/;"	m	class:Game
+getRadius	model/CircularUnit.java	/^    public double getRadius() {$/;"	m	class:CircularUnit
+getRandomSeed	model/Game.java	/^    public long getRandomSeed() {$/;"	m	class:Game
+getRemainingLifetime	model/OilSlick.java	/^    public int getRemainingLifetime() {$/;"	m	class:OilSlick
+getRemainingNitroCooldownTicks	model/Car.java	/^    public int getRemainingNitroCooldownTicks() {$/;"	m	class:Car
+getRemainingNitroTicks	model/Car.java	/^    public int getRemainingNitroTicks() {$/;"	m	class:Car
+getRemainingOilCooldownTicks	model/Car.java	/^    public int getRemainingOilCooldownTicks() {$/;"	m	class:Car
+getRemainingOiledTicks	model/Car.java	/^    public int getRemainingOiledTicks() {$/;"	m	class:Car
+getRemainingProjectileCooldownTicks	model/Car.java	/^    public int getRemainingProjectileCooldownTicks() {$/;"	m	class:Car
+getScore	model/Player.java	/^    public int getScore() {$/;"	m	class:Player
+getSideWasherAngle	model/Game.java	/^    public double getSideWasherAngle() {$/;"	m	class:Game
+getSpeedX	model/Unit.java	/^    public final double getSpeedX() {$/;"	m	class:Unit
+getSpeedY	model/Unit.java	/^    public final double getSpeedY() {$/;"	m	class:Unit
+getSpillOilCooldownTicks	model/Game.java	/^    public int getSpillOilCooldownTicks() {$/;"	m	class:Game
+getStartingDirection	model/World.java	/^    public Direction getStartingDirection() {$/;"	m	class:World
+getTeammateIndex	model/Car.java	/^    public int getTeammateIndex() {$/;"	m	class:Car
+getThrowProjectileCooldownTicks	model/Game.java	/^    public int getThrowProjectileCooldownTicks() {$/;"	m	class:Game
+getTick	model/World.java	/^    public int getTick() {$/;"	m	class:World
+getTickCount	model/Game.java	/^    public int getTickCount() {$/;"	m	class:Game
+getTickCount	model/World.java	/^    public int getTickCount() {$/;"	m	class:World
+getTile	MyStrategy.java	/^	public static Vector2D getTile(double x, double y)$/;"	m	class:MyStrategy
+getTilesXY	model/World.java	/^    public TileType[][] getTilesXY() {$/;"	m	class:World
+getTireDamageFactor	model/Game.java	/^    public double getTireDamageFactor() {$/;"	m	class:Game
+getTireDisappearSpeedFactor	model/Game.java	/^    public double getTireDisappearSpeedFactor() {$/;"	m	class:Game
+getTireInitialSpeed	model/Game.java	/^    public double getTireInitialSpeed() {$/;"	m	class:Game
+getTireMass	model/Game.java	/^    public double getTireMass() {$/;"	m	class:Game
+getTireRadius	model/Game.java	/^    public double getTireRadius() {$/;"	m	class:Game
+getTrackTileMargin	model/Game.java	/^    public double getTrackTileMargin() {$/;"	m	class:Game
+getTrackTileSize	model/Game.java	/^    public double getTrackTileSize() {$/;"	m	class:Game
+getType	model/Bonus.java	/^    public BonusType getType() {$/;"	m	class:Bonus
+getType	model/Car.java	/^    public CarType getType() {$/;"	m	class:Car
+getType	model/Projectile.java	/^    public ProjectileType getType() {$/;"	m	class:Projectile
+getUseNitroCooldownTicks	model/Game.java	/^    public int getUseNitroCooldownTicks() {$/;"	m	class:Game
+getWasherDamage	model/Game.java	/^    public double getWasherDamage() {$/;"	m	class:Game
+getWasherInitialSpeed	model/Game.java	/^    public double getWasherInitialSpeed() {$/;"	m	class:Game
+getWasherMass	model/Game.java	/^    public double getWasherMass() {$/;"	m	class:Game
+getWasherRadius	model/Game.java	/^    public double getWasherRadius() {$/;"	m	class:Game
+getWaypoints	model/World.java	/^    public int[][] getWaypoints() {$/;"	m	class:World
+getWheelTurn	model/Car.java	/^    public double getWheelTurn() {$/;"	m	class:Car
+getWheelTurn	model/Move.java	/^    public double getWheelTurn() {$/;"	m	class:Move
+getWidth	model/RectangularUnit.java	/^    public double getWidth() {$/;"	m	class:RectangularUnit
+getWidth	model/World.java	/^    public int getWidth() {$/;"	m	class:World
+getWorld	model/PlayerContext.java	/^    public World getWorld() {$/;"	m	class:PlayerContext
+getWorldHeight	model/Game.java	/^    public int getWorldHeight() {$/;"	m	class:Game
+getWorldWidth	model/Game.java	/^    public int getWorldWidth() {$/;"	m	class:Game
+getX	model/Unit.java	/^    public final double getX() {$/;"	m	class:Unit
+getY	model/Unit.java	/^    public final double getY() {$/;"	m	class:Unit
+height	model/RectangularUnit.java	/^    private final double height;$/;"	f	class:RectangularUnit	file:
+height	model/World.java	/^    private final int height;$/;"	f	class:World	file:
+id	model/Player.java	/^    private final long id;$/;"	f	class:Player	file:
+id	model/Unit.java	/^    private final long id;$/;"	f	class:Unit	file:
+initialFreezeDurationTicks	model/Game.java	/^    private final int initialFreezeDurationTicks;$/;"	f	class:Game	file:
+inputStream	RemoteProcessClient.java	/^    private final InputStream inputStream;$/;"	f	class:RemoteProcessClient	file:
+isBrake	model/Move.java	/^    public boolean isBrake() {$/;"	m	class:Move
+isFinishedTrack	model/Car.java	/^    public boolean isFinishedTrack() {$/;"	m	class:Car
+isMe	model/Player.java	/^    public boolean isMe() {$/;"	m	class:Player
+isSpillOil	model/Move.java	/^    public boolean isSpillOil() {$/;"	m	class:Move
+isStrategyCrashed	model/Player.java	/^    public boolean isStrategyCrashed() {$/;"	m	class:Player
+isTeammate	model/Car.java	/^    public boolean isTeammate() {$/;"	m	class:Car
+isThrowProjectile	model/Move.java	/^    public boolean isThrowProjectile() {$/;"	m	class:Move
+isUseNitro	model/Move.java	/^    public boolean isUseNitro() {$/;"	m	class:Move
+jeepEngineForwardPower	model/Game.java	/^    private final double jeepEngineForwardPower;$/;"	f	class:Game	file:
+jeepEngineRearPower	model/Game.java	/^    private final double jeepEngineRearPower;$/;"	f	class:Game	file:
+jeepMass	model/Game.java	/^    private final double jeepMass;$/;"	f	class:Game	file:
+lapCount	model/Game.java	/^    private final int lapCount;$/;"	f	class:Game	file:
+lapTickCount	model/Game.java	/^    private final int lapTickCount;$/;"	f	class:Game	file:
+lapWaypointsSummaryScoreFactor	model/Game.java	/^    private final double lapWaypointsSummaryScoreFactor;$/;"	f	class:Game	file:
+lastMovementAirFrictionFactor	CarProxy.java	/^  private double lastMovementAirFrictionFactor;                                                      $/;"	f	class:CarProxy	file:
+lastMovementTransferFactor	CarProxy.java	/^	private Double lastMovementTransferFactor;  $/;"	f	class:CarProxy	file:
+lastMovementUpdateFactor	CarProxy.java	/^	private double lastMovementUpdateFactor;                                                            $/;"	f	class:CarProxy	file:
+lastRotationAirFrictionFactor	CarProxy.java	/^	private double lastRotationAirFrictionFactor;$/;"	f	class:CarProxy	file:
+lastRotationTransferFactor	CarProxy.java	/^	private Double  lastRotationTransferFactor; $/;"	f	class:CarProxy	file:
+lastRotationUpdateFactor	CarProxy.java	/^	private double lastRotationUpdateFactor;$/;"	f	class:CarProxy	file:
+lastTickIndex	model/World.java	/^    private final int lastTickIndex;$/;"	f	class:World	file:
+length	Vector2D.java	/^   public double length() {$/;"	m	class:Vector2D
+line	VisualClient.java	/^    public void line(double x1, double y1, double x2, double y2, Color color) {$/;"	m	class:VisualClient
+m_Minv	CarProxy.java	/^	public double m_Minv;$/;"	f	class:CarProxy
+m_airFrict	CarProxy.java	/^	public double m_airFrict;$/;"	f	class:CarProxy
+m_angle	CarProxy.java	/^	public double m_angle;$/;"	f	class:CarProxy
+m_crossFrict	CarProxy.java	/^	public double m_crossFrict; $/;"	f	class:CarProxy
+m_f	CarProxy.java	/^	public Vector2D m_f;$/;"	f	class:CarProxy
+m_game	CarProxy.java	/^	public Game m_game;$/;"	f	class:CarProxy
+m_height	Wave.java	/^	private int m_height;$/;"	f	class:Wave	file:
+m_in_brake	CarProxy.java	/^	public boolean m_in_brake;$/;"	f	class:CarProxy
+m_in_power	CarProxy.java	/^	public double m_in_power;$/;"	f	class:CarProxy
+m_in_wheel	CarProxy.java	/^	public double m_in_wheel;$/;"	f	class:CarProxy
+m_longFrict	CarProxy.java	/^	public double m_longFrict;$/;"	f	class:CarProxy
+m_medianV	CarProxy.java	/^	public Vector2D m_medianV;\/\/zero$/;"	f	class:CarProxy
+m_medianW	CarProxy.java	/^	public double m_medianW;$/;"	f	class:CarProxy
+m_nodes	Wave.java	/^	public Node[][] m_nodes; $/;"	f	class:Wave
+m_polygons	Global.java	/^	static public List<Vector2D> m_polygons = new ArrayList<Vector2D>();$/;"	f	class:Global
+m_pos	CarProxy.java	/^	public Vector2D m_pos;$/;"	f	class:CarProxy
+m_power	CarProxy.java	/^	public double m_power;$/;"	f	class:CarProxy
+m_rotAirFrict	CarProxy.java	/^	public double m_rotAirFrict;$/;"	f	class:CarProxy
+m_rotFrictF	CarProxy.java	/^	public double m_rotFrictF;$/;"	f	class:CarProxy
+m_v	CarProxy.java	/^	public Vector2D m_v;$/;"	f	class:CarProxy
+m_w	CarProxy.java	/^	public double m_w;$/;"	f	class:CarProxy
+m_w	Wave.java	/^	public World m_w;$/;"	f	class:Wave
+m_wheel	CarProxy.java	/^	public double m_wheel;$/;"	f	class:CarProxy
+m_width	Wave.java	/^	private int m_width;$/;"	f	class:Wave	file:
+main	Runner.java	/^    public static void main(String[] args) throws IOException {$/;"	m	class:Runner
+mapName	RemoteProcessClient.java	/^    private String mapName;$/;"	f	class:RemoteProcessClient	file:
+mapName	model/World.java	/^    private final String mapName;$/;"	f	class:World	file:
+mass	model/Unit.java	/^    private final double mass;$/;"	f	class:Unit	file:
+maxOiledStateDurationTicks	model/Game.java	/^    private final int maxOiledStateDurationTicks;$/;"	f	class:Game	file:
+me	model/Player.java	/^    private final boolean me;$/;"	f	class:Player	file:
+model	model/Bonus.java	/^package model;$/;"	p
+model	model/BonusType.java	/^package model;$/;"	p
+model	model/Car.java	/^package model;$/;"	p
+model	model/CarType.java	/^package model;$/;"	p
+model	model/CircularUnit.java	/^package model;$/;"	p
+model	model/Direction.java	/^package model;$/;"	p
+model	model/Game.java	/^package model;$/;"	p
+model	model/Move.java	/^package model;$/;"	p
+model	model/OilSlick.java	/^package model;$/;"	p
+model	model/Player.java	/^package model;$/;"	p
+model	model/PlayerContext.java	/^package model;$/;"	p
+model	model/Projectile.java	/^package model;$/;"	p
+model	model/ProjectileType.java	/^package model;$/;"	p
+model	model/RectangularUnit.java	/^package model;$/;"	p
+model	model/TileType.java	/^package model;$/;"	p
+model	model/Unit.java	/^package model;$/;"	p
+model	model/World.java	/^package model;$/;"	p
+move	MyStrategy.java	/^	public void move(Car self, World world, Game game, Move move) $/;"	m	class:MyStrategy
+move	Strategy.java	/^    void move(Car self, World world, Game game, Move move);$/;"	m	interface:Strategy
+name	model/Player.java	/^    private final String name;$/;"	f	class:Player	file:
+nextWaypointX	model/Car.java	/^    private final int nextWaypointX;$/;"	f	class:Car	file:
+nextWaypointY	model/Car.java	/^    private final int nextWaypointY;$/;"	f	class:Car	file:
+nitroChargeCount	model/Car.java	/^    private final int nitroChargeCount;$/;"	f	class:Car	file:
+nitroDurationTicks	model/Game.java	/^    private final int nitroDurationTicks;$/;"	f	class:Game	file:
+nitroEnginePowerFactor	model/Game.java	/^    private final double nitroEnginePowerFactor;$/;"	f	class:Game	file:
+normalize	Vector2D.java	/^   public Vector2D normalize() {$/;"	m	class:Vector2D
+oilCanisterCount	model/Car.java	/^    private final int oilCanisterCount;$/;"	f	class:Car	file:
+oilSlickInitialRange	model/Game.java	/^    private final double oilSlickInitialRange;$/;"	f	class:Game	file:
+oilSlickLifetime	model/Game.java	/^    private final int oilSlickLifetime;$/;"	f	class:Game	file:
+oilSlickRadius	model/Game.java	/^    private final double oilSlickRadius;$/;"	f	class:Game	file:
+oilSlicks	model/World.java	/^    private final OilSlick[] oilSlicks;$/;"	f	class:World	file:
+outputStream	RemoteProcessClient.java	/^    private final OutputStream outputStream;$/;"	f	class:RemoteProcessClient	file:
+outputStream	VisualClient.java	/^    OutputStream    outputStream;$/;"	f	class:VisualClient
+outputStreamBuffer	RemoteProcessClient.java	/^    private final ByteArrayOutputStream outputStreamBuffer;$/;"	f	class:RemoteProcessClient	file:
+playerId	model/Car.java	/^    private final long playerId;$/;"	f	class:Car	file:
+playerId	model/Projectile.java	/^    private final long playerId;$/;"	f	class:Projectile	file:
+players	model/World.java	/^    private final Player[] players;$/;"	f	class:World	file:
+projectileCount	model/Car.java	/^    private final int projectileCount;$/;"	f	class:Car	file:
+projectiles	model/World.java	/^    private final Projectile[] projectiles;$/;"	f	class:World	file:
+pureScoreAmount	model/Game.java	/^    private final int pureScoreAmount;$/;"	f	class:Game	file:
+radius	model/CircularUnit.java	/^    private final double radius;$/;"	f	class:CircularUnit	file:
+randomSeed	model/Game.java	/^    private final long randomSeed;$/;"	f	class:Game	file:
+readBonus	RemoteProcessClient.java	/^    private Bonus readBonus() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readBonuses	RemoteProcessClient.java	/^    private Bonus[] readBonuses() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readBoolean	RemoteProcessClient.java	/^    private boolean readBoolean() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readBooleanArray	RemoteProcessClient.java	/^    private boolean[] readBooleanArray() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readBooleanArray	RemoteProcessClient.java	/^    private boolean[] readBooleanArray(int count) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readBooleanArray2D	RemoteProcessClient.java	/^    private boolean[][] readBooleanArray2D() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readBytes	RemoteProcessClient.java	/^    private byte[] readBytes(int byteCount) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readCar	RemoteProcessClient.java	/^    private Car readCar() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readCars	RemoteProcessClient.java	/^    private Car[] readCars() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readDouble	RemoteProcessClient.java	/^    private double readDouble() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readEnum	RemoteProcessClient.java	/^    private <E extends Enum> E readEnum(Class<E> enumClass) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readEnumArray	RemoteProcessClient.java	/^    private <E extends Enum> E[] readEnumArray(Class<E> enumClass) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readEnumArray	RemoteProcessClient.java	/^    private <E extends Enum> E[] readEnumArray(Class<E> enumClass, int count) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readEnumArray2D	RemoteProcessClient.java	/^    private <E extends Enum> E[][] readEnumArray2D(Class<E> enumClass) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readGameContext	RemoteProcessClient.java	/^    public Game readGameContext() throws IOException {$/;"	m	class:RemoteProcessClient
+readInt	RemoteProcessClient.java	/^    private int readInt() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readIntArray	RemoteProcessClient.java	/^    private int[] readIntArray() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readIntArray	RemoteProcessClient.java	/^    private int[] readIntArray(int count) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readIntArray2D	RemoteProcessClient.java	/^    private int[][] readIntArray2D() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readLong	RemoteProcessClient.java	/^    private long readLong() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readMapName	RemoteProcessClient.java	/^    private String readMapName() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readOilSlick	RemoteProcessClient.java	/^    private OilSlick readOilSlick() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readOilSlicks	RemoteProcessClient.java	/^    private OilSlick[] readOilSlicks() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readPlayerContext	RemoteProcessClient.java	/^    public PlayerContext readPlayerContext() throws IOException {$/;"	m	class:RemoteProcessClient
+readPlayers	RemoteProcessClient.java	/^    private Player[] readPlayers() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readProjectile	RemoteProcessClient.java	/^    private Projectile readProjectile() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readProjectiles	RemoteProcessClient.java	/^    private Projectile[] readProjectiles() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readStartingDirection	RemoteProcessClient.java	/^    private Direction readStartingDirection() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readString	RemoteProcessClient.java	/^    private String readString() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readTeamSize	RemoteProcessClient.java	/^    public int readTeamSize() throws IOException {$/;"	m	class:RemoteProcessClient
+readTilesXY	RemoteProcessClient.java	/^    private TileType[][] readTilesXY() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readWaypoints	RemoteProcessClient.java	/^    private int[][] readWaypoints() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+readWorld	RemoteProcessClient.java	/^    private World readWorld() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+rect	VisualClient.java	/^    public void rect(double x1, double y1, double x2, double y2, Color color) {$/;"	m	class:VisualClient
+remainingLifetime	model/OilSlick.java	/^    private final int remainingLifetime;$/;"	f	class:OilSlick	file:
+remainingNitroCooldownTicks	model/Car.java	/^    private final int remainingNitroCooldownTicks;$/;"	f	class:Car	file:
+remainingNitroTicks	model/Car.java	/^    private final int remainingNitroTicks;$/;"	f	class:Car	file:
+remainingOilCooldownTicks	model/Car.java	/^    private final int remainingOilCooldownTicks;$/;"	f	class:Car	file:
+remainingOiledTicks	model/Car.java	/^    private final int remainingOiledTicks;$/;"	f	class:Car	file:
+remainingProjectileCooldownTicks	model/Car.java	/^    private final int remainingProjectileCooldownTicks;$/;"	f	class:Car	file:
+remoteProcessClient	Runner.java	/^    private final RemoteProcessClient remoteProcessClient;$/;"	f	class:Runner	file:
+rotate	Vector2D.java	/^	public Vector2D rotate(double rad)$/;"	m	class:Vector2D
+run	Runner.java	/^    public void run() throws IOException {$/;"	m	class:Runner
+s_vc	MyStrategy.java	/^	public static VisualClient s_vc = null;$/;"	f	class:MyStrategy
+scale	Vector2D.java	/^   public Vector2D scale( double scaleFactor ) {$/;"	m	class:Vector2D
+score	model/Player.java	/^    private final int score;$/;"	f	class:Player	file:
+sendCommand	VisualClient.java	/^    private void sendCommand(String command) {$/;"	m	class:VisualClient	file:
+setBrake	model/Move.java	/^    public void setBrake(boolean brake) {$/;"	m	class:Move
+setEnginePower	model/Move.java	/^    public void setEnginePower(double enginePower) {$/;"	m	class:Move
+setSpillOil	model/Move.java	/^    public void setSpillOil(boolean spillOil) {$/;"	m	class:Move
+setThrowProjectile	model/Move.java	/^    public void setThrowProjectile(boolean throwProjectile) {$/;"	m	class:Move
+setUseNitro	model/Move.java	/^    public void setUseNitro(boolean useNitro) {$/;"	m	class:Move
+setWheelTurn	model/Move.java	/^    public void setWheelTurn(double wheelTurn) {$/;"	m	class:Move
+sideWasherAngle	model/Game.java	/^    private final double sideWasherAngle;$/;"	f	class:Game	file:
+socket	RemoteProcessClient.java	/^    private final Socket socket;$/;"	f	class:RemoteProcessClient	file:
+socket	VisualClient.java	/^    Socket          socket;$/;"	f	class:VisualClient
+speedX	model/Unit.java	/^    private final double speedX;$/;"	f	class:Unit	file:
+speedY	model/Unit.java	/^    private final double speedY;$/;"	f	class:Unit	file:
+spillOil	model/Move.java	/^    private boolean spillOil;$/;"	f	class:Move	file:
+spillOilCooldownTicks	model/Game.java	/^    private final int spillOilCooldownTicks;$/;"	f	class:Game	file:
+startingDirection	RemoteProcessClient.java	/^    private Direction startingDirection;$/;"	f	class:RemoteProcessClient	file:
+startingDirection	model/World.java	/^    private final Direction startingDirection;$/;"	f	class:World	file:
+step	PhysSym.java	/^	public static void step(CarProxy cp, Game game)$/;"	m	class:PhysSym
+stop	VisualClient.java	/^    public void stop() {$/;"	m	class:VisualClient
+strategyCrashed	model/Player.java	/^    private final boolean strategyCrashed;$/;"	f	class:Player	file:
+sub	Vector2D.java	/^   public Vector2D sub( Vector2D v1 ) {$/;"	m	class:Vector2D
+teammate	model/Car.java	/^    private final boolean teammate;$/;"	f	class:Car	file:
+teammateIndex	model/Car.java	/^    private final int teammateIndex;$/;"	f	class:Car	file:
+text	VisualClient.java	/^    public void text(double x, double y, String msg, Color color) {$/;"	m	class:VisualClient
+throwProjectile	model/Move.java	/^    private boolean throwProjectile;$/;"	f	class:Move	file:
+throwProjectileCooldownTicks	model/Game.java	/^    private final int throwProjectileCooldownTicks;$/;"	f	class:Game	file:
+tick	model/World.java	/^    private final int tick;$/;"	f	class:World	file:
+tickCount	model/Game.java	/^    private final int tickCount;$/;"	f	class:Game	file:
+tickCount	model/World.java	/^    private final int tickCount;$/;"	f	class:World	file:
+tickN	MyStrategy.java	/^	int tickN = 0;$/;"	f	class:MyStrategy
+tilesXY	RemoteProcessClient.java	/^    private TileType[][] tilesXY;$/;"	f	class:RemoteProcessClient	file:
+tilesXY	model/World.java	/^    private final TileType[][] tilesXY;$/;"	f	class:World	file:
+tireDamageFactor	model/Game.java	/^    private final double tireDamageFactor;$/;"	f	class:Game	file:
+tireDisappearSpeedFactor	model/Game.java	/^    private final double tireDisappearSpeedFactor;$/;"	f	class:Game	file:
+tireInitialSpeed	model/Game.java	/^    private final double tireInitialSpeed;$/;"	f	class:Game	file:
+tireMass	model/Game.java	/^    private final double tireMass;$/;"	f	class:Game	file:
+tireRadius	model/Game.java	/^    private final double tireRadius;$/;"	f	class:Game	file:
+toString	Vector2D.java	/^   public String toString() {$/;"	m	class:Vector2D
+token	Runner.java	/^    private final String token;$/;"	f	class:Runner	file:
+trackTileMargin	model/Game.java	/^    private final double trackTileMargin;$/;"	f	class:Game	file:
+trackTileSize	model/Game.java	/^    private final double trackTileSize;$/;"	f	class:Game	file:
+type	model/Bonus.java	/^    private final BonusType type;$/;"	f	class:Bonus	file:
+type	model/Car.java	/^    private final CarType type;$/;"	f	class:Car	file:
+type	model/Projectile.java	/^    private final ProjectileType type;$/;"	f	class:Projectile	file:
+updateAngle	PhysSym.java	/^	public static void updateAngle(CarProxy cp, Game game)$/;"	m	class:PhysSym
+updateFactor	PhysSym.java	/^	protected static double updateFactor = 1.0D \/ ITERATION_COUNT ;\/\/ \/ 60;$/;"	f	class:PhysSym
+updatePos	PhysSym.java	/^	public static void updatePos(CarProxy cp) $/;"	m	class:PhysSym
+useNitro	model/Move.java	/^    private boolean useNitro;$/;"	f	class:Move	file:
+useNitroCooldownTicks	model/Game.java	/^    private final int useNitroCooldownTicks;$/;"	f	class:Game	file:
+washerDamage	model/Game.java	/^    private final double washerDamage;$/;"	f	class:Game	file:
+washerInitialSpeed	model/Game.java	/^    private final double washerInitialSpeed;$/;"	f	class:Game	file:
+washerMass	model/Game.java	/^    private final double washerMass;$/;"	f	class:Game	file:
+washerRadius	model/Game.java	/^    private final double washerRadius;$/;"	f	class:Game	file:
+waypoints	RemoteProcessClient.java	/^    private int[][] waypoints;$/;"	f	class:RemoteProcessClient	file:
+waypoints	model/World.java	/^    private final int[][] waypoints;$/;"	f	class:World	file:
+wheelTurn	model/Car.java	/^    private final double wheelTurn;$/;"	f	class:Car	file:
+wheelTurn	model/Move.java	/^    private double wheelTurn;$/;"	f	class:Move	file:
+width	model/RectangularUnit.java	/^    private final double width;$/;"	f	class:RectangularUnit	file:
+width	model/World.java	/^    private final int width;$/;"	f	class:World	file:
+world	model/PlayerContext.java	/^    private final World world;$/;"	f	class:PlayerContext	file:
+worldHeight	model/Game.java	/^    private final int worldHeight;$/;"	f	class:Game	file:
+worldWidth	model/Game.java	/^    private final int worldWidth;$/;"	f	class:Game	file:
+writeBoolean	RemoteProcessClient.java	/^    private void writeBoolean(boolean value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+writeBytes	RemoteProcessClient.java	/^    private void writeBytes(byte[] bytes) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+writeDouble	RemoteProcessClient.java	/^    private void writeDouble(double value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+writeEnum	RemoteProcessClient.java	/^    private <E extends Enum> void writeEnum(E value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+writeInt	RemoteProcessClient.java	/^    private void writeInt(int value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+writeLong	RemoteProcessClient.java	/^    private void writeLong(long value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+writeMoves	RemoteProcessClient.java	/^    public void writeMoves(Move[] moves) throws IOException {$/;"	m	class:RemoteProcessClient
+writeProtocolVersion	RemoteProcessClient.java	/^    public void writeProtocolVersion() throws IOException {$/;"	m	class:RemoteProcessClient
+writeString	RemoteProcessClient.java	/^    private void writeString(String value) throws IOException {$/;"	m	class:RemoteProcessClient	file:
+writeToken	RemoteProcessClient.java	/^    public void writeToken(String token) throws IOException {$/;"	m	class:RemoteProcessClient
+x	Vector2D.java	/^	 public double x(){$/;"	m	class:Vector2D
+x	model/Unit.java	/^    private final double x;$/;"	f	class:Unit	file:
+y	Vector2D.java	/^	 public double y(){$/;"	m	class:Vector2D
+y	model/Unit.java	/^    private final double y;$/;"	f	class:Unit	file:

@@ -3,12 +3,20 @@ import model.Game;
 import model.Move;
 import model.World;
 
+import java.util.*;
 import java.awt.Color;
 
 public final class MyStrategy implements Strategy {
     
 	int tickN = 0;
+	public static int WIDTH = 800;
 	public static VisualClient s_vc = null;
+
+	public static Vector2D getTile(double x, double y)
+	{
+		return new Vector2D((int)x / WIDTH, (int)y / WIDTH);
+	}
+
   @Override
 	public void move(Car self, World world, Game game, Move move) 
 	{
@@ -28,11 +36,10 @@ public final class MyStrategy implements Strategy {
 		long ms0 = System.currentTimeMillis();
 		
 		CarProxy cp = new CarProxy(self, game);
-	
-		s_vc.beginPost();
+		//s_vc.beginPost();
 
-		s_vc.fillCircle(0,0,5000,Color.black);		
-		s_vc.endPost();
+		//s_vc.fillCircle(0,0,5000,Color.black);		
+		//s_vc.endPost();
 
 		if (tickN < 300)
 		{		
@@ -55,6 +62,22 @@ public final class MyStrategy implements Strategy {
 			System.out.printf("cur turn %.5f, next turn %.5f\n", self.getWheelTurn(), cp.m_wheel);
 			System.out.printf("w %.5f, next w %.5f\n", self.getAngularSpeed(), cp.m_w);
 			System.out.printf("angle %.5f, next angle %.5f\n", self.getAngle(), cp.m_angle);
+
+		
+			for (int[] i : world.getWaypoints())
+			{
+				System.out.printf("%d %d\n", i[0], i[1]);
+			}		
+
+			Wave w = new Wave(world);	
+			Vector<Vector2D> vs = w.find(world.getWaypoints()[0][0],world.getWaypoints()[0][1],world.getWaypoints()[1][0],world.getWaypoints()[1][1]);
+
+			
+			System.out.printf("Way to the rescue\n");
+			for (Vector2D vec : vs)
+			{
+				System.out.printf("%s\n", vec);
+			}				
 		}
 		tickN = tickN + 1;
 	}
