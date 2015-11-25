@@ -7,5 +7,5 @@ import java.util.*;
 public final class Global{
 
 
-	static public List<Vector2D> m_polygons = new ArrayList<Vector2D>();
+	public static VisualClient s_vc = null;
 }

@@ -62,6 +62,44 @@ public final class CarProxy
 		this.m_in_brake = false; 	
 	}
 
+	public CarProxy(CarProxy another)
+	{
+		this.m_v = another.m_v;
+		this.m_pos = another.m_pos ;
+	 this.m_f = another.m_f ;
+	this.m_Minv = another.m_Minv ;
+	this.m_airFrict = another.m_airFrict ;
+	this.m_rotAirFrict = another.m_rotAirFrict ;
+
+	this.m_longFrict = another.m_longFrict ;
+	this.m_crossFrict = another.m_crossFrict ; 
+	this.m_rotFrictF = another.m_rotFrictF ;
+	this.m_medianV = another.m_medianV ;//zero
+
+	this.m_medianW = another.m_medianW ;
+
+	this.m_power = another.m_power ;
+	this.m_wheel = another.m_wheel ;
+	
+	//input parameters
+	this.m_in_power = another.m_in_power ;
+	this.m_in_brake = another.m_in_brake ;
+	this.m_in_wheel = another.m_in_wheel ;
+
+	this.m_angle = another.m_angle ;
+	this.m_w = another.m_w ;
+
+  this.lastMovementAirFrictionFactor = another.lastMovementAirFrictionFactor ;                                                      
+	this.lastMovementUpdateFactor = another.lastMovementUpdateFactor ;                                                            
+	this.lastMovementTransferFactor = another.lastMovementTransferFactor ;  
+
+	this.lastRotationTransferFactor = another.lastRotationTransferFactor ; 
+	this.lastRotationAirFrictionFactor = another.lastRotationAirFrictionFactor ;
+	this.lastRotationUpdateFactor = another.lastRotationUpdateFactor ;
+	this.m_game = another.m_game; 
+
+
+	}
    public void applyMovementAirFriction(double updateFactor)
 	 {                                                      
 			if (lastMovementTransferFactor == null                                                          

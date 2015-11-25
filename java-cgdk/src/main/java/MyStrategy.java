@@ -10,7 +10,6 @@ public final class MyStrategy implements Strategy {
     
 	int tickN = 0;
 	public static int WIDTH = 800;
-	public static VisualClient s_vc = null;
 
 	public static Vector2D getTile(double x, double y)
 	{
@@ -21,10 +20,10 @@ public final class MyStrategy implements Strategy {
 	public void move(Car self, World world, Game game, Move move) 
 	{
 
-		if (s_vc == null)
-			s_vc = new VisualClient();
+		if (Global.s_vc == null)
+			Global.s_vc = new VisualClient();
 
-	
+
 		//move.setThrowProjectile(true);
 		//move.setSpillOil(true);
 
@@ -41,20 +40,23 @@ public final class MyStrategy implements Strategy {
 		//s_vc.fillCircle(0,0,5000,Color.black);		
 		//s_vc.endPost();
 
-		if (tickN < 300)
-		{		
-			move.setEnginePower(0.5D);
+		//if (tickN < 300)
+		//{		
+			move.setEnginePower(0.1D);
 			cp.m_in_power = 0.5D;
-		}else{
-			move.setBrake(true);
-			cp.m_in_brake = true;
-			move.setWheelTurn(1);
-			cp.m_in_wheel = 1;		
-		}
-		PhysSym.step(cp, game);
+		//}else{
+			//move.setBrake(true);
+			//cp.m_in_brake = true;
+			//move.setWheelTurn(1);
+			//cp.m_in_wheel = 1;		
+		//}
+
+
+		TrajBuilder.findBestTrajectory(cp, game);
+		//PhysSym.step(cp, game);
 
 		long ms1 = System.currentTimeMillis();
-		if (tickN > 290 && tickN < 310)
+		//if (tickN > 290 && tickN < 310)
 		{
 			System.out.printf("time %d ms\n", ms1 - ms0);
 			System.out.printf("tickN:%d curr vel (%.5f, %.5f), next vel %s\n", tickN, v_x, v_y,  cp.m_v.toString());
@@ -63,21 +65,17 @@ public final class MyStrategy implements Strategy {
 			System.out.printf("w %.5f, next w %.5f\n", self.getAngularSpeed(), cp.m_w);
 			System.out.printf("angle %.5f, next angle %.5f\n", self.getAngle(), cp.m_angle);
 
-		
-			for (int[] i : world.getWaypoints())
-			{
-				System.out.printf("%d %d\n", i[0], i[1]);
-			}		
 
 			Wave w = new Wave(world);	
 			Vector<Vector2D> vs = w.find(world.getWaypoints()[0][0],world.getWaypoints()[0][1],world.getWaypoints()[1][0],world.getWaypoints()[1][1]);
 
-			
-			System.out.printf("Way to the rescue\n");
+			Global.s_vc.beginPost();
 			for (Vector2D vec : vs)
 			{
 				System.out.printf("%s\n", vec);
+				Global.s_vc.fillCircle((int)vec.x() * 800 + 400, (int)vec.y() * 800 + 400, 50, Color.red);
 			}				
+			Global.s_vc.endPost();
 		}
 		tickN = tickN + 1;
 	}

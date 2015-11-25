@@ -6,11 +6,10 @@ import model.World;
 
 public final class PhysSym
 {
-	public static final int ITERATION_COUNT = 10;
+	public static final int ITERATION_COUNT = 1;
 	public static final double EPSILON = 1.0E-7D;   
 	protected static double updateFactor = 1.0D / ITERATION_COUNT ;// / 60;
 
-  //static double ANGULAR_FACTOR = 0.001745;
   static double POWER_PER_TICK = 0.025;
 
 	public static void step(CarProxy cp, Game game)
@@ -96,5 +95,4 @@ public final class PhysSym
 			}
 		}
 	}
-
 }

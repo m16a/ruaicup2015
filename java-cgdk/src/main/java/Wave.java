@@ -27,8 +27,6 @@ public final class Wave
 		for(int i = 0; i < m_width; i++)
 			for (int j = 0; j < m_height; j++)
 				this.m_nodes[i][j] = new Node();
-
-		System.out.printf("Initialization");
 	}
 
 	public World m_w;
@@ -49,7 +47,7 @@ public final class Wave
 		int dist = 0;
 
 
-		System.out.printf("find %d %d %d %d\n", m_width, m_height, startI, startJ);
+	 //	System.out.printf("find %d %d %d %d\n", m_width, m_height, startI, startJ);
 		m_nodes[startI][startJ].d = dist;
 		
 		while (m_nodes[finishI][finishJ].d == -1)// and ability to build wave
@@ -82,11 +80,11 @@ public final class Wave
 			dist++;
 		}
 
-			for(int i = 0; i < m_width; i++){
-			for (int j = 0; j < m_height; j++)
-				System.out.printf("%d\t", m_nodes[i][j].d);
-				System.out.printf("\n");
-			}
+			//for(int i = 0; i < m_width; i++){
+			//for (int j = 0; j < m_height; j++)
+			//	System.out.printf("%d\t", m_nodes[i][j].d);
+			//	System.out.printf("\n");
+			//}
 
 		//backward
 		Vector res = new Vector();
