@@ -21,10 +21,10 @@ public final class TrajBuilder{
 			for (int sub_v = 1; sub_v < vs-v; sub_v++)
 			{
 				int secondParam = firstParam + sub_v * (startTick+tickAhead - firstParam)/(vs-v);
-				//System.out.printf("[%d %d]", firstParam, secondParam);
+		//		System.out.printf("[%d %d]", firstParam, secondParam);
 				res.add(new Vector2D(firstParam, secondParam));
 			}
-			//System.out.printf("\n");
+		//	System.out.printf("\n");
 		}
 		return res;
 	}
@@ -40,6 +40,8 @@ public final class TrajBuilder{
 		{
 			CarProxy cp = new CarProxy(clear_cp);
 			
+				System.out.printf("%s ", input.toString());
+	
 			for (int i = 0; i < tickAhead; i++)
 			{
 				int tC = (int)((input.x() + input.y()) / 2);//middle tick
@@ -47,10 +49,15 @@ public final class TrajBuilder{
 					cp.m_in_wheel = 1;
 				else if (i >= tC && i < input.y())
 					cp.m_in_wheel = -1;
-				else if (i < input.x() && i > input.y())
+				else if (i < input.x() || i > input.y())
 					cp.m_in_wheel = 0;
 
 				PhysSym.step(cp, game);
+				if (CollisionChecker.checkBoard(game, cp.m_pos))
+					{
+					//System.out.printf("break \n");
+					break;
+					}				
 				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), 2, Color.black);				
 			}
 		}

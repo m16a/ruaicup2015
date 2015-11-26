@@ -23,7 +23,9 @@ public final class MyStrategy implements Strategy {
 		if (Global.s_vc == null)
 			Global.s_vc = new VisualClient();
 
-
+			if (Global.s_wave == null)
+				Global.s_wave  = new Wave(world);
+	
 		//move.setThrowProjectile(true);
 		//move.setSpillOil(true);
 
@@ -66,8 +68,7 @@ public final class MyStrategy implements Strategy {
 			System.out.printf("angle %.5f, next angle %.5f\n", self.getAngle(), cp.m_angle);
 
 
-			Wave w = new Wave(world);	
-			Vector<Vector2D> vs = w.find(world.getWaypoints()[0][0],world.getWaypoints()[0][1],world.getWaypoints()[1][0],world.getWaypoints()[1][1]);
+			Vector<Vector2D> vs = Global.s_wave.find(world.getWaypoints()[0][0],world.getWaypoints()[0][1],world.getWaypoints()[1][0],world.getWaypoints()[1][1]);
 
 			Global.s_vc.beginPost();
 			for (Vector2D vec : vs)

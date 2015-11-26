@@ -7,10 +7,10 @@ import model.TileType;
 
 public final class Wave
 {
-	int TOP = 8;//1<<3;
-	int BOTTOM = 4;//1<<2;
-	int LEFT = 2;//1<<1;
-	int RIGHT = 1;// 1<<0;
+	static public int TOP = 8;//1<<3;
+	static public int BOTTOM = 4;//1<<2;
+	static public int LEFT = 2;//1<<1;
+	static public	int RIGHT = 1;// 1<<0;
 	
 	private int m_width;
 	private int m_height;
@@ -129,7 +129,7 @@ public final class Wave
 		return res;	
 	}
 
-	private int getNeighbours(int x, int y)
+	public int getNeighbours(int x, int y)
 	{
 		int res = 0;
 

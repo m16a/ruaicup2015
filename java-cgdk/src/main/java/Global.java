@@ -6,6 +6,6 @@ import java.util.*;
 
 public final class Global{
 
-
+	public static Wave s_wave = null;
 	public static VisualClient s_vc = null;
 }
