@@ -37,11 +37,6 @@ public final class MyStrategy implements Strategy {
 		long ms0 = System.currentTimeMillis();
 		
 		CarProxy cp = new CarProxy(self, game);
-		//s_vc.beginPost();
-
-		//s_vc.fillCircle(0,0,5000,Color.black);		
-		//s_vc.endPost();
-
 		//if (tickN < 300)
 		//{		
 			move.setEnginePower(1.0D);
@@ -53,14 +48,31 @@ public final class MyStrategy implements Strategy {
 			//cp.m_in_wheel = 1;		
 		//}
 
-		Vector2D input = new Vector2D(0,0);
-
+		Global.s_vc.beginPost();
+		double[] input = new double[3];
+				input[0] = 0;
+				input[1] = 0;
+				input[2] = 0;
+	
 		if (tickN > 170)
 			input = TrajBuilder.findBestTrajectory(cp, game);
 		
-		if ((int)input.x() == 0)
-			move.setWheelTurn(1 * input.y());
-		//PhysSym.step(cp, game);
+		if ((int)input[0] == 0)
+			move.setWheelTurn(1 * input[1]);
+		
+		if ((int)input[2] == 0)
+			move.setBrake(true);
+		else 
+			move.setBrake(false);
+		
+		Global.s_vc.fillCircle(self.getX() + 200, self.getY() - 100, 25, move.isBrake() ? Color.red :Color.black);		
+
+
+		Color c = Math.abs(move.getWheelTurn()) < 0.0000001 ? Color.black : (move.getWheelTurn() > 0 ? Color.green : Color.blue);
+
+		Global.s_vc.fillCircle(self.getX() + 150, self.getY() - 100, 25, c);		
+		Global.s_vc.endPost();
+
 
 		long ms1 = System.currentTimeMillis();
 		//if (tickN > 290 && tickN < 310)
