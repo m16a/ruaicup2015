@@ -37,7 +37,7 @@ public final class TrajBuilder{
 		int tickAhead = 400;
 		if (m_inputs == null)
 			m_inputs = generateInputs(0, tickAhead, 50);
-		Global.s_vc.beginPost();
+		//Global.s_vc.beginPost();
 		for (Vector2D input : m_inputs)
 		{
 			CarProxy cp = new CarProxy(clear_cp);
@@ -56,14 +56,14 @@ public final class TrajBuilder{
 					cp.m_in_wheel = 0;
 
 				PhysSym.step(cp, game);
-				if (CollisionChecker.checkBoard(game, cp.m_pos))
+				if (CollisionChecker.checkBoard(game, cp.m_pos, cp.m_angle))
 					{
 					//System.out.printf("break \n");
 					break;
 					}				
 				way += (cp.m_pos.sub(oldPos)).length();
 				oldPos = cp.m_pos;
-				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), 2, Color.black);				
+			//	Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), 2, Color.black);				
 			}
 			if (way > bestMetric)
 			{
@@ -72,7 +72,7 @@ public final class TrajBuilder{
 			}
 
 		}
-		Global.s_vc.endPost();
+		//Global.s_vc.endPost();
 		return res;
 	} 
 }
