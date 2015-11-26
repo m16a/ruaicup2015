@@ -44,8 +44,8 @@ public final class MyStrategy implements Strategy {
 
 		//if (tickN < 300)
 		//{		
-			move.setEnginePower(0.7D);
-			cp.m_in_power = 0.7D;
+			move.setEnginePower(1.0D);
+			cp.m_in_power = 1.0D;
 		//}else{
 			//move.setBrake(true);
 			//cp.m_in_brake = true;
@@ -53,11 +53,13 @@ public final class MyStrategy implements Strategy {
 			//cp.m_in_wheel = 1;		
 		//}
 
+		Vector2D input = new Vector2D(0,0);
 
-		Vector2D input = TrajBuilder.findBestTrajectory(cp, game);
+		if (tickN > 170)
+			input = TrajBuilder.findBestTrajectory(cp, game);
 		
 		if ((int)input.x() == 0)
-			move.setWheelTurn(1);
+			move.setWheelTurn(1 * input.y());
 		//PhysSym.step(cp, game);
 
 		long ms1 = System.currentTimeMillis();

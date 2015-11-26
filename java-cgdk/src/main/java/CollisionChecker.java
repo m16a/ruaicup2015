@@ -5,6 +5,9 @@ import model.World;
 import java.util.*;
 
 public final class CollisionChecker{
+	static Vector2D corner1 = new Vector2D(0, 0);
+	static Vector2D corner2 = new Vector2D(MyStrategy.WIDTH, 0);
+	static Vector2D corner3 = new Vector2D(0, MyStrategy.WIDTH);
 	static Vector2D corner4 = new Vector2D(MyStrategy.WIDTH, MyStrategy.WIDTH);
 
 	static Vector2D[] corners = null;
@@ -52,21 +55,40 @@ public final class CollisionChecker{
 		int tileType = Global.s_wave.getNeighbours((int)tile.x(), (int)tile.y());
 
 		Vector2D p_rel = p.sub(tile.scale(MyStrategy.WIDTH));
-		double offst = 80;
+		double offst = 82;
 		if ((tileType & Wave.TOP) == 0)
-			res |= p_rel.y() < offst;
+			if  (p_rel.y() < offst)
+				return true;
 
 		if ((tileType & Wave.BOTTOM) == 0)
-			res |= p_rel.y() > MyStrategy.WIDTH-offst;
+			if (p_rel.y() > MyStrategy.WIDTH-offst)
+				return true;
 
 		if ((tileType & Wave.LEFT) == 0)
-			res |= p_rel.x() < offst;
+			if (p_rel.x() < offst)
+				return true;
 
 		if ((tileType & Wave.RIGHT) == 0)
-			res |= p_rel.x() > MyStrategy.WIDTH-offst;
+			if (p_rel.x() > MyStrategy.WIDTH-offst)
+				return true;
 		
 		if ( ((tileType & Wave.BOTTOM) != 0) && ((tileType & Wave.RIGHT) != 0) )
-			res |= p_rel.sub(corner4).length() < offst;
+			if (p_rel.sub(corner4).length() < offst)
+				return true;
+
+		if ( ((tileType & Wave.BOTTOM) != 0) && ((tileType & Wave.LEFT) != 0) )
+			if (p_rel.sub(corner3).length() < offst) 
+				return true; 
+
+		if ( ((tileType & Wave.TOP) != 0) && ((tileType & Wave.RIGHT) != 0) )
+			if (p_rel.sub(corner2).length() < offst)
+				return true;
+
+		if ( ((tileType & Wave.TOP) != 0) && ((tileType & Wave.LEFT) != 0) )
+			if (p_rel.sub(corner1).length() < offst)
+				return true;
+
+
 
 		return res;
 	}
