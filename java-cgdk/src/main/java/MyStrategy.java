@@ -44,8 +44,8 @@ public final class MyStrategy implements Strategy {
 
 		//if (tickN < 300)
 		//{		
-			move.setEnginePower(0.1D);
-			cp.m_in_power = 0.5D;
+			move.setEnginePower(0.7D);
+			cp.m_in_power = 0.7D;
 		//}else{
 			//move.setBrake(true);
 			//cp.m_in_brake = true;
@@ -54,7 +54,10 @@ public final class MyStrategy implements Strategy {
 		//}
 
 
-		TrajBuilder.findBestTrajectory(cp, game);
+		Vector2D input = TrajBuilder.findBestTrajectory(cp, game);
+		
+		if ((int)input.x() == 0)
+			move.setWheelTurn(1);
 		//PhysSym.step(cp, game);
 
 		long ms1 = System.currentTimeMillis();
@@ -70,13 +73,13 @@ public final class MyStrategy implements Strategy {
 
 			Vector<Vector2D> vs = Global.s_wave.find(world.getWaypoints()[0][0],world.getWaypoints()[0][1],world.getWaypoints()[1][0],world.getWaypoints()[1][1]);
 
-			Global.s_vc.beginPost();
+			//Global.s_vc.beginPost();
 			for (Vector2D vec : vs)
 			{
-				System.out.printf("%s\n", vec);
-				Global.s_vc.fillCircle((int)vec.x() * 800 + 400, (int)vec.y() * 800 + 400, 50, Color.red);
+				//System.out.printf("%s\n", vec);
+				//Global.s_vc.fillCircle((int)vec.x() * 800 + 400, (int)vec.y() * 800 + 400, 50, Color.red);
 			}				
-			Global.s_vc.endPost();
+			//Global.s_vc.endPost();
 		}
 		tickN = tickN + 1;
 	}

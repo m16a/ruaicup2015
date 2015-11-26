@@ -30,18 +30,21 @@ public final class TrajBuilder{
 	}
 	
 
-	static public int findBestTrajectory(CarProxy clear_cp, Game game)
+	static public Vector2D findBestTrajectory(CarProxy clear_cp, Game game)
 	{	
-		int tickAhead = 200;
+		Vector2D res = new Vector2D(0,0);
+		double bestMetric = 0;
+		int tickAhead = 400;
 		if (m_inputs == null)
-			m_inputs = generateInputs(0, tickAhead, 25);
+			m_inputs = generateInputs(0, tickAhead, 50);
 		Global.s_vc.beginPost();
 		for (Vector2D input : m_inputs)
 		{
 			CarProxy cp = new CarProxy(clear_cp);
 			
-				System.out.printf("%s ", input.toString());
-	
+				//System.out.printf("%s ", input.toString());
+			double way = 0;
+			Vector2D oldPos = clear_cp.m_pos;
 			for (int i = 0; i < tickAhead; i++)
 			{
 				int tC = (int)((input.x() + input.y()) / 2);//middle tick
@@ -58,10 +61,18 @@ public final class TrajBuilder{
 					//System.out.printf("break \n");
 					break;
 					}				
+				way += (cp.m_pos.sub(oldPos)).length();
+				oldPos = cp.m_pos;
 				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), 2, Color.black);				
 			}
+			if (way > bestMetric)
+			{
+				bestMetric = way;
+				res = input;
+			}
+
 		}
 		Global.s_vc.endPost();
-		return 0;
+		return res;
 	} 
 }
