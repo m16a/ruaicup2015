@@ -32,13 +32,28 @@ public final class TrajBuilder{
 		return res;
 	}
 	
-
-	static public double[] findBestTrajectory(CarProxy cp, Game game)
+	static public List<Vector2D> generateBrakeInputs(int startTick, int tickAhead, int N) // tickAhead * N ~ 10000
+	{
+		List<Vector2D> res = new ArrayList<Vector2D>(); 
+		
+		for (int i = 0; i < N; i++)
+		{	
+			int firstParam = startTick + i * (tickAhead)/ N;
+				int secondParam = firstParam + 50;
+		//		System.out.printf("[%d %d]", firstParam, secondParam);
+				res.add(new Vector2D(firstParam, secondParam));
+		}
+		
+		res.add(new Vector2D(startTick+tickAhead, startTick+tickAhead));
+		return res;
+	}
+	
+	static public Vector2D[] findBestTrajectory(CarProxy cp, Game game)
 	{	
-		double[] res = new double[3];
-				res[0] = 0;
-				res[1] = 0;
-				res[2] = 0;
+		Vector2D[] res = new Vector2D[3];
+				res[0] = new Vector2D();
+				res[1] = new Vector2D();
+				res[2] = new Vector2D();
 		double bestMetric = 0;
 		int tickAhead = 150;
 
@@ -50,7 +65,7 @@ public final class TrajBuilder{
 			m_turn_inputs = generateInputs(0, tickAhead, 10);
 
 		if (m_break_inputs == null)
-			m_break_inputs = generateInputs(0, tickAhead, 10);
+			m_break_inputs = generateBrakeInputs(0, tickAhead, 10);
 	
 	
 			Global.s_vc.beginPre();
@@ -70,13 +85,13 @@ public final class TrajBuilder{
 				bestMetric = Math.max(wayR, wayL);
 				
 				//res = new Vector2D( turn_input.x(),  wayR > wayL ? 1:-1);
-				res[0] = turn_input.x();
-				res[1] = wayR > wayL ? 1:-1;
-				res[2] = break_input.x();
+				res[0] = turn_input;
+				res[1] = new Vector2D(wayR > wayL ? 1:-1, 0);
+				res[2] = break_input;
 				
 				best_in_turn = turn_input;
 				best_in_brake = break_input;
-				best_side = (int)res[1];
+				best_side = (int)res[1].x();
 			}
 
 		}

@@ -11,6 +11,10 @@ public final class MyStrategy implements Strategy {
 	int tickN = 0;
 	public static int WIDTH = 800;
 
+	public static Vector2D turn_input = new Vector2D();
+	public static Vector2D brake_input = new Vector2D();
+	public static int turn_side = 0;
+	public static boolean inputReady = false;
 	public static Vector2D getTile(double x, double y)
 	{
 		return new Vector2D((int)x / WIDTH, (int)y / WIDTH);
@@ -49,22 +53,45 @@ public final class MyStrategy implements Strategy {
 		//}
 
 		Global.s_vc.beginPost();
-		double[] input = new double[3];
-				input[0] = 0;
-				input[1] = 0;
-				input[2] = 0;
 	
-		if (tickN > 170)
-			input = TrajBuilder.findBestTrajectory(cp, game);
+	
+		if (tickN > 170 && (tickN % 10) == 0)
+		{		
+				Vector2D[] input = TrajBuilder.findBestTrajectory(cp, game);
+				
+				turn_input = input[0].add(new Vector2D(tickN, tickN));
+				turn_side = (int)(input[1].x());
+				brake_input = input[2].add(new Vector2D(tickN, tickN));			
+				inputReady = true;
+		}	
 		
-		if ((int)input[0] == 0)
-			move.setWheelTurn(1 * input[1]);
+		if (inputReady)
+		{
+			int i = tickN;
+				int tC = (int)((turn_input.x() + turn_input.y()) / 2);//middle tick
+				if (i > turn_input.x() && i < tC)
+					move.setWheelTurn(1*turn_side);
+				else if (i >= tC && i < turn_input.y())
+					move.setWheelTurn(-1*turn_side);
+				else if (i < turn_input.x() || i > turn_input.y())
+					cp.m_in_wheel = 0;
+
+				if (i > brake_input.x() && i < brake_input.y())
+					move.setBrake(true);
+				else
+					move.setBrake(false);
+
+		}
+
+/*	
+		if ((int)input[0].x() == 0)
+			move.setWheelTurn(1 * input[1].x());
 		
-		if ((int)input[2] == 0)
+		if ((int)input[2].x() == 0)
 			move.setBrake(true);
 		else 
 			move.setBrake(false);
-		
+	*/	
 		Global.s_vc.fillCircle(self.getX() + 200, self.getY() - 100, 25, move.isBrake() ? Color.red :Color.black);		
 
 
