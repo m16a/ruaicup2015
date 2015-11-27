@@ -55,7 +55,7 @@ public final class Wave
 		int dist = 0;
 
 		reset();
-	 	System.out.printf("find %d %d %d %d\n", startI, startJ, finishI, finishJ);
+	// 	System.out.printf("find %d %d %d %d\n", startI, startJ, finishI, finishJ);
 		m_nodes[startI][startJ].d = dist;
 		
 		while (m_nodes[finishI][finishJ].d == -1)// and ability to build wave

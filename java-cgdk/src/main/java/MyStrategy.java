@@ -15,6 +15,11 @@ public final class MyStrategy implements Strategy {
 	public static Vector2D brake_input = new Vector2D();
 	public static int turn_side = 0;
 	public static boolean inputReady = false;
+	
+	public static int waypointsPassed = 0;
+	public static int nextX = -1;
+	public static int nextY = -1;
+
 	public static Vector2D getTile(double x, double y)
 	{
 		return new Vector2D((int)x / WIDTH, (int)y / WIDTH);
@@ -33,6 +38,14 @@ public final class MyStrategy implements Strategy {
 			if (Global.s_wave == null)
 				Global.s_wave  = new Wave(world);
 	
+		if (nextX == -1 || (nextX !=self.getNextWaypointX() || nextY != self.getNextWaypointY()))
+		{
+			nextX = self.getNextWaypointX();
+			nextY = self.getNextWaypointY();
+			waypointsPassed = (waypointsPassed + 1) % world.getWaypoints().length;
+		}
+
+
 		//move.setThrowProjectile(true);
 		//move.setSpillOil(true);
 
@@ -121,7 +134,10 @@ public final class MyStrategy implements Strategy {
 			int[][] wpnts = world.getWaypoints();
 
 			entirePath.clear();
-			for (int i = 0; i < wpnts.length-1; i++)
+
+			entirePath.addAll(   Global.s_wave.find( (int)(self.getX()) / 800, (int)(self.getY()) / 800, self.getNextWaypointX(), self.getNextWaypointY()));
+			
+			for (int i = waypointsPassed; i < wpnts.length-1; i++)
 			{
 				
 				Vector<Vector2D> vs = Global.s_wave.find(wpnts[i][0],wpnts[i][1], wpnts[i+1][0],wpnts[i+1][1]);
@@ -139,7 +155,7 @@ public final class MyStrategy implements Strategy {
 			Global.s_vc.beginPost();
 			for (Vector2D vec : entirePath)
 			{
-				System.out.printf("%s\n", vec);
+			//	System.out.printf("%s\n", vec);
 				Global.s_vc.fillCircle((int)vec.x() * 800 + 400, (int)vec.y() * 800 + 400, 50, Color.red);
 			}				
 Global.s_vc.endPost();

@@ -6,7 +6,7 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 AMMO_CRATE	model/BonusType.java	/^    AMMO_CRATE,$/;"	e	enum:BonusType	file:
 AUTHENTICATION_TOKEN	RemoteProcessClient.java	/^        AUTHENTICATION_TOKEN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
-BOTTOM	Wave.java	/^	int BOTTOM = 4;\/\/1<<2;$/;"	f	class:Wave
+BOTTOM	Wave.java	/^	static public int BOTTOM = 4;\/\/1<<2;$/;"	f	class:Wave
 BOTTOM_HEADED_T	model/TileType.java	/^    BOTTOM_HEADED_T,$/;"	e	enum:TileType	file:
 BUFFER_SIZE_BYTES	RemoteProcessClient.java	/^    private static final int BUFFER_SIZE_BYTES = 1 << 20;$/;"	f	class:RemoteProcessClient	file:
 BUGGY	model/CarType.java	/^    BUGGY,$/;"	e	enum:CarType	file:
@@ -17,10 +17,12 @@ CROSSROADS	model/TileType.java	/^    CROSSROADS$/;"	e	enum:TileType	file:
 Car	model/Car.java	/^    public Car($/;"	m	class:Car
 Car	model/Car.java	/^public class Car extends RectangularUnit {$/;"	c
 CarProxy	CarProxy.java	/^	public CarProxy(Car c, Game game)$/;"	m	class:CarProxy
+CarProxy	CarProxy.java	/^	public CarProxy(CarProxy another)$/;"	m	class:CarProxy
 CarProxy	CarProxy.java	/^public final class CarProxy$/;"	c
 CarType	model/CarType.java	/^public enum CarType {$/;"	g
 CircularUnit	model/CircularUnit.java	/^    protected CircularUnit($/;"	m	class:CircularUnit
 CircularUnit	model/CircularUnit.java	/^public abstract class CircularUnit extends Unit {$/;"	c
+CollisionChecker	CollisionChecker.java	/^public final class CollisionChecker{$/;"	c
 DEFAULT_HOST	VisualClient.java	/^    final String    DEFAULT_HOST = "127.0.0.1";$/;"	f	class:VisualClient
 DEFAULT_PORT	VisualClient.java	/^    final int       DEFAULT_PORT = 13579;$/;"	f	class:VisualClient
 DOWN	model/Direction.java	/^    DOWN$/;"	e	enum:Direction	file:
@@ -34,9 +36,9 @@ Game	model/Game.java	/^public class Game {$/;"	c
 Global	Global.java	/^public final class Global{$/;"	c
 HORIZONTAL	model/TileType.java	/^    HORIZONTAL,$/;"	e	enum:TileType	file:
 INTEGER_SIZE_BYTES	RemoteProcessClient.java	/^    private static final int INTEGER_SIZE_BYTES = Integer.SIZE \/ Byte.SIZE;$/;"	f	class:RemoteProcessClient	file:
-ITERATION_COUNT	PhysSym.java	/^	public static final int ITERATION_COUNT = 10;$/;"	f	class:PhysSym
+ITERATION_COUNT	PhysSym.java	/^	public static final int ITERATION_COUNT = 1;$/;"	f	class:PhysSym
 JEEP	model/CarType.java	/^    JEEP$/;"	e	enum:CarType	file:
-LEFT	Wave.java	/^	int LEFT = 2;\/\/1<<1;$/;"	f	class:Wave
+LEFT	Wave.java	/^	static public int LEFT = 2;\/\/1<<1;$/;"	f	class:Wave
 LEFT	model/Direction.java	/^    LEFT,$/;"	e	enum:Direction	file:
 LEFT_BOTTOM_CORNER	model/TileType.java	/^    LEFT_BOTTOM_CORNER,$/;"	e	enum:TileType	file:
 LEFT_HEADED_T	model/TileType.java	/^    LEFT_HEADED_T,$/;"	e	enum:TileType	file:
@@ -66,7 +68,7 @@ Projectile	model/Projectile.java	/^    public Projectile($/;"	m	class:Projectile
 Projectile	model/Projectile.java	/^public class Projectile extends CircularUnit {$/;"	c
 ProjectileType	model/ProjectileType.java	/^public enum ProjectileType {$/;"	g
 REPAIR_KIT	model/BonusType.java	/^    REPAIR_KIT,$/;"	e	enum:BonusType	file:
-RIGHT	Wave.java	/^	int RIGHT = 1;\/\/ 1<<0;$/;"	f	class:Wave
+RIGHT	Wave.java	/^	static public	int RIGHT = 1;\/\/ 1<<0;$/;"	f	class:Wave
 RIGHT	model/Direction.java	/^    RIGHT,$/;"	e	enum:Direction	file:
 RIGHT_BOTTOM_CORNER	model/TileType.java	/^    RIGHT_BOTTOM_CORNER,$/;"	e	enum:TileType	file:
 RIGHT_HEADED_T	model/TileType.java	/^    RIGHT_HEADED_T,$/;"	e	enum:TileType	file:
@@ -80,9 +82,10 @@ Runner	Runner.java	/^public final class Runner {$/;"	c
 Strategy	Strategy.java	/^public interface Strategy {$/;"	i
 TEAM_SIZE	RemoteProcessClient.java	/^        TEAM_SIZE,$/;"	e	enum:RemoteProcessClient.MessageType	file:
 TIRE	model/ProjectileType.java	/^    TIRE$/;"	e	enum:ProjectileType	file:
-TOP	Wave.java	/^	int TOP = 8;\/\/1<<3;$/;"	f	class:Wave
+TOP	Wave.java	/^	static public int TOP = 8;\/\/1<<3;$/;"	f	class:Wave
 TOP_HEADED_T	model/TileType.java	/^    TOP_HEADED_T,$/;"	e	enum:TileType	file:
 TileType	model/TileType.java	/^public enum TileType {$/;"	g
+TrajBuilder	TrajBuilder.java	/^public final class TrajBuilder{$/;"	c
 UNKNOWN	RemoteProcessClient.java	/^        UNKNOWN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
 UP	model/Direction.java	/^    UP,$/;"	e	enum:Direction	file:
 Unit	model/Unit.java	/^    protected Unit($/;"	m	class:Unit
@@ -112,6 +115,7 @@ bonusMass	model/Game.java	/^    private final double bonusMass;$/;"	f	class:Game
 bonusSize	model/Game.java	/^    private final double bonusSize;$/;"	f	class:Game	file:
 bonuses	model/World.java	/^    private final Bonus[] bonuses;$/;"	f	class:World	file:
 brake	model/Move.java	/^    private boolean brake;$/;"	f	class:Move	file:
+brake_input	MyStrategy.java	/^	public static Vector2D brake_input = new Vector2D();$/;"	f	class:MyStrategy
 buggyEngineForwardPower	model/Game.java	/^    private final double buggyEngineForwardPower;$/;"	f	class:Game	file:
 buggyEngineRearPower	model/Game.java	/^    private final double buggyEngineRearPower;$/;"	f	class:Game	file:
 buggyMass	model/Game.java	/^    private final double buggyMass;$/;"	f	class:Game	file:
@@ -132,8 +136,15 @@ carWheelTurnChangePerTick	model/Game.java	/^    private final double carWheelTur
 carWidth	model/Game.java	/^    private final double carWidth;$/;"	f	class:Game	file:
 cars	model/PlayerContext.java	/^    private final Car[] cars;$/;"	f	class:PlayerContext	file:
 cars	model/World.java	/^    private final Car[] cars;$/;"	f	class:World	file:
+checkBoard	CollisionChecker.java	/^	static public boolean checkBoard(Game game, Vector2D car_center, double angle)$/;"	m	class:CollisionChecker
+checkPoint	CollisionChecker.java	/^	static public boolean checkPoint(Vector2D p)$/;"	m	class:CollisionChecker
 circle	VisualClient.java	/^    public void circle(double x, double y, double r, Color color) {$/;"	m	class:VisualClient
 close	RemoteProcessClient.java	/^    public void close() throws IOException {$/;"	m	class:RemoteProcessClient
+corner1	CollisionChecker.java	/^	static Vector2D corner1 = new Vector2D(0, 0);$/;"	f	class:CollisionChecker
+corner2	CollisionChecker.java	/^	static Vector2D corner2 = new Vector2D(MyStrategy.WIDTH, 0);$/;"	f	class:CollisionChecker
+corner3	CollisionChecker.java	/^	static Vector2D corner3 = new Vector2D(0, MyStrategy.WIDTH);$/;"	f	class:CollisionChecker
+corner4	CollisionChecker.java	/^	static Vector2D corner4 = new Vector2D(MyStrategy.WIDTH, MyStrategy.WIDTH);$/;"	f	class:CollisionChecker
+corners	CollisionChecker.java	/^	static Vector2D[] corners = null;$/;"	f	class:CollisionChecker
 d	Wave.java	/^		int d = -1;$/;"	f	class:Wave.Node
 dX	Vector2D.java	/^   protected double dX;$/;"	f	class:Vector2D
 dY	Vector2D.java	/^   protected double dY;$/;"	f	class:Vector2D
@@ -144,13 +155,17 @@ endPre	VisualClient.java	/^    public void endPre() {$/;"	m	class:VisualClient
 enginePower	model/Car.java	/^    private final double enginePower;$/;"	f	class:Car	file:
 enginePower	model/Move.java	/^    private double enginePower;$/;"	f	class:Move	file:
 ensureMessageType	RemoteProcessClient.java	/^    private static void ensureMessageType(MessageType actualType, MessageType expectedType) {$/;"	m	class:RemoteProcessClient	file:
+entirePath	MyStrategy.java	/^	public static Vector<Vector2D> entirePath = new Vector<Vector2D>();$/;"	f	class:MyStrategy
 fillCircle	VisualClient.java	/^    public void fillCircle(double x, double y, double r, Color color) {$/;"	m	class:VisualClient
 fillRect	VisualClient.java	/^    public void fillRect(double x1, double y1, double x2, double y2, Color color) {$/;"	m	class:VisualClient
 find	Wave.java	/^	public Vector<Vector2D> find(int startI, int startJ, int finishI, int finishJ)$/;"	m	class:Wave
+findBestTrajectory	TrajBuilder.java	/^	static public Vector2D[] findBestTrajectory(CarProxy cp, Game game)$/;"	m	class:TrajBuilder
 finishLapScore	model/Game.java	/^    private final int finishLapScore;$/;"	f	class:Game	file:
 finishTrackScores	model/Game.java	/^    private final int[] finishTrackScores;$/;"	f	class:Game	file:
 finishedTrack	model/Car.java	/^    private final boolean finishedTrack;$/;"	f	class:Car	file:
 flush	RemoteProcessClient.java	/^    private void flush() throws IOException {$/;"	m	class:RemoteProcessClient	file:
+generateBrakeInputs	TrajBuilder.java	/^	static public List<Vector2D> generateBrakeInputs(int startTick, int tickAhead, int N) \/\/ tickAhead * N ~ 10000$/;"	m	class:TrajBuilder
+generateInputs	TrajBuilder.java	/^	static public List<Vector2D> generateInputs(int startTick, int tickAhead, int N) \/\/ tickAhead * N ~ 10000$/;"	m	class:TrajBuilder
 getAngle	model/Unit.java	/^    public final double getAngle() {$/;"	m	class:Unit
 getAngleTo	model/Unit.java	/^    public double getAngleTo(Unit unit) {$/;"	m	class:Unit
 getAngleTo	model/Unit.java	/^    public double getAngleTo(double x, double y) {$/;"	m	class:Unit
@@ -202,7 +217,7 @@ getMass	model/Unit.java	/^    public double getMass() {$/;"	m	class:Unit
 getMaxOiledStateDurationTicks	model/Game.java	/^    public int getMaxOiledStateDurationTicks() {$/;"	m	class:Game
 getMyPlayer	model/World.java	/^    public Player getMyPlayer() {$/;"	m	class:World
 getName	model/Player.java	/^    public String getName() {$/;"	m	class:Player
-getNeighbours	Wave.java	/^	private int getNeighbours(int x, int y)$/;"	m	class:Wave	file:
+getNeighbours	Wave.java	/^	public int getNeighbours(int x, int y)$/;"	m	class:Wave
 getNextWaypointX	model/Car.java	/^    public int getNextWaypointX() {$/;"	m	class:Car
 getNextWaypointY	model/Car.java	/^    public int getNextWaypointY() {$/;"	m	class:Car
 getNitroChargeCount	model/Car.java	/^    public int getNitroChargeCount() {$/;"	m	class:Car
@@ -270,6 +285,7 @@ height	model/World.java	/^    private final int height;$/;"	f	class:World	file:
 id	model/Player.java	/^    private final long id;$/;"	f	class:Player	file:
 id	model/Unit.java	/^    private final long id;$/;"	f	class:Unit	file:
 initialFreezeDurationTicks	model/Game.java	/^    private final int initialFreezeDurationTicks;$/;"	f	class:Game	file:
+inputReady	MyStrategy.java	/^	public static boolean inputReady = false;$/;"	f	class:MyStrategy
 inputStream	RemoteProcessClient.java	/^    private final InputStream inputStream;$/;"	f	class:RemoteProcessClient	file:
 isBrake	model/Move.java	/^    public boolean isBrake() {$/;"	m	class:Move
 isFinishedTrack	model/Car.java	/^    public boolean isFinishedTrack() {$/;"	m	class:Car
@@ -297,6 +313,7 @@ line	VisualClient.java	/^    public void line(double x1, double y1, double x2, d
 m_Minv	CarProxy.java	/^	public double m_Minv;$/;"	f	class:CarProxy
 m_airFrict	CarProxy.java	/^	public double m_airFrict;$/;"	f	class:CarProxy
 m_angle	CarProxy.java	/^	public double m_angle;$/;"	f	class:CarProxy
+m_break_inputs	TrajBuilder.java	/^	static public List<Vector2D> m_break_inputs = null;$/;"	f	class:TrajBuilder
 m_crossFrict	CarProxy.java	/^	public double m_crossFrict; $/;"	f	class:CarProxy
 m_f	CarProxy.java	/^	public Vector2D m_f;$/;"	f	class:CarProxy
 m_game	CarProxy.java	/^	public Game m_game;$/;"	f	class:CarProxy
@@ -308,11 +325,11 @@ m_longFrict	CarProxy.java	/^	public double m_longFrict;$/;"	f	class:CarProxy
 m_medianV	CarProxy.java	/^	public Vector2D m_medianV;\/\/zero$/;"	f	class:CarProxy
 m_medianW	CarProxy.java	/^	public double m_medianW;$/;"	f	class:CarProxy
 m_nodes	Wave.java	/^	public Node[][] m_nodes; $/;"	f	class:Wave
-m_polygons	Global.java	/^	static public List<Vector2D> m_polygons = new ArrayList<Vector2D>();$/;"	f	class:Global
 m_pos	CarProxy.java	/^	public Vector2D m_pos;$/;"	f	class:CarProxy
 m_power	CarProxy.java	/^	public double m_power;$/;"	f	class:CarProxy
 m_rotAirFrict	CarProxy.java	/^	public double m_rotAirFrict;$/;"	f	class:CarProxy
 m_rotFrictF	CarProxy.java	/^	public double m_rotFrictF;$/;"	f	class:CarProxy
+m_turn_inputs	TrajBuilder.java	/^	static public List<Vector2D> m_turn_inputs = null;$/;"	f	class:TrajBuilder
 m_v	CarProxy.java	/^	public Vector2D m_v;$/;"	f	class:CarProxy
 m_w	CarProxy.java	/^	public double m_w;$/;"	f	class:CarProxy
 m_w	Wave.java	/^	public World m_w;$/;"	f	class:Wave
@@ -407,9 +424,11 @@ remainingOilCooldownTicks	model/Car.java	/^    private final int remainingOilCoo
 remainingOiledTicks	model/Car.java	/^    private final int remainingOiledTicks;$/;"	f	class:Car	file:
 remainingProjectileCooldownTicks	model/Car.java	/^    private final int remainingProjectileCooldownTicks;$/;"	f	class:Car	file:
 remoteProcessClient	Runner.java	/^    private final RemoteProcessClient remoteProcessClient;$/;"	f	class:Runner	file:
+reset	Wave.java	/^	private void reset()$/;"	m	class:Wave	file:
 rotate	Vector2D.java	/^	public Vector2D rotate(double rad)$/;"	m	class:Vector2D
 run	Runner.java	/^    public void run() throws IOException {$/;"	m	class:Runner
-s_vc	MyStrategy.java	/^	public static VisualClient s_vc = null;$/;"	f	class:MyStrategy
+s_vc	Global.java	/^	public static VisualClient s_vc = null;$/;"	f	class:Global
+s_wave	Global.java	/^	public static Wave s_wave = null;$/;"	f	class:Global
 scale	Vector2D.java	/^   public Vector2D scale( double scaleFactor ) {$/;"	m	class:Vector2D
 score	model/Player.java	/^    private final int score;$/;"	f	class:Player	file:
 sendCommand	VisualClient.java	/^    private void sendCommand(String command) {$/;"	m	class:VisualClient	file:
@@ -452,6 +471,9 @@ toString	Vector2D.java	/^   public String toString() {$/;"	m	class:Vector2D
 token	Runner.java	/^    private final String token;$/;"	f	class:Runner	file:
 trackTileMargin	model/Game.java	/^    private final double trackTileMargin;$/;"	f	class:Game	file:
 trackTileSize	model/Game.java	/^    private final double trackTileSize;$/;"	f	class:Game	file:
+tryTurn	TrajBuilder.java	/^	static public double tryTurn(Game game, CarProxy clear_cp, Vector2D input, Vector2D b_input, int isRight, int tickAhead, Color c, int draw_width) \/\/ right 1, left -1$/;"	m	class:TrajBuilder
+turn_input	MyStrategy.java	/^	public static Vector2D turn_input = new Vector2D();$/;"	f	class:MyStrategy
+turn_side	MyStrategy.java	/^	public static int turn_side = 0;$/;"	f	class:MyStrategy
 type	model/Bonus.java	/^    private final BonusType type;$/;"	f	class:Bonus	file:
 type	model/Car.java	/^    private final CarType type;$/;"	f	class:Car	file:
 type	model/Projectile.java	/^    private final ProjectileType type;$/;"	f	class:Projectile	file:

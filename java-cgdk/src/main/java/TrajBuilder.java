@@ -107,7 +107,7 @@ public final class TrajBuilder{
 			CarProxy cp = new CarProxy(clear_cp);
 			
 			//System.out.printf("%s %s\n", input.toString(), b_input.toString());
-			double way = 0;
+			double metric = 0;
 			Vector2D oldPos = clear_cp.m_pos;
 			for (int i = 0; i < tickAhead; i++)
 			{
@@ -132,11 +132,29 @@ public final class TrajBuilder{
 					//System.out.printf("break \n");
 					break;
 					}				
-				way += (cp.m_pos.sub(oldPos)).length();
+				metric += (cp.m_pos.sub(oldPos)).length();
 				oldPos = cp.m_pos;
 
-//				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
+				//Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
 			}
-			return way;
+
+			metric += getClosestWaypoint(cp.m_pos) * 10000;
+
+			return metric;
 }
+
+	static public int getClosestWaypoint(Vector2D pos)
+	{
+		int res = 0;
+		for (Vector2D v : MyStrategy.entirePath)
+		{
+				if ( (int)(pos.x()) / 800 == (int)v.x() && (int)(pos.y()) / 800 == (int)v.y())
+					break;
+				res++;
+		}
+		//System.out.printf("EXTRA %d\n", res);
+		return res;	
+	}
+
+
 }
