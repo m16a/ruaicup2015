@@ -135,7 +135,7 @@ public final class TrajBuilder{
 				way += (cp.m_pos.sub(oldPos)).length();
 				oldPos = cp.m_pos;
 
-				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
+//				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
 			}
 			return way;
 }

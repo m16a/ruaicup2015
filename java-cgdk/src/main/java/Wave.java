@@ -29,6 +29,14 @@ public final class Wave
 				this.m_nodes[i][j] = new Node();
 	}
 
+	private void reset()
+	{
+		for(int i = 0; i < m_width; i++)
+			for (int j = 0; j < m_height; j++)
+				m_nodes[i][j] = new Node();
+	
+	}
+
 	public World m_w;
 
 	public final class Node
@@ -46,8 +54,8 @@ public final class Wave
 		//forward
 		int dist = 0;
 
-
-	 //	System.out.printf("find %d %d %d %d\n", m_width, m_height, startI, startJ);
+		reset();
+	 	System.out.printf("find %d %d %d %d\n", startI, startJ, finishI, finishJ);
 		m_nodes[startI][startJ].d = dist;
 		
 		while (m_nodes[finishI][finishJ].d == -1)// and ability to build wave

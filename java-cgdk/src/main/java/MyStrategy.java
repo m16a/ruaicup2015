@@ -20,6 +20,9 @@ public final class MyStrategy implements Strategy {
 		return new Vector2D((int)x / WIDTH, (int)y / WIDTH);
 	}
 
+
+	public static Vector<Vector2D> entirePath = new Vector<Vector2D>();
+
   @Override
 	public void move(Car self, World world, Game game, Move move) 
 	{
@@ -112,15 +115,34 @@ public final class MyStrategy implements Strategy {
 			System.out.printf("angle %.5f, next angle %.5f\n", self.getAngle(), cp.m_angle);
 
 
-			Vector<Vector2D> vs = Global.s_wave.find(world.getWaypoints()[0][0],world.getWaypoints()[0][1],world.getWaypoints()[1][0],world.getWaypoints()[1][1]);
 
-			//Global.s_vc.beginPost();
-			for (Vector2D vec : vs)
+			//draw waypoints
+			Global.s_vc.beginPost();
+			int[][] wpnts = world.getWaypoints();
+
+			entirePath.clear();
+			for (int i = 0; i < wpnts.length-1; i++)
 			{
-				//System.out.printf("%s\n", vec);
-				//Global.s_vc.fillCircle((int)vec.x() * 800 + 400, (int)vec.y() * 800 + 400, 50, Color.red);
+				
+				Vector<Vector2D> vs = Global.s_wave.find(wpnts[i][0],wpnts[i][1], wpnts[i+1][0],wpnts[i+1][1]);
+				Global.s_vc.text((int)wpnts[i][0] * 800 + 400, (int)wpnts[i][1]  * 800 + 400, Integer.toString(i), Color.red);
+			
+				//pop init point
+				vs.remove(0);
+
+				entirePath.addAll(vs);
+				
+			}
+			Global.s_vc.endPost();
+			
+
+			Global.s_vc.beginPost();
+			for (Vector2D vec : entirePath)
+			{
+				System.out.printf("%s\n", vec);
+				Global.s_vc.fillCircle((int)vec.x() * 800 + 400, (int)vec.y() * 800 + 400, 50, Color.red);
 			}				
-			//Global.s_vc.endPost();
+Global.s_vc.endPost();
 		}
 		tickN = tickN + 1;
 	}
