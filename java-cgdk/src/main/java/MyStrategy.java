@@ -58,9 +58,10 @@ public final class MyStrategy implements Strategy {
 		
 		CarProxy cp = new CarProxy(self, game);
 		//if (tickN < 300)
-		//{		
-			move.setEnginePower(1.0D);
-			cp.m_in_power = 1.0D;
+		//{	
+			double in_p = 0.1D;	
+			move.setEnginePower(in_p);
+			cp.m_in_power = in_p;
 		//}else{
 			//move.setBrake(true);
 			//cp.m_in_brake = true;
@@ -68,7 +69,6 @@ public final class MyStrategy implements Strategy {
 			//cp.m_in_wheel = 1;		
 		//}
 
-		Global.s_vc.beginPost();
 	
 	
 		if (tickN > 170 && (tickN % 10) == 0)
@@ -99,16 +99,8 @@ public final class MyStrategy implements Strategy {
 
 		}
 
-/*	
-		if ((int)input[0].x() == 0)
-			move.setWheelTurn(1 * input[1].x());
-		
-		if ((int)input[2].x() == 0)
-			move.setBrake(true);
-		else 
-			move.setBrake(false);
-	*/	
-		Global.s_vc.fillCircle(self.getX() + 200, self.getY() - 100, 25, move.isBrake() ? Color.red :Color.black);		
+		Global.s_vc.beginPost();
+	Global.s_vc.fillCircle(self.getX() + 200, self.getY() - 100, 25, move.isBrake() ? Color.red :Color.black);		
 
 
 		Color c = Math.abs(move.getWheelTurn()) < 0.0000001 ? Color.black : (move.getWheelTurn() > 0 ? Color.green : Color.blue);
@@ -121,27 +113,28 @@ public final class MyStrategy implements Strategy {
 		//if (tickN > 290 && tickN < 310)
 		{
 			System.out.printf("time %d ms\n", ms1 - ms0);
-			System.out.printf("tickN:%d curr vel (%.5f, %.5f), next vel %s\n", tickN, v_x, v_y,  cp.m_v.toString());
+			//System.out.printf("tickN:%d curr vel (%.5f, %.5f), next vel %s\n", tickN, v_x, v_y,  cp.m_v.toString());
 			//System.out.printf("curr power %.5f, next power %.5f\n", self.getEnginePower(), cp.m_power);
-			System.out.printf("cur turn %.5f, next turn %.5f\n", self.getWheelTurn(), cp.m_wheel);
-			System.out.printf("w %.5f, next w %.5f\n", self.getAngularSpeed(), cp.m_w);
-			System.out.printf("angle %.5f, next angle %.5f\n", self.getAngle(), cp.m_angle);
+			//System.out.printf("cur turn %.5f, next turn %.5f\n", self.getWheelTurn(), cp.m_wheel);
+			//System.out.printf("w %.5f, next w %.5f\n", self.getAngularSpeed(), cp.m_w);
+			//System.out.printf("angle %.5f, next angle %.5f\n", self.getAngle(), cp.m_angle);
 
 
 
 			//draw waypoints
-			Global.s_vc.beginPost();
+	//		Global.s_vc.beginPre();
 			int[][] wpnts = world.getWaypoints();
 
 			entirePath.clear();
 
 			entirePath.addAll(   Global.s_wave.find( (int)(self.getX()) / 800, (int)(self.getY()) / 800, self.getNextWaypointX(), self.getNextWaypointY()));
-			
+		
+	
 			for (int i = waypointsPassed; i < wpnts.length-1; i++)
 			{
 				
 				Vector<Vector2D> vs = Global.s_wave.find(wpnts[i][0],wpnts[i][1], wpnts[i+1][0],wpnts[i+1][1]);
-				Global.s_vc.text((int)wpnts[i][0] * 800 + 400, (int)wpnts[i][1]  * 800 + 400, Integer.toString(i), Color.red);
+		//		Global.s_vc.text((int)wpnts[i][0] * 800 + 400, (int)wpnts[i][1]  * 800 + 400, Integer.toString(i), Color.red);
 			
 				//pop init point
 				vs.remove(0);
@@ -149,16 +142,21 @@ public final class MyStrategy implements Strategy {
 				entirePath.addAll(vs);
 				
 			}
-			Global.s_vc.endPost();
+
+		//	Global.s_vc.endPre();
 			
 
-			Global.s_vc.beginPost();
+	//		Global.s_vc.beginPost();
+			int show = 4;
 			for (Vector2D vec : entirePath)
 			{
 			//	System.out.printf("%s\n", vec);
-				Global.s_vc.fillCircle((int)vec.x() * 800 + 400, (int)vec.y() * 800 + 400, 50, Color.red);
+				if (show == 0)
+					break;
+		//		Global.s_vc.fillCircle((int)vec.x() * 800 + 400, (int)vec.y() * 800 + 400, 50, Color.red);
+				show--;
 			}				
-Global.s_vc.endPost();
+	//		Global.s_vc.endPost();
 		}
 		tickN = tickN + 1;
 	}

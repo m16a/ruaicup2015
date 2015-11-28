@@ -104,29 +104,29 @@ public final class Wave
 		while (nI != startI || nJ != startJ)
 		{
 			int d = m_nodes[nI][nJ].d;
-
-			if (nI > 0 && m_nodes[nI-1][nJ].d == d-1){
+			int nbs = getNeighbours(nI, nJ);
+			if (nI > 0 && m_nodes[nI-1][nJ].d == d-1 && (nbs & LEFT) != 0){
 				res.insertElementAt(new Vector2D(nI-1, nJ),0);
 				nI--;
 				d--;
 				continue;	
 			}
 			
-			if (nI < m_width - 1 && m_nodes[nI+1][nJ].d == d-1){
+			if (nI < m_width - 1 && m_nodes[nI+1][nJ].d == d-1 && (nbs & RIGHT) != 0){
 				res.insertElementAt(new Vector2D(nI+1, nJ),0);
 				nI++;
 				d--;
 				continue;	
 			}	
 			
-			if (nJ > 0 && m_nodes[nI][nJ-1].d == d-1){
+			if (nJ > 0 && m_nodes[nI][nJ-1].d == d-1 && (nbs & TOP) != 0){
 				res.insertElementAt(new Vector2D(nI, nJ-1),0);
 				nJ--;
 				d--;
 				continue;	
 			}	
 
-			if (nJ < m_height-1 && m_nodes[nI][nJ+1].d == d-1){
+			if (nJ < m_height-1 && m_nodes[nI][nJ+1].d == d-1 && (nbs & BOTTOM) != 0){
 				res.insertElementAt(new Vector2D(nI, nJ+1),0);
 				nJ++;
 				d--;

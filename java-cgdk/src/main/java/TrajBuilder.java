@@ -35,11 +35,12 @@ public final class TrajBuilder{
 	static public List<Vector2D> generateBrakeInputs(int startTick, int tickAhead, int N) // tickAhead * N ~ 10000
 	{
 		List<Vector2D> res = new ArrayList<Vector2D>(); 
-		
+
+		if (true)		
 		for (int i = 0; i < N; i++)
 		{	
-			int firstParam = startTick + i * (tickAhead)/ N;
-				int secondParam = firstParam + 50;
+			int firstParam = startTick + i * (tickAhead / 3)/ N;
+				int secondParam = firstParam + 30;
 		//		System.out.printf("[%d %d]", firstParam, secondParam);
 				res.add(new Vector2D(firstParam, secondParam));
 		}
@@ -55,22 +56,21 @@ public final class TrajBuilder{
 				res[1] = new Vector2D();
 				res[2] = new Vector2D();
 		double bestMetric = 0;
-		int tickAhead = 150;
+		int tickAhead = 100;
 
 		Vector2D best_in_turn = new Vector2D();
 		Vector2D best_in_brake = new Vector2D();
 		int best_side = 0;
 
 		if (m_turn_inputs == null)
-			m_turn_inputs = generateInputs(0, tickAhead, 10);
+			m_turn_inputs = generateInputs(0, tickAhead, 5);
 
 		if (m_break_inputs == null)
-			m_break_inputs = generateBrakeInputs(0, tickAhead, 10);
+			m_break_inputs = generateBrakeInputs(0, tickAhead, 5);
 	
 	
-			Global.s_vc.beginPre();
+		Global.s_vc.beginPre();
 		
-		//
 		for (Vector2D turn_input : m_turn_inputs)
 			for (Vector2D break_input : m_break_inputs)
 		{
@@ -127,15 +127,17 @@ public final class TrajBuilder{
 		
 
 				PhysSym.step(cp, game);
-				if (CollisionChecker.checkBoard(game, cp.m_pos, cp.m_angle))
+			
+				metric += (cp.m_pos.sub(oldPos)).length();
+				oldPos = cp.m_pos;
+
+
+			if (CollisionChecker.checkBoard(game, cp.m_pos, cp.m_angle))
 					{
 					//System.out.printf("break \n");
 					break;
 					}				
-				metric += (cp.m_pos.sub(oldPos)).length();
-				oldPos = cp.m_pos;
-
-				//Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
+				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
 			}
 
 			metric += getClosestWaypoint(cp.m_pos) * 10000;
@@ -146,11 +148,15 @@ public final class TrajBuilder{
 	static public int getClosestWaypoint(Vector2D pos)
 	{
 		int res = 0;
+		int hack = 4;
 		for (Vector2D v : MyStrategy.entirePath)
 		{
+				if (hack == 0)
+					return 0;
 				if ( (int)(pos.x()) / 800 == (int)v.x() && (int)(pos.y()) / 800 == (int)v.y())
 					break;
 				res++;
+				hack--;
 		}
 		//System.out.printf("EXTRA %d\n", res);
 		return res;	

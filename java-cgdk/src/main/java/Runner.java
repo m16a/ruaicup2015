@@ -33,7 +33,7 @@ public final class Runner {
             }
 
             PlayerContext playerContext;
-						
+
             while ((playerContext = remoteProcessClient.readPlayerContext()) != null) {
                 Car[] playerCars = playerContext.getCars();
                 if (playerCars == null || playerCars.length != teamSize) {
