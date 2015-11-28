@@ -82,22 +82,7 @@ public final class MyStrategy implements Strategy {
 		}	
 		
 		if (inputReady)
-		{
-			int i = tickN;
-				int tC = (int)((turn_input.x() + turn_input.y()) / 2);//middle tick
-				if (i > turn_input.x() && i < tC)
-					move.setWheelTurn(1*turn_side);
-				else if (i >= tC && i < turn_input.y())
-					move.setWheelTurn(-1*turn_side);
-				else if (i < turn_input.x() || i > turn_input.y())
-					move.setWheelTurn(0);
-
-				if (i > brake_input.x() && i < brake_input.y())
-					move.setBrake(true);
-				else
-					move.setBrake(false);
-
-		}
+			fillMoveFromInputs(move, tickN, turn_input, brake_input, turn_side);
 
 		Global.s_vc.beginPost();
 	Global.s_vc.fillCircle(self.getX() + 200, self.getY() - 100, 25, move.isBrake() ? Color.red :Color.black);		
@@ -160,4 +145,22 @@ public final class MyStrategy implements Strategy {
 		}
 		tickN = tickN + 1;
 	}
+
+	public static void fillMoveFromInputs(Move move, int t, Vector2D turn_input, Vector2D brake_input, int turn_side)
+	{
+				int tC = (int)((turn_input.x() + turn_input.y()) / 2);//middle tick
+				if (t > turn_input.x() && t < tC)
+					move.setWheelTurn(1*turn_side);
+				else if (t >= tC && t < turn_input.y())
+					move.setWheelTurn(-1*turn_side);
+				else if (t < turn_input.x() || t > turn_input.y())
+					move.setWheelTurn(0);
+
+				if (t > brake_input.x() && t < brake_input.y())
+					move.setBrake(true);
+				else
+					move.setBrake(false);
+}
+
+
 }

@@ -105,13 +105,14 @@ public final class TrajBuilder{
 	static public double tryTurn(Game game, CarProxy clear_cp, Vector2D input, Vector2D b_input, int isRight, int tickAhead, Color c, int draw_width) // right 1, left -1
 	{
 			CarProxy cp = new CarProxy(clear_cp);
-			
+			Move move = new Move();	
 			//System.out.printf("%s %s\n", input.toString(), b_input.toString());
 			double metric = 0;
 			Vector2D oldPos = clear_cp.m_pos;
 			for (int i = 0; i < tickAhead; i++)
 			{
-				int tC = (int)((input.x() + input.y()) / 2);//middle tick
+				MyStrategy.fillMoveFromInputs(move, i, input, b_input, isRight);
+	/*			int tC = (int)((input.x() + input.y()) / 2);//middle tick
 				if (i > input.x() && i < tC)
 					cp.m_in_wheel = 1*isRight;
 				else if (i >= tC && i < input.y())
@@ -123,8 +124,9 @@ public final class TrajBuilder{
 					cp.m_in_brake = true;
 				else
 					cp.m_in_brake = false;
-
-		
+*/
+				cp.m_in_wheel = move.getWheelTurn();
+				cp.m_in_brake = move.isBrake();	
 
 				PhysSym.step(cp, game);
 			
