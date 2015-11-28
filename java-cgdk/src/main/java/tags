@@ -8,12 +8,13 @@ AMMO_CRATE	model/BonusType.java	/^    AMMO_CRATE,$/;"	e	enum:BonusType	file:
 AUTHENTICATION_TOKEN	RemoteProcessClient.java	/^        AUTHENTICATION_TOKEN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
 BOTTOM	Wave.java	/^	static public int BOTTOM = 4;\/\/1<<2;$/;"	f	class:Wave
 BOTTOM_HEADED_T	model/TileType.java	/^    BOTTOM_HEADED_T,$/;"	e	enum:TileType	file:
+BREAK_VAR	TrajBuilder.java	/^	static public int BREAK_VAR = 5;	$/;"	f	class:TrajBuilder
 BUFFER_SIZE_BYTES	RemoteProcessClient.java	/^    private static final int BUFFER_SIZE_BYTES = 1 << 20;$/;"	f	class:RemoteProcessClient	file:
 BUGGY	model/CarType.java	/^    BUGGY,$/;"	e	enum:CarType	file:
 Bonus	model/Bonus.java	/^    public Bonus($/;"	m	class:Bonus
 Bonus	model/Bonus.java	/^public class Bonus extends RectangularUnit {$/;"	c
 BonusType	model/BonusType.java	/^public enum BonusType {$/;"	g
-CROSSROADS	model/TileType.java	/^    CROSSROADS$/;"	e	enum:TileType	file:
+CROSSROADS	model/TileType.java	/^    CROSSROADS,$/;"	e	enum:TileType	file:
 Car	model/Car.java	/^    public Car($/;"	m	class:Car
 Car	model/Car.java	/^public class Car extends RectangularUnit {$/;"	c
 CarProxy	CarProxy.java	/^	public CarProxy(Car c, Game game)$/;"	m	class:CarProxy
@@ -84,9 +85,11 @@ TEAM_SIZE	RemoteProcessClient.java	/^        TEAM_SIZE,$/;"	e	enum:RemoteProcess
 TIRE	model/ProjectileType.java	/^    TIRE$/;"	e	enum:ProjectileType	file:
 TOP	Wave.java	/^	static public int TOP = 8;\/\/1<<3;$/;"	f	class:Wave
 TOP_HEADED_T	model/TileType.java	/^    TOP_HEADED_T,$/;"	e	enum:TileType	file:
+TURN_VAR	TrajBuilder.java	/^	static public int TURN_VAR = 20;$/;"	f	class:TrajBuilder
 TileType	model/TileType.java	/^public enum TileType {$/;"	g
 TrajBuilder	TrajBuilder.java	/^public final class TrajBuilder{$/;"	c
 UNKNOWN	RemoteProcessClient.java	/^        UNKNOWN,$/;"	e	enum:RemoteProcessClient.MessageType	file:
+UNKNOWN	model/TileType.java	/^    UNKNOWN$/;"	e	enum:TileType	file:
 UP	model/Direction.java	/^    UP,$/;"	e	enum:Direction	file:
 Unit	model/Unit.java	/^    protected Unit($/;"	m	class:Unit
 Unit	model/Unit.java	/^public abstract class Unit {$/;"	c
@@ -157,6 +160,7 @@ enginePower	model/Move.java	/^    private double enginePower;$/;"	f	class:Move	f
 ensureMessageType	RemoteProcessClient.java	/^    private static void ensureMessageType(MessageType actualType, MessageType expectedType) {$/;"	m	class:RemoteProcessClient	file:
 entirePath	MyStrategy.java	/^	public static Vector<Vector2D> entirePath = new Vector<Vector2D>();$/;"	f	class:MyStrategy
 fillCircle	VisualClient.java	/^    public void fillCircle(double x, double y, double r, Color color) {$/;"	m	class:VisualClient
+fillMoveFromInputs	MyStrategy.java	/^	public static void fillMoveFromInputs(Move move, int t, Vector2D turn_input, Vector2D brake_input, int turn_side)$/;"	m	class:MyStrategy
 fillRect	VisualClient.java	/^    public void fillRect(double x1, double y1, double x2, double y2, Color color) {$/;"	m	class:VisualClient
 find	Wave.java	/^	public Vector<Vector2D> find(int startI, int startJ, int finishI, int finishJ)$/;"	m	class:Wave
 findBestTrajectory	TrajBuilder.java	/^	static public Vector2D[] findBestTrajectory(CarProxy cp, Game game)$/;"	m	class:TrajBuilder
@@ -193,6 +197,7 @@ getCarWheelTurnChangePerTick	model/Game.java	/^    public double getCarWheelTurn
 getCarWidth	model/Game.java	/^    public double getCarWidth() {$/;"	m	class:Game
 getCars	model/PlayerContext.java	/^    public Car[] getCars() {$/;"	m	class:PlayerContext
 getCars	model/World.java	/^    public Car[] getCars() {$/;"	m	class:World
+getClosestWaypoint	TrajBuilder.java	/^	static public int getClosestWaypoint(Vector2D pos)$/;"	m	class:TrajBuilder
 getDistanceTo	model/Unit.java	/^    public double getDistanceTo(Unit unit) {$/;"	m	class:Unit
 getDistanceTo	model/Unit.java	/^    public double getDistanceTo(double x, double y) {$/;"	m	class:Unit
 getDurability	model/Car.java	/^    public double getDurability() {$/;"	m	class:Car
@@ -218,6 +223,7 @@ getMaxOiledStateDurationTicks	model/Game.java	/^    public int getMaxOiledStateD
 getMyPlayer	model/World.java	/^    public Player getMyPlayer() {$/;"	m	class:World
 getName	model/Player.java	/^    public String getName() {$/;"	m	class:Player
 getNeighbours	Wave.java	/^	public int getNeighbours(int x, int y)$/;"	m	class:Wave
+getNextWaypointIndex	model/Car.java	/^    public int getNextWaypointIndex() {$/;"	m	class:Car
 getNextWaypointX	model/Car.java	/^    public int getNextWaypointX() {$/;"	m	class:Car
 getNextWaypointY	model/Car.java	/^    public int getNextWaypointY() {$/;"	m	class:Car
 getNitroChargeCount	model/Car.java	/^    public int getNitroChargeCount() {$/;"	m	class:Car
@@ -361,8 +367,11 @@ model	model/World.java	/^package model;$/;"	p
 move	MyStrategy.java	/^	public void move(Car self, World world, Game game, Move move) $/;"	m	class:MyStrategy
 move	Strategy.java	/^    void move(Car self, World world, Game game, Move move);$/;"	m	interface:Strategy
 name	model/Player.java	/^    private final String name;$/;"	f	class:Player	file:
+nextWaypointIndex	model/Car.java	/^    private final int nextWaypointIndex;$/;"	f	class:Car	file:
 nextWaypointX	model/Car.java	/^    private final int nextWaypointX;$/;"	f	class:Car	file:
 nextWaypointY	model/Car.java	/^    private final int nextWaypointY;$/;"	f	class:Car	file:
+nextX	MyStrategy.java	/^	public static int nextX = -1;$/;"	f	class:MyStrategy
+nextY	MyStrategy.java	/^	public static int nextY = -1;$/;"	f	class:MyStrategy
 nitroChargeCount	model/Car.java	/^    private final int nitroChargeCount;$/;"	f	class:Car	file:
 nitroDurationTicks	model/Game.java	/^    private final int nitroDurationTicks;$/;"	f	class:Game	file:
 nitroEnginePowerFactor	model/Game.java	/^    private final double nitroEnginePowerFactor;$/;"	f	class:Game	file:
@@ -488,6 +497,7 @@ washerMass	model/Game.java	/^    private final double washerMass;$/;"	f	class:Ga
 washerRadius	model/Game.java	/^    private final double washerRadius;$/;"	f	class:Game	file:
 waypoints	RemoteProcessClient.java	/^    private int[][] waypoints;$/;"	f	class:RemoteProcessClient	file:
 waypoints	model/World.java	/^    private final int[][] waypoints;$/;"	f	class:World	file:
+waypointsPassed	MyStrategy.java	/^	public static int waypointsPassed = 0;$/;"	f	class:MyStrategy
 wheelTurn	model/Car.java	/^    private final double wheelTurn;$/;"	f	class:Car	file:
 wheelTurn	model/Move.java	/^    private double wheelTurn;$/;"	f	class:Move	file:
 width	model/RectangularUnit.java	/^    private final double width;$/;"	f	class:RectangularUnit	file:

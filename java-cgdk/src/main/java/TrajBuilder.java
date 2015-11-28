@@ -10,7 +10,10 @@ public final class TrajBuilder{
 
 	static public List<Vector2D> m_turn_inputs = null;
 	static public List<Vector2D> m_break_inputs = null;
-	
+
+
+	static public int TURN_VAR = 20;
+	static public int BREAK_VAR = 5;	
 	static public List<Vector2D> generateInputs(int startTick, int tickAhead, int N) // tickAhead * N ~ 10000
 	{
 		List<Vector2D> res = new ArrayList<Vector2D>(); 
@@ -22,10 +25,10 @@ public final class TrajBuilder{
 			for (int sub_v = 1; sub_v < vs-v; sub_v++)
 			{
 				int secondParam = firstParam + sub_v * (startTick+tickAhead - firstParam)/(vs-v);
-		//		System.out.printf("[%d %d]", firstParam, secondParam);
+				System.out.printf("[%d %d]", firstParam, secondParam);
 				res.add(new Vector2D(firstParam, secondParam));
 			}
-		//	System.out.printf("\n");
+			System.out.printf("\n");
 		}
 		
 		res.add(new Vector2D(startTick+tickAhead, startTick+tickAhead));
@@ -39,12 +42,13 @@ public final class TrajBuilder{
 		if (true)		
 		for (int i = 0; i < N; i++)
 		{	
-			int firstParam = startTick + i * (tickAhead / 3)/ N;
-				int secondParam = firstParam + 30;
-		//		System.out.printf("[%d %d]", firstParam, secondParam);
+			int firstParam = startTick + i * (tickAhead / 1)/ N;
+				int secondParam = firstParam + 100;
+				System.out.printf("[%d %d]", firstParam, secondParam);
 				res.add(new Vector2D(firstParam, secondParam));
-		}
+			}
 		
+		System.out.printf("\n");
 		res.add(new Vector2D(startTick+tickAhead, startTick+tickAhead));
 		return res;
 	}
@@ -63,10 +67,10 @@ public final class TrajBuilder{
 		int best_side = 0;
 
 		if (m_turn_inputs == null)
-			m_turn_inputs = generateInputs(0, tickAhead, 5);
+			m_turn_inputs = generateInputs(0, tickAhead, TURN_VAR);
 
 		if (m_break_inputs == null)
-			m_break_inputs = generateBrakeInputs(0, tickAhead, 5);
+			m_break_inputs = generateBrakeInputs(0, tickAhead, BREAK_VAR);
 	
 	
 		Global.s_vc.beginPre();
@@ -109,6 +113,7 @@ public final class TrajBuilder{
 			//System.out.printf("%s %s\n", input.toString(), b_input.toString());
 			double metric = 0;
 			Vector2D oldPos = clear_cp.m_pos;
+			
 			for (int i = 0; i < tickAhead; i++)
 			{
 				MyStrategy.fillMoveFromInputs(move, i, input, b_input, isRight);
@@ -141,8 +146,10 @@ public final class TrajBuilder{
 					}				
 				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
 			}
-
-			metric += getClosestWaypoint(cp.m_pos) * 10000;
+			int i = getClosestWaypoint(cp.m_pos);
+			Vector2D nextTile = MyStrategy.entirePath.elementAt(i+1);
+			double dist_to_next_tile = (nextTile.scale(800).add(new Vector2D(400,400) ) ).sub(cp.m_pos).length();
+			metric = i * 10000 +  4000 - dist_to_next_tile;
 
 			return metric;
 }

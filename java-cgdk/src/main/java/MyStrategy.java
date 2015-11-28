@@ -59,7 +59,7 @@ public final class MyStrategy implements Strategy {
 		CarProxy cp = new CarProxy(self, game);
 		//if (tickN < 300)
 		//{	
-			double in_p = 0.8D;	
+			double in_p = 0.5D;	
 			move.setEnginePower(in_p);
 			cp.m_in_power = in_p;
 		//}else{
@@ -91,6 +91,8 @@ public final class MyStrategy implements Strategy {
 		Color c = Math.abs(move.getWheelTurn()) < 0.0000001 ? Color.black : (move.getWheelTurn() > 0 ? Color.green : Color.blue);
 
 		Global.s_vc.fillCircle(self.getX() + 150, self.getY() - 100, 25, c);		
+	
+		Global.s_vc.text(self.getX() - 150, self.getY()-100, Double.toString(Math.sqrt(self.getSpeedX()*self.getSpeedX()+ self.getSpeedY()*self.getSpeedY())), Color.red);
 		Global.s_vc.endPost();
 
 
@@ -152,7 +154,7 @@ public final class MyStrategy implements Strategy {
 				if (t > turn_input.x() && t < tC)
 					move.setWheelTurn(1*turn_side);
 				else if (t >= tC && t < turn_input.y())
-					move.setWheelTurn(-1*turn_side);
+					move.setWheelTurn(1*turn_side);
 				else if (t < turn_input.x() || t > turn_input.y())
 					move.setWheelTurn(0);
 
