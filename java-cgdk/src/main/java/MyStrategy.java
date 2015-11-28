@@ -28,6 +28,7 @@ public final class MyStrategy implements Strategy {
 
 	public static Vector<Vector2D> entirePath = new Vector<Vector2D>();
 
+	public static Vector<Integer> arrows = new Vector<Integer>();
   @Override
 	public void move(Car self, World world, Game game, Move move) 
 	{
@@ -59,7 +60,7 @@ public final class MyStrategy implements Strategy {
 		CarProxy cp = new CarProxy(self, game);
 		//if (tickN < 300)
 		//{	
-			double in_p = 0.5D;	
+			double in_p = 0.8D;	
 			move.setEnginePower(in_p);
 			cp.m_in_power = in_p;
 		//}else{
@@ -109,7 +110,7 @@ public final class MyStrategy implements Strategy {
 
 
 			//draw waypoints
-	//		Global.s_vc.beginPre();
+			//Global.s_vc.beginPre();
 			int[][] wpnts = world.getWaypoints();
 
 			entirePath.clear();
@@ -121,7 +122,7 @@ public final class MyStrategy implements Strategy {
 			{
 				
 				Vector<Vector2D> vs = Global.s_wave.find(wpnts[i][0],wpnts[i][1], wpnts[i+1][0],wpnts[i+1][1]);
-		//		Global.s_vc.text((int)wpnts[i][0] * 800 + 400, (int)wpnts[i][1]  * 800 + 400, Integer.toString(i), Color.red);
+			//	Global.s_vc.text((int)wpnts[i][0] * 800 + 400, (int)wpnts[i][1]  * 800 + 400, Integer.toString(i), Color.red);
 			
 				//pop init point
 				vs.remove(0);
@@ -144,6 +145,51 @@ public final class MyStrategy implements Strategy {
 				show--;
 			}				
 	//		Global.s_vc.endPost();
+
+			// define turns
+
+			//Vector<Integer> arrow = new Vector<Integer>();	
+			arrows.clear();
+			for (int i = 0; i < entirePath.size()-2; i++)
+			{
+				Vector2D v1 = entirePath.elementAt(i+1).sub(entirePath.elementAt(i));
+				Vector2D v2 = entirePath.elementAt(i+2).sub(entirePath.elementAt(i+1)); 
+					
+				if (v1.dot(v2) < 0.01)
+				{
+					if (v1.cross(v2) > 0)
+						arrows.add(Wave.RIGHT);
+					else
+						arrows.add(Wave.LEFT);
+				}
+				else if (v1.add(v2).length() < 0.01)
+						arrows.add(Wave.BOTTOM);
+				else 
+						arrows.add(Wave.TOP);
+			}
+
+	/*		
+		for (Integer i : arrows)
+			switch (i)
+			{
+				case Wave.TOP:
+					System.out.printf("forward ");
+				break;
+				case Wave.LEFT:
+					System.out.printf("left ");
+				break;
+				case Wave.RIGHT:
+					System.out.printf("right ");
+				break;
+				case Wave.BOTTOM:
+					System.out.printf("backward ");
+				break;
+
+			}
+			
+		System.out.printf("\n ");
+*/
+
 		}
 		tickN = tickN + 1;
 	}

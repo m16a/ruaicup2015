@@ -90,9 +90,13 @@ public class Vector2D {
 
    // Dot product of two vectors .....
 
-   public double dotProduct ( Vector2D v1 ) {
+   public double dot( Vector2D v1 ) {
         return this.dX*v1.dX + this.dY*v1.dY;
    }
+
+	 public double cross(Vector2D v1){
+			return this.dX*v1.dY - this.dY*v1.dX;	
+	}
 /*
    // Exercise methods in Vector2D class
 

@@ -14,6 +14,7 @@ public final class TrajBuilder{
 
 	static public int TURN_VAR = 20;
 	static public int BREAK_VAR = 5;	
+	static public int TICK_AHEAD = 75;
 	static public List<Vector2D> generateInputs(int startTick, int tickAhead, int N) // tickAhead * N ~ 10000
 	{
 		List<Vector2D> res = new ArrayList<Vector2D>(); 
@@ -60,7 +61,7 @@ public final class TrajBuilder{
 				res[1] = new Vector2D();
 				res[2] = new Vector2D();
 		double bestMetric = 0;
-		int tickAhead = 100;
+		int tickAhead = TICK_AHEAD;
 
 		Vector2D best_in_turn = new Vector2D();
 		Vector2D best_in_brake = new Vector2D();
@@ -139,18 +140,62 @@ public final class TrajBuilder{
 				oldPos = cp.m_pos;
 
 
-			if (CollisionChecker.checkBoard(game, cp.m_pos, cp.m_angle))
+				if (CollisionChecker.checkBoard(game, cp.m_pos, cp.m_angle))
 					{
 					//System.out.printf("break \n");
 					break;
 					}				
-				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
+//				Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
 			}
+/*			
 			int i = getClosestWaypoint(cp.m_pos);
-			Vector2D nextTile = MyStrategy.entirePath.elementAt(i+1);
+			int ii = i+1;
+			if (ii >= MyStrategy.entirePath.size())
+				ii = MyStrategy.entirePath.size() - 1;
+			if (ii < 0){
+					ii = 0;
+			}
+			Vector2D nextTile = MyStrategy.entirePath.elementAt(ii);
 			double dist_to_next_tile = (nextTile.scale(800).add(new Vector2D(400,400) ) ).sub(cp.m_pos).length();
 			metric = i * 10000 +  4000 - dist_to_next_tile;
 
+*/
+
+				int i = getClosestWaypoint(cp.m_pos);
+				int ii = i+1;
+				if (ii >= MyStrategy.entirePath.size())
+					ii = MyStrategy.entirePath.size() - 1;
+				if (ii < 0)
+					ii = 0;
+			
+				Vector2D tile = MyStrategy.entirePath.elementAt(ii-1);
+				Vector2D nextTile = MyStrategy.entirePath.elementAt(ii);
+
+				Vector2D arr = nextTile.sub(tile);
+
+				if (MyStrategy.arrows.size() > 3)
+				{
+					int cc = 0;
+					for (cc = 0; MyStrategy.arrows.elementAt(cc) == Wave.TOP; cc++){}
+					
+					if (MyStrategy.arrows.elementAt(cc) == Wave.RIGHT)
+						arr = arr.rotate(-3.14f / 2);
+					else if (MyStrategy.arrows.elementAt(cc) == Wave.LEFT)
+					{
+						arr = arr.rotate(3.14f / 2);
+									
+						//System.out.printf("ROT LEFT");	
+					}
+				//System.out.printf("cc %d\n", cc);	
+			}
+				
+			Vector2D p = (nextTile.scale(800).add(new Vector2D(400,400) ) ).add(arr.scale(300));
+			double dist_to_next_tile = p.sub(cp.m_pos).length();
+
+	
+			Global.s_vc.fillCircle(p.x(), p.y(), 25, Color.green);		
+		metric = i * 10000 +  4000 - dist_to_next_tile;
+			
 			return metric;
 }
 

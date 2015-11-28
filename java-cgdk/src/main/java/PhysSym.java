@@ -30,7 +30,7 @@ public final class PhysSym
 		cp.m_wheel += Math.max(Math.min(cp.m_in_wheel - cp.m_wheel, game.getCarWheelTurnChangePerTick()), -game.getCarWheelTurnChangePerTick());
     cp.m_w -= cp.m_medianW;
     Vector2D dirVector = new Vector2D(1.0, 0.0).rotate(cp.m_angle);
-    double angSpeedPart = cp.m_v.dotProduct(dirVector);
+    double angSpeedPart = cp.m_v.dot(dirVector);
     cp.m_medianW = cp.m_wheel * game.getCarAngularSpeedFactor() * angSpeedPart;
     cp.m_w += cp.m_medianW;
 

@@ -7,10 +7,10 @@ import model.TileType;
 
 public final class Wave
 {
-	static public int TOP = 8;//1<<3;
-	static public int BOTTOM = 4;//1<<2;
-	static public int LEFT = 2;//1<<1;
-	static public	int RIGHT = 1;// 1<<0;
+	static public final int TOP = 8;//1<<3;
+	static public final int BOTTOM = 4;//1<<2;
+	static public final int LEFT = 2;//1<<1;
+	static public	final int RIGHT = 1;// 1<<0;
 	
 	private int m_width;
 	private int m_height;

@@ -125,7 +125,7 @@ public final class CarProxy
 		Vector2D forward = new Vector2D(1.0D, 0.0D).rotate(m_angle);
 		Vector2D crosswise = new Vector2D(0.0D, 1.0D).rotate(m_angle);                    
 		
-		double vel_forw = m_v.dotProduct(forward);                  
+		double vel_forw = m_v.dot(forward);                  
 																																															
 		if ( vel_forw >= 0.0D) {                                                                 
 			vel_forw -= dlf;                                               
@@ -137,7 +137,7 @@ public final class CarProxy
 						vel_forw = 0.0D;                                                                
 		}                                                                                           
 		
-		double vel_cross = m_v.dotProduct(crosswise);                    
+		double vel_cross = m_v.dot(crosswise);                    
 																																																
 		if (vel_cross >= 0.0D) 
 		{                                                                  
