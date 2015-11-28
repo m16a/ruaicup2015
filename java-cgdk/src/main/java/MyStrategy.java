@@ -59,7 +59,7 @@ public final class MyStrategy implements Strategy {
 		CarProxy cp = new CarProxy(self, game);
 		//if (tickN < 300)
 		//{	
-			double in_p = 0.1D;	
+			double in_p = 0.8D;	
 			move.setEnginePower(in_p);
 			cp.m_in_power = in_p;
 		//}else{
@@ -90,7 +90,7 @@ public final class MyStrategy implements Strategy {
 				else if (i >= tC && i < turn_input.y())
 					move.setWheelTurn(-1*turn_side);
 				else if (i < turn_input.x() || i > turn_input.y())
-					cp.m_in_wheel = 0;
+					move.setWheelTurn(0);
 
 				if (i > brake_input.x() && i < brake_input.y())
 					move.setBrake(true);
