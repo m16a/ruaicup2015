@@ -13,6 +13,7 @@ public final class MyStrategy implements Strategy {
 
 	public static Vector2D turn_input = new Vector2D();
 	public static Vector2D brake_input = new Vector2D();
+	public static Vector2D acc_input = new Vector2D();
 	public static int turn_side = 0;
 	public static boolean inputReady = false;
 	
@@ -36,6 +37,7 @@ public final class MyStrategy implements Strategy {
 	public void move(Car self, World world, Game game, Move move) 
 	{
 
+		if (Global.DBG_RNDR)
 		if (Global.s_vc == null)
 			Global.s_vc = new VisualClient();
 
@@ -87,35 +89,43 @@ public final class MyStrategy implements Strategy {
 
 	
 		CarProxy cp = new CarProxy(self, game);
-		double in_p = 1.0D;	
-		move.setEnginePower(in_p);
-		cp.m_in_power = in_p;
+		//double in_p = 1.0D;	
+		//move.setEnginePower(in_p);
+		//cp.m_in_power = in_p;
 				
 	
 		if (tickN > 170 && (tickN % 10) == 0)
 		{		
-				Vector2D[] input = TrajBuilder.findBestTrajectory(cp, game);
-				
-				turn_input = input[0].add(new Vector2D(tickN, tickN));
-				turn_side = (int)(input[1].x());
-				brake_input = input[2].add(new Vector2D(tickN, tickN));			
-				inputReady = true;
+			Vector2D[] input = TrajBuilder.findBestTrajectory(cp, game);
+			turn_input = input[0].add(new Vector2D(tickN, tickN));
+			turn_side = (int)(input[1].x());
+			brake_input = input[2].add(new Vector2D(tickN, tickN));		
+			acc_input = input[3].add(new Vector2D(tickN, tickN));	
+			inputReady = true;
 		}	
 		
 		if (inputReady)
-			fillMoveFromInputs(move, tickN, turn_input, brake_input, turn_side);
+			fillMoveFromInputs(move, tickN, turn_input, brake_input, turn_side, acc_input);
+
 
 		//------------- Draw car parameters ---------------- 
-		Global.s_vc.beginPre();
-		Global.s_vc.fillCircle(self.getX() + 200, self.getY() - 100, 25, move.isBrake() ? Color.red :Color.black);		
+		if (Global.DBG_RNDR)
+		{
+			Global.s_vc.beginPre();
+			Global.s_vc.fillCircle(self.getX() + 200, self.getY() - 100, 25, move.isBrake() ? Color.red :Color.black);		
 
 
-		Color c = Math.abs(move.getWheelTurn()) < 0.0000001 ? Color.black : (move.getWheelTurn() > 0 ? Color.green : Color.blue);
+			Color c = Math.abs(move.getWheelTurn()) < 0.0000001 ? Color.black : (move.getWheelTurn() > 0 ? Color.green : Color.blue);
 
-		Global.s_vc.fillCircle(self.getX() + 150, self.getY() - 100, 25, c);		
-	
-		Global.s_vc.text(self.getX() - 150, self.getY()-100, Double.toString(Math.sqrt(self.getSpeedX()*self.getSpeedX()+ self.getSpeedY()*self.getSpeedY())), Color.red);
-		Global.s_vc.endPre();
+			Global.s_vc.fillCircle(self.getX() + 150, self.getY() - 100, 25, c);		
+
+			Color cc = Math.abs(move.getEnginePower()) < 0.0000001 ? Color.black : (move.getEnginePower() > 0 ? Color.green : Color.blue);
+
+			Global.s_vc.fillCircle(self.getX() + 250, self.getY() - 100, 25, cc);
+				
+			Global.s_vc.text(self.getX() - 150, self.getY()-100, Double.toString(Math.sqrt(self.getSpeedX()*self.getSpeedX()+ self.getSpeedY()*self.getSpeedY())), Color.red);
+			Global.s_vc.endPre();
+			}
 		//--------------------------------------------------
 
 
@@ -211,26 +221,31 @@ public final class MyStrategy implements Strategy {
 		tickN = tickN + 1;
 	}
 
-	public static void fillMoveFromInputs(Move move, int t, Vector2D turn_input, Vector2D brake_input, int turn_side)
+	public static void fillMoveFromInputs(Move move, int t, Vector2D turn_input, Vector2D brake_input, int turn_side, Vector2D acc_input)
 	{
-				int tC = (int)((turn_input.x() + turn_input.y()) / 2);//middle tick
-				if (t > turn_input.x() && t < tC)
-					move.setWheelTurn(1*turn_side);
-				else if (t >= tC && t < turn_input.y())
-					move.setWheelTurn(1*turn_side);
-				else if (t < turn_input.x() || t > turn_input.y())
-					move.setWheelTurn(0);
+		int tC = (int)((turn_input.x() + turn_input.y()) / 2);//middle tick
+		if (t > turn_input.x() && t < tC)
+			move.setWheelTurn(1*turn_side);
+		else if (t >= tC && t < turn_input.y())
+			move.setWheelTurn(1*turn_side);
+		else if (t < turn_input.x() || t > turn_input.y())
+			move.setWheelTurn(0);
 
-				if (t > brake_input.x() && t < brake_input.y())
-					move.setBrake(true);
-				else
-					move.setBrake(false);
-}
+		if (t > brake_input.x() && t < brake_input.y())
+			move.setBrake(true);
+		else
+			move.setBrake(false);
+
+		if (t > Math.abs(acc_input.x()) && t < acc_input.y())
+			move.setEnginePower( (turn_input.x() >= 0 ? 1.0D : -1.D ));	
+		else 
+			move.setEnginePower(0.0D);	
+	}
 
 	public static void moveBack(Move move)
 	{
 		move.setEnginePower(-1.0D);
-		move.setWheelTurn(-1 * turn_side);
+		move.setWheelTurn(1 * turn_side);
 		move.setBrake(false);
 	}
 }
