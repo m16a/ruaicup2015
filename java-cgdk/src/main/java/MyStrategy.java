@@ -24,8 +24,11 @@ public final class MyStrategy implements Strategy {
 	{
 		return new Vector2D((int)x / WIDTH, (int)y / WIDTH);
 	}
-
-
+	
+	public static Vector2D old_pos = new Vector2D(0,0);
+	public static int old_pos_cntr = 0;
+	public static int move_back_duration = 0;
+	
 	public static Vector<Vector2D> entirePath = new Vector<Vector2D>();
 
 	public static Vector<Integer> arrows = new Vector<Integer>();
@@ -56,21 +59,38 @@ public final class MyStrategy implements Strategy {
 		double v_x = self.getSpeedX();
 		double v_y = self.getSpeedY();
 		long ms0 = System.currentTimeMillis();
+	
+
+
+		//-------------- Check if stacked ------------------
+		Vector2D cur_pos = new Vector2D(self.getX(), self.getY());
+	
+		if (cur_pos.sub(old_pos).length() < 0.05 && tickN > 200)
+			old_pos_cntr++;
 		
-		CarProxy cp = new CarProxy(self, game);
-		//if (tickN < 300)
-		//{	
-			double in_p = 0.8D;	
-			move.setEnginePower(in_p);
-			cp.m_in_power = in_p;
-		//}else{
-			//move.setBrake(true);
-			//cp.m_in_brake = true;
-			//move.setWheelTurn(1);
-			//cp.m_in_wheel = 1;		
-		//}
+		old_pos = cur_pos;
+
+
+		if (old_pos_cntr > 50 )
+		{
+			move_back_duration = 100; 
+			old_pos_cntr = 0;
+		}
+
+		if (move_back_duration > 0 )
+		{
+			move_back_duration--;
+			moveBack(move);
+			return;
+		}
+		//-------------------------------------------------
 
 	
+		CarProxy cp = new CarProxy(self, game);
+		double in_p = 1.0D;	
+		move.setEnginePower(in_p);
+		cp.m_in_power = in_p;
+				
 	
 		if (tickN > 170 && (tickN % 10) == 0)
 		{		
@@ -85,8 +105,9 @@ public final class MyStrategy implements Strategy {
 		if (inputReady)
 			fillMoveFromInputs(move, tickN, turn_input, brake_input, turn_side);
 
-		Global.s_vc.beginPost();
-	Global.s_vc.fillCircle(self.getX() + 200, self.getY() - 100, 25, move.isBrake() ? Color.red :Color.black);		
+		//------------- Draw car parameters ---------------- 
+		Global.s_vc.beginPre();
+		Global.s_vc.fillCircle(self.getX() + 200, self.getY() - 100, 25, move.isBrake() ? Color.red :Color.black);		
 
 
 		Color c = Math.abs(move.getWheelTurn()) < 0.0000001 ? Color.black : (move.getWheelTurn() > 0 ? Color.green : Color.blue);
@@ -94,7 +115,8 @@ public final class MyStrategy implements Strategy {
 		Global.s_vc.fillCircle(self.getX() + 150, self.getY() - 100, 25, c);		
 	
 		Global.s_vc.text(self.getX() - 150, self.getY()-100, Double.toString(Math.sqrt(self.getSpeedX()*self.getSpeedX()+ self.getSpeedY()*self.getSpeedY())), Color.red);
-		Global.s_vc.endPost();
+		Global.s_vc.endPre();
+		//--------------------------------------------------
 
 
 		long ms1 = System.currentTimeMillis();
@@ -107,10 +129,8 @@ public final class MyStrategy implements Strategy {
 			//System.out.printf("w %.5f, next w %.5f\n", self.getAngularSpeed(), cp.m_w);
 			//System.out.printf("angle %.5f, next angle %.5f\n", self.getAngle(), cp.m_angle);
 
-
-
 			//draw waypoints
-			//Global.s_vc.beginPre();
+		//	Global.s_vc.beginPre();
 			int[][] wpnts = world.getWaypoints();
 
 			entirePath.clear();
@@ -118,22 +138,17 @@ public final class MyStrategy implements Strategy {
 			entirePath.addAll(   Global.s_wave.find( (int)(self.getX()) / 800, (int)(self.getY()) / 800, self.getNextWaypointX(), self.getNextWaypointY()));
 		
 	
-			for (int i = waypointsPassed; i < wpnts.length-1; i++)
+			for (int i = waypointsPassed; i < wpnts.length+1; i++)
 			{
-				
-				Vector<Vector2D> vs = Global.s_wave.find(wpnts[i][0],wpnts[i][1], wpnts[i+1][0],wpnts[i+1][1]);
-			//	Global.s_vc.text((int)wpnts[i][0] * 800 + 400, (int)wpnts[i][1]  * 800 + 400, Integer.toString(i), Color.red);
+				Vector<Vector2D> vs = Global.s_wave.find(wpnts[i % wpnts.length ][0],wpnts[i % wpnts.length ][1], wpnts[(i+1) % wpnts.length][0],wpnts[(i+1) % wpnts.length][1]);
+	//			Global.s_vc.text((int)wpnts[i % wpnts.length][0] * 800 + 400, (int)wpnts[i % wpnts.length][1]  * 800 + 400, Integer.toString(i % wpnts.length), Color.red);
 			
 				//pop init point
 				vs.remove(0);
-
 				entirePath.addAll(vs);
-				
 			}
-
-		//	Global.s_vc.endPre();
+//			Global.s_vc.endPre();
 			
-
 	//		Global.s_vc.beginPost();
 			int show = 4;
 			for (Vector2D vec : entirePath)
@@ -191,6 +206,8 @@ public final class MyStrategy implements Strategy {
 */
 
 		}
+		
+
 		tickN = tickN + 1;
 	}
 
@@ -210,5 +227,10 @@ public final class MyStrategy implements Strategy {
 					move.setBrake(false);
 }
 
-
+	public static void moveBack(Move move)
+	{
+		move.setEnginePower(-1.0D);
+		move.setWheelTurn(-1 * turn_side);
+		move.setBrake(false);
+	}
 }
