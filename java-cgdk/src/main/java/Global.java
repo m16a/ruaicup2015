@@ -8,5 +8,5 @@ public final class Global{
 
 	public static Wave s_wave = null;
 	public static VisualClient s_vc = null;
-	public static final boolean DBG_RNDR = false;
+	public static final boolean DBG_RNDR = true;
 }

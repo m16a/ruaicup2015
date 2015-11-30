@@ -14,7 +14,7 @@ public final class TrajBuilder{
 
 	static public int TURN_VAR = 10;
 	static public int BREAK_VAR = 2;	
-	static public int TICK_AHEAD = 150;
+	static public int TICK_AHEAD = 75;
 
 	static public List<Vector2D> generateInputs(int startTick, int tickAhead, int N) // tickAhead * N ~ 10000
 	{
@@ -28,11 +28,11 @@ public final class TrajBuilder{
 			for (int sub_v = 1; sub_v < vs-v; sub_v++)
 			{
 				int secondParam = firstParam + sub_v * (startTick+tickAhead - firstParam)/(vs-v);
-				System.out.printf("[%d %d]", firstParam, secondParam);
+//				System.out.printf("[%d %d]", firstParam, secondParam);
 				res.add(new Vector2D(firstParam, secondParam));
 			}
 
-			System.out.printf("\n");
+		//	System.out.printf("\n");
 
 			//break;
 		}
@@ -45,16 +45,16 @@ public final class TrajBuilder{
 	{
 		List<Vector2D> res = new ArrayList<Vector2D>(); 
 
-		if (false)		
+		if (true)		
 		for (int i = 0; i < N; i++)
 		{	
 			int firstParam = startTick + i * (tickAhead / 1)/ N;
 			int secondParam = firstParam + 50;
-			System.out.printf("[%d %d]", firstParam, secondParam);
+	//		System.out.printf("[%d %d]", firstParam, secondParam);
 			res.add(new Vector2D(firstParam, secondParam));
 		}
 		
-		System.out.printf("\n");
+	//	System.out.printf("\n");
 		res.add(new Vector2D(startTick+tickAhead, startTick+tickAhead));
 
 		res.add(new Vector2D(startTick, startTick+tickAhead));
@@ -95,7 +95,7 @@ public final class TrajBuilder{
 			m_acc_inputs = generateAccInputs(0, tickAhead, 0);
 
 		if (Global.DBG_RNDR)
-			Global.s_vc.beginPre();
+			Global.s_vc.beginPost();
 		
 		for (Vector2D turn_input : m_turn_inputs)
 			for (Vector2D break_input : m_break_inputs)
@@ -124,7 +124,7 @@ public final class TrajBuilder{
 		
 		if (Global.DBG_RNDR){
 			tryTurn(game, cp, best_in_turn, best_in_brake, best_side, best_in_acc, tickAhead, Color.red,6);
-			Global.s_vc.endPre();				
+			Global.s_vc.endPost();				
 		}
 		return res;
 	} 
@@ -156,8 +156,10 @@ public final class TrajBuilder{
 					//System.out.printf("break \n");
 					break;
 				}				
-			//	Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
-			}
+				if (Global.DBG_RNDR){
+				//Global.s_vc.fillCircle((int)cp.m_pos.x(), (int)cp.m_pos.y(), draw_width, c);
+			}			
+		}
 
 			int i = getClosestWaypoint(cp.m_pos);
 			int ii = i+1;

@@ -94,7 +94,7 @@ public final class MyStrategy implements Strategy {
 		//cp.m_in_power = in_p;
 				
 	
-		if (tickN > 170 && (tickN % 10) == 0)
+		if (tickN > 170 && (tickN % 5) == 0)
 		{		
 			Vector2D[] input = TrajBuilder.findBestTrajectory(cp, game);
 			turn_input = input[0].add(new Vector2D(tickN, tickN));
@@ -132,7 +132,7 @@ public final class MyStrategy implements Strategy {
 		long ms1 = System.currentTimeMillis();
 		//if (tickN > 290 && tickN < 310)
 		{
-			System.out.printf("time %d ms\n", ms1 - ms0);
+			//System.out.printf("time %d ms\n", ms1 - ms0);
 			//System.out.printf("tickN:%d curr vel (%.5f, %.5f), next vel %s\n", tickN, v_x, v_y,  cp.m_v.toString());
 			//System.out.printf("curr power %.5f, next power %.5f\n", self.getEnginePower(), cp.m_power);
 			//System.out.printf("cur turn %.5f, next turn %.5f\n", self.getWheelTurn(), cp.m_wheel);
